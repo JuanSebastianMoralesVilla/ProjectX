@@ -1,0 +1,9 @@
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe.config
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.pdb
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csprojAssemblyReference.cache
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Properties.Resources.resources
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.GenerateResource.cache
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CoreCompileInputs.cache
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb

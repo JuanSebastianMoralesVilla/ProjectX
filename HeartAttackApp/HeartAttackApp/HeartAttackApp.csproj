@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ui\Form1.cs">
+    <Compile Include="Ui\Add_pane.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ui\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Ui\Add_pane.Designer.cs">
+      <DependentUpon>Add_pane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Main_pane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Main_pane.Designer.cs">
+      <DependentUpon>Main_pane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Start_pane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Start_pane.Designer.cs">
+      <DependentUpon>Start_pane.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +75,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ui\Add_pane.resx">
+      <DependentUpon>Add_pane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Main_pane.resx">
+      <DependentUpon>Main_pane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Start_pane.resx">
+      <DependentUpon>Start_pane.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

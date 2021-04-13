@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace HeartAttackApp
 {
-    public partial class Form1 : Form
+    public partial class Start_pane: Form
     {
-        public Form1()
+        public Start_pane()
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
     }
 }

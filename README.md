@@ -42,7 +42,7 @@
 
 ## About The Project
 
-An awesome app to predict the risk to have a heart attack using machine learning tools.
+An awesome app to predict the risk to have a heart attack using machine learning tools this tools used in the proyect is the Decision-Trees.
 
 <!--![Principal Screen](https://github.com/SebasBarrera/valle-temperatures/blob/master/images/tableview.jpeg?raw=true "Principal Screen") -->
 

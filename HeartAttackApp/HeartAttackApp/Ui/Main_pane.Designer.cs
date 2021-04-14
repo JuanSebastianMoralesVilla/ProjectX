@@ -29,6 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grid_data = new System.Windows.Forms.DataGridView();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
@@ -42,12 +43,18 @@ namespace HeartAttackApp.Ui
             this.cb_choose = new System.Windows.Forms.ComboBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_graphics = new System.Windows.Forms.Button();
+            this.textBoxLoad1 = new System.Windows.Forms.TextBox();
+            this.textBoxLoad2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
             this.SuspendLayout();
             // 
             // grid_data
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grid_data.Location = new System.Drawing.Point(35, 82);
             this.grid_data.Name = "grid_data";
             this.grid_data.Size = new System.Drawing.Size(692, 269);
@@ -71,6 +78,7 @@ namespace HeartAttackApp.Ui
             this.btn_load.TabIndex = 2;
             this.btn_load.Text = "LOAD";
             this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // btn_solve
             // 
@@ -166,11 +174,27 @@ namespace HeartAttackApp.Ui
             this.btn_graphics.Text = "Graphics";
             this.btn_graphics.UseVisualStyleBackColor = true;
             // 
+            // textBoxLoad1
+            // 
+            this.textBoxLoad1.Location = new System.Drawing.Point(270, 424);
+            this.textBoxLoad1.Name = "textBoxLoad1";
+            this.textBoxLoad1.Size = new System.Drawing.Size(216, 20);
+            this.textBoxLoad1.TabIndex = 13;
+            // 
+            // textBoxLoad2
+            // 
+            this.textBoxLoad2.Location = new System.Drawing.Point(270, 465);
+            this.textBoxLoad2.Name = "textBoxLoad2";
+            this.textBoxLoad2.Size = new System.Drawing.Size(216, 20);
+            this.textBoxLoad2.TabIndex = 14;
+            // 
             // Main_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.textBoxLoad2);
+            this.Controls.Add(this.textBoxLoad1);
             this.Controls.Add(this.btn_graphics);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cb_choose);
@@ -185,6 +209,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.grid_data);
             this.Name = "Main_pane";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "main_pane";
             this.Load += new System.EventHandler(this.Main_pane_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).EndInit();
@@ -208,5 +233,7 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.ComboBox cb_choose;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_graphics;
+        private System.Windows.Forms.TextBox textBoxLoad1;
+        private System.Windows.Forms.TextBox textBoxLoad2;
     }
 }

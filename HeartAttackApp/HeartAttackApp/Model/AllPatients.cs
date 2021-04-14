@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace HeartAttackApp.Model
 {
-    class Patient
-
-
-
+    class AllPatients
+       
     {
 
-        public int id {get; }
+        public int idPatient { get; set; }
         public string year { get; set; }
 
         // bolean
@@ -26,7 +24,7 @@ namespace HeartAttackApp.Model
         public string cholesterol { get; set; }
 
         public string levelSugar { get; set; }
-        
+
 
         // boolean
         public string angina { get; set; }
@@ -36,14 +34,16 @@ namespace HeartAttackApp.Model
         public string heartRate { get; set; }
 
         public string result { get; set; }
-        public int size { get; set; }
+
+        private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
 
 
-        
 
-        public Patient(int id, string year, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
+        List<String> listPatients;
+
+        public AllPatients(int idPatient, string year, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
         {
-            this.id = id;
+            this.idPatient = idPatient;
             this.year = year;
             this.genre = genre;
             this.typeDolor = typeDolor;
@@ -57,14 +57,9 @@ namespace HeartAttackApp.Model
         }
 
 
-        public void add(int idTown, string nameTown, string type)
-        {
-            //
-            size++;
+        public String toString() {
+            return idPatient + year + genre + typeDolor + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
         }
-
-
+      
     }
-
-    }
-
+}

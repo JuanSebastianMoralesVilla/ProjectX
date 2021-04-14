@@ -52,6 +52,7 @@ namespace HeartAttackApp.Ui
             this.grid_data.Name = "grid_data";
             this.grid_data.Size = new System.Drawing.Size(692, 269);
             this.grid_data.TabIndex = 0;
+            this.grid_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_data_CellContentClick);
             // 
             // btn_new
             // 

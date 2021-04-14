@@ -36,5 +36,10 @@ namespace HeartAttackApp.Ui
         {
 
         }
+
+        private void grid_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace HeartAttackApp.Ui
             this.tb_lower = new System.Windows.Forms.TextBox();
             this.cb_choose = new System.Windows.Forms.ComboBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_graphics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +103,7 @@ namespace HeartAttackApp.Ui
             // cb_column
             // 
             this.cb_column.FormattingEnabled = true;
-            this.cb_column.Location = new System.Drawing.Point(35, 49);
+            this.cb_column.Location = new System.Drawing.Point(35, 55);
             this.cb_column.Name = "cb_column";
             this.cb_column.Size = new System.Drawing.Size(162, 21);
             this.cb_column.TabIndex = 6;
@@ -139,7 +140,7 @@ namespace HeartAttackApp.Ui
             // cb_choose
             // 
             this.cb_choose.FormattingEnabled = true;
-            this.cb_choose.Location = new System.Drawing.Point(238, 31);
+            this.cb_choose.Location = new System.Drawing.Point(238, 30);
             this.cb_choose.Name = "cb_choose";
             this.cb_choose.Size = new System.Drawing.Size(125, 21);
             this.cb_choose.TabIndex = 10;
@@ -154,11 +155,22 @@ namespace HeartAttackApp.Ui
             this.btn_search.Text = "search";
             this.btn_search.UseVisualStyleBackColor = true;
             // 
+            // btn_graphics
+            // 
+            this.btn_graphics.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btn_graphics.Location = new System.Drawing.Point(596, 29);
+            this.btn_graphics.Name = "btn_graphics";
+            this.btn_graphics.Size = new System.Drawing.Size(75, 23);
+            this.btn_graphics.TabIndex = 12;
+            this.btn_graphics.Text = "Graphics";
+            this.btn_graphics.UseVisualStyleBackColor = true;
+            // 
             // Main_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_graphics);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cb_choose);
             this.Controls.Add(this.tb_lower);
@@ -194,5 +206,6 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.TextBox tb_lower;
         private System.Windows.Forms.ComboBox cb_choose;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_graphics;
     }
 }

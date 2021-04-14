@@ -45,11 +45,11 @@ namespace HeartAttackApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 260);
+            this.label1.Location = new System.Drawing.Point(364, 246);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Estamos preparando la aplicacion para su perfecto uso, por favor espere...";
+            this.label1.Text = "Loading...";
             // 
             // pct_logo
             // 
@@ -59,7 +59,7 @@ namespace HeartAttackApp
             this.pct_logo.TabIndex = 2;
             this.pct_logo.TabStop = false;
             // 
-            // Form1
+            // Start_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,7 +67,7 @@ namespace HeartAttackApp
             this.Controls.Add(this.pct_logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pb_starting);
-            this.Name = "Form1";
+            this.Name = "Start_pane";
             this.Text = "Start";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();

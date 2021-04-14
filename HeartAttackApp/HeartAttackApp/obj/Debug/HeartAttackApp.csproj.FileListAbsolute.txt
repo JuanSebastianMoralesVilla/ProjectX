@@ -22,3 +22,15 @@ C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAtta
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe.config
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.pdb
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe.config
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.exe
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\HeartAttackApp.pdb
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csprojAssemblyReference.cache
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Properties.Resources.resources
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Add_pane.resources
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main_pane.resources
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Start_pane.resources
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.GenerateResource.cache
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CoreCompileInputs.cache
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
+C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb

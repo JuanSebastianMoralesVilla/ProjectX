@@ -69,6 +69,7 @@ namespace HeartAttackApp.Ui
             this.btn_new.TabIndex = 1;
             this.btn_new.Text = "NEW";
             this.btn_new.UseVisualStyleBackColor = true;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // btn_load
             // 

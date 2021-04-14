@@ -29,6 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grid_data = new System.Windows.Forms.DataGridView();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
@@ -49,7 +50,11 @@ namespace HeartAttackApp.Ui
             // 
             // grid_data
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grid_data.Location = new System.Drawing.Point(35, 82);
             this.grid_data.Name = "grid_data";
             this.grid_data.Size = new System.Drawing.Size(692, 269);
@@ -204,6 +209,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.grid_data);
             this.Name = "Main_pane";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "main_pane";
             this.Load += new System.EventHandler(this.Main_pane_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).EndInit();

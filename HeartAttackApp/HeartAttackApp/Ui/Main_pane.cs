@@ -25,7 +25,7 @@ namespace HeartAttackApp.Ui
 
         //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
 
-        //private Add_pane addPane;
+      private Add_pane addPane;
 
         // List<String> listPatients; 
 
@@ -40,8 +40,9 @@ namespace HeartAttackApp.Ui
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            //addPane = new Add_pane();
-            //addPane.ShowDialog();
+         
+           addPane = new Add_pane();
+            addPane.ShowDialog();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

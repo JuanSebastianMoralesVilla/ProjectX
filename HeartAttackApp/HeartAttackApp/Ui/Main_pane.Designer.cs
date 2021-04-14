@@ -45,6 +45,7 @@ namespace HeartAttackApp.Ui
             this.btn_graphics = new System.Windows.Forms.Button();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
             this.textBoxLoad2 = new System.Windows.Forms.TextBox();
+            this.bt_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +95,7 @@ namespace HeartAttackApp.Ui
             // 
             this.btn_add.Location = new System.Drawing.Point(733, 201);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(55, 34);
+            this.btn_add.Size = new System.Drawing.Size(70, 34);
             this.btn_add.TabIndex = 4;
             this.btn_add.Text = "ADD";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -189,11 +190,21 @@ namespace HeartAttackApp.Ui
             this.textBoxLoad2.Size = new System.Drawing.Size(216, 20);
             this.textBoxLoad2.TabIndex = 14;
             // 
+            // bt_delete
+            // 
+            this.bt_delete.Location = new System.Drawing.Point(733, 241);
+            this.bt_delete.Name = "bt_delete";
+            this.bt_delete.Size = new System.Drawing.Size(70, 36);
+            this.bt_delete.TabIndex = 15;
+            this.bt_delete.Text = "DELETE";
+            this.bt_delete.UseVisualStyleBackColor = true;
+            // 
             // Main_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.ClientSize = new System.Drawing.Size(836, 539);
+            this.Controls.Add(this.bt_delete);
             this.Controls.Add(this.textBoxLoad2);
             this.Controls.Add(this.textBoxLoad1);
             this.Controls.Add(this.btn_graphics);
@@ -236,5 +247,6 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.Button btn_graphics;
         private System.Windows.Forms.TextBox textBoxLoad1;
         private System.Windows.Forms.TextBox textBoxLoad2;
+        private System.Windows.Forms.Button bt_delete;
     }
 }

@@ -11,14 +11,26 @@ namespace HeartAttackApp.Model
 
 
     {
+        // CONST
+        public const string ID = "idPatient";
+        public const string AGE = "age";
+        public const string GENRE = "genre";
+        public const string TYPE_PAIN = "typePain";
+        public const string BLOOD_PRESSURE = "blood pressure";
+        public const string CHOLESTEROL = "cholesterol";
+        public const string LEVEL_SUGAR = "level of sugar";
+        public const string ANGINA = "angina";
+        public const string RESULT_ELECTRO = "electrocardiographic results";
+        public const string HEART_RATE = "heart rate";
+        public const string RESULT = "result";
 
         public int id {get; }
-        public string year { get; set; }
+        public string age { get; set; }
 
         // bolean
         public string genre { get; set; }
         // int
-        public string typeDolor { get; set; }
+        public string typePain { get; set; }
 
         public string bloodPressure { get; set; }
 
@@ -41,12 +53,12 @@ namespace HeartAttackApp.Model
 
         
 
-        public Patient(int id, string year, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
+        public Patient(int id, string age, string genre, string typePain, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
         {
             this.id = id;
-            this.year = year;
+            this.age = age;
             this.genre = genre;
-            this.typeDolor = typeDolor;
+            this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
             this.levelSugar = levelSugar;
@@ -63,6 +75,38 @@ namespace HeartAttackApp.Model
             size++;
         }
 
+        public static string[] matrixE()
+        {
+         
+            string[] result = { ID, AGE , GENRE, TYPE_PAIN,BLOOD_PRESSURE, 
+                                CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
+                                HEART_RATE,RESULT};
+            return result;
+        }
+
+        public static string[] cadenaValues()
+        {
+            string[] result = {ID};
+            return result;
+        }
+
+        public static string[] numericValues()
+        {
+
+            string[] result = {AGE , BLOOD_PRESSURE,
+                                CHOLESTEROL,
+                                HEART_RATE};
+            return result;
+        }
+
+        public static string[] binariValue()
+        {
+
+            string[] result = { GENRE, TYPE_PAIN,
+                                LEVEL_SUGAR,ANGINA,
+                                RESULT_ELECTRO,RESULT};
+            return result;
+        }
 
     }
 

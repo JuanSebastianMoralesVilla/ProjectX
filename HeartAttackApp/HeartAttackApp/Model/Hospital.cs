@@ -18,7 +18,7 @@ namespace HeartAttackApp.Model
           this.size = 0;
         }
 
-        public void add(int idPatient, string year, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
+        public void add(int idPatient, string age, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
         {
             Patient patient = null;
             for (int i = 0; i < size; i++) {
@@ -30,13 +30,10 @@ namespace HeartAttackApp.Model
             }
             if (patient == null)
             {
-               patient = new Patient(idPatient, year, genre, typeDolor, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
+               patient = new Patient(idPatient, age, genre, typeDolor, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
                 patients.Add(patient);
                 size++;
             }
-
-            patients.Add(patient);
-            
         }
 
         }

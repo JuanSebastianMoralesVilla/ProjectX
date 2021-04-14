@@ -46,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Hospital.cs" />
+    <Compile Include="Model\Patient.cs" />
     <Compile Include="Ui\Add_pane.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ui\Add_pane.Designer.cs">
       <DependentUpon>Add_pane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\ControllerGUI.cs" />
     <Compile Include="Ui\Main_pane.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,8 +100,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

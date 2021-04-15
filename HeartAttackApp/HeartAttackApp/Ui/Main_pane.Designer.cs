@@ -29,7 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grid_data = new System.Windows.Forms.DataGridView();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
@@ -44,18 +44,14 @@ namespace HeartAttackApp.Ui
             this.btn_graphics = new System.Windows.Forms.Button();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
             this.textBoxLoad2 = new System.Windows.Forms.TextBox();
-<<<<<<< HEAD
             this.tb_cadena = new System.Windows.Forms.TextBox();
-=======
-            this.bt_delete = new System.Windows.Forms.Button();
->>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
             this.SuspendLayout();
             // 
             // grid_data
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
@@ -146,7 +142,6 @@ namespace HeartAttackApp.Ui
             // 
             // cb_choose
             // 
-            this.cb_choose.Enabled = false;
             this.cb_choose.FormattingEnabled = true;
             this.cb_choose.Location = new System.Drawing.Point(352, 56);
             this.cb_choose.Name = "cb_choose";
@@ -163,6 +158,7 @@ namespace HeartAttackApp.Ui
             this.btn_search.Text = "search";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Visible = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_graphics
             // 
@@ -192,7 +188,6 @@ namespace HeartAttackApp.Ui
             this.textBoxLoad2.Size = new System.Drawing.Size(216, 20);
             this.textBoxLoad2.TabIndex = 14;
             // 
-<<<<<<< HEAD
             // tb_cadena
             // 
             this.tb_cadena.Location = new System.Drawing.Point(352, 13);
@@ -200,28 +195,13 @@ namespace HeartAttackApp.Ui
             this.tb_cadena.Size = new System.Drawing.Size(162, 20);
             this.tb_cadena.TabIndex = 15;
             this.tb_cadena.Visible = false;
-=======
-            // bt_delete
-            // 
-            this.bt_delete.Location = new System.Drawing.Point(733, 241);
-            this.bt_delete.Name = "bt_delete";
-            this.bt_delete.Size = new System.Drawing.Size(70, 36);
-            this.bt_delete.TabIndex = 15;
-            this.bt_delete.Text = "DELETE";
-            this.bt_delete.UseVisualStyleBackColor = true;
->>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             // 
             // Main_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.ClientSize = new System.Drawing.Size(827, 539);
             this.Controls.Add(this.tb_cadena);
-=======
-            this.ClientSize = new System.Drawing.Size(836, 539);
-            this.Controls.Add(this.bt_delete);
->>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             this.Controls.Add(this.textBoxLoad2);
             this.Controls.Add(this.textBoxLoad1);
             this.Controls.Add(this.btn_graphics);
@@ -262,10 +242,6 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.Button btn_graphics;
         private System.Windows.Forms.TextBox textBoxLoad1;
         private System.Windows.Forms.TextBox textBoxLoad2;
-<<<<<<< HEAD
         private System.Windows.Forms.TextBox tb_cadena;
-=======
-        private System.Windows.Forms.Button bt_delete;
->>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
     }
 }

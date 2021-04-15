@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AllPatients.cs" />
     <Compile Include="Model\Hospital.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Ui\Add_pane.cs">

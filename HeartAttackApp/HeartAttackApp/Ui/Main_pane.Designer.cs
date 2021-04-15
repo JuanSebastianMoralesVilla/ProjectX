@@ -44,7 +44,11 @@ namespace HeartAttackApp.Ui
             this.btn_graphics = new System.Windows.Forms.Button();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
             this.textBoxLoad2 = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.tb_cadena = new System.Windows.Forms.TextBox();
+=======
+            this.bt_delete = new System.Windows.Forms.Button();
+>>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +98,7 @@ namespace HeartAttackApp.Ui
             // 
             this.btn_add.Location = new System.Drawing.Point(733, 201);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(55, 34);
+            this.btn_add.Size = new System.Drawing.Size(70, 34);
             this.btn_add.TabIndex = 4;
             this.btn_add.Text = "ADD";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -188,6 +192,7 @@ namespace HeartAttackApp.Ui
             this.textBoxLoad2.Size = new System.Drawing.Size(216, 20);
             this.textBoxLoad2.TabIndex = 14;
             // 
+<<<<<<< HEAD
             // tb_cadena
             // 
             this.tb_cadena.Location = new System.Drawing.Point(352, 13);
@@ -195,13 +200,28 @@ namespace HeartAttackApp.Ui
             this.tb_cadena.Size = new System.Drawing.Size(162, 20);
             this.tb_cadena.TabIndex = 15;
             this.tb_cadena.Visible = false;
+=======
+            // bt_delete
+            // 
+            this.bt_delete.Location = new System.Drawing.Point(733, 241);
+            this.bt_delete.Name = "bt_delete";
+            this.bt_delete.Size = new System.Drawing.Size(70, 36);
+            this.bt_delete.TabIndex = 15;
+            this.bt_delete.Text = "DELETE";
+            this.bt_delete.UseVisualStyleBackColor = true;
+>>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             // 
             // Main_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(800, 539);
             this.Controls.Add(this.tb_cadena);
+=======
+            this.ClientSize = new System.Drawing.Size(836, 539);
+            this.Controls.Add(this.bt_delete);
+>>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
             this.Controls.Add(this.textBoxLoad2);
             this.Controls.Add(this.textBoxLoad1);
             this.Controls.Add(this.btn_graphics);
@@ -242,6 +262,10 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.Button btn_graphics;
         private System.Windows.Forms.TextBox textBoxLoad1;
         private System.Windows.Forms.TextBox textBoxLoad2;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox tb_cadena;
+=======
+        private System.Windows.Forms.Button bt_delete;
+>>>>>>> 0e59de81cb0472f29bada188f27fa0974f754dbe
     }
 }

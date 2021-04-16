@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,23 @@ namespace HeartAttackApp.Model
     {
         public List<Patient> patients{ get; set; }
 
+        public Hashtable Cuadro1 { get; set; }
+        public Hashtable Cuadro2 { get; set; }
+        public Hashtable Cuadro3 { get; set; }
+        public Hashtable Cuadro4 { get; set; }
+        public Hashtable Cuadro5 { get; set; }
+
         public int size;
 
         public Hospital()
         {
-          patients = new List<Patient> ();
-          this.size = 0;
+            patients = new List<Patient> ();
+            this.size = 0;
+            Cuadro1 = new Hashtable();
+            Cuadro2 = new Hashtable();
+            Cuadro3 = new Hashtable();
+            Cuadro4 = new Hashtable();
+            Cuadro5 = new Hashtable();
         }
 
         public void add(int idPatient, string age, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
@@ -36,5 +48,16 @@ namespace HeartAttackApp.Model
             }
         }
 
+        public void AddRecordToHashTables(Patient Pat)
+        {
+            int oneUnit = 1;
+            double[] arrayForAverage = { 0, 0 };
+
+            if (Cuadro1.ContainsKey(Pat.genre))
+            {
+
+            }
         }
+
+    }
 }

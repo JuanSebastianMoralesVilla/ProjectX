@@ -162,5 +162,10 @@ namespace HeartAttackApp.Ui
         {
 
         }
+
+        private void btn_graphics_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

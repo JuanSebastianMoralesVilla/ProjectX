@@ -147,19 +147,19 @@ namespace HeartAttackApp.Model
             if (Pat.sex.Equals("0"))
             {
                 x = "Woman";
-            } 
+            }
             else
             {
                 x = "man";
             }
-            
+
             if (Cuadro1.ContainsKey(x))
             {
                 Cuadro1[x] = ((int)Cuadro1[x] + 1);
             }
             else
             {
-                Cuadro1.Add(x , 1);
+                Cuadro1.Add(x, 1);
             }
 
             string ang = "";
@@ -167,10 +167,10 @@ namespace HeartAttackApp.Model
             {
                 case 0:
                     ang = "no";
-                break;
+                    break;
                 case 1:
                     ang = "yes";
-                break;
+                    break;
             }
             if (Cuadro2.ContainsKey(ang))
             {
@@ -182,11 +182,11 @@ namespace HeartAttackApp.Model
             }
 
             string edad = "";
-            if(Pat.age < 30)
+            if (Pat.age < 30)
             {
                 edad = "Young";
             }
-            else if( Pat.age < 60)
+            else if (Pat.age < 60)
             {
                 edad = "adult";
             } else
@@ -194,7 +194,7 @@ namespace HeartAttackApp.Model
                 edad = "elder";
             }
 
-            
+
             if (Cuadro3.ContainsKey(edad))
             {
                 Cuadro3[edad] = ((int)Cuadro3[edad] + 1);
@@ -215,18 +215,20 @@ namespace HeartAttackApp.Model
                     break;
                 case 3:
                     angi = "Asymptomatic";
-                break;
-            }
+                    break;
 
-            if (Cuadro4.ContainsKey(angi))
-            {
-                Cuadro4[angi] = ((int)Cuadro4[angi] + 1);
             }
-            else
-            {
-                Cuadro4.Add(angi, 1);
-            }
+            if (angi != "") { 
 
+                if (Cuadro4.ContainsKey(angi))
+                {
+                    Cuadro4[angi] = ((int)Cuadro4[angi] + 1);
+                }
+                else
+                {
+                    Cuadro4.Add(angi, 1);
+                }
+            }
             string colesterol = "";
             if (Pat.cholesterol < 200)
             {
@@ -245,13 +247,13 @@ namespace HeartAttackApp.Model
                 colesterol = "extremly bad";
             }
             
-            if (Cuadro2.ContainsKey(colesterol))
+            if (Cuadro5.ContainsKey(colesterol))
             {
-                Cuadro2[ colesterol] = ((int)Cuadro2[colesterol] + 1);
+                Cuadro5[ colesterol] = ((int)Cuadro5[colesterol] + 1);
             }
             else
             {
-                Cuadro2.Add(colesterol, 1);
+                Cuadro5.Add(colesterol, 1);
             }
         }
 

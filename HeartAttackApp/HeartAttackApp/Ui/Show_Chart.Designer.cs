@@ -98,9 +98,10 @@ namespace HeartAttackApp.Ui
             this.chart3.Location = new System.Drawing.Point(0, 369);
             this.chart3.Name = "chart3";
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series3.Legend = "Legend1";
             series3.Name = "s3";
+            series3.YValuesPerPoint = 2;
             this.chart3.Series.Add(series3);
             this.chart3.Size = new System.Drawing.Size(300, 300);
             this.chart3.TabIndex = 2;

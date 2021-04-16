@@ -66,7 +66,7 @@ namespace HeartAttackApp.Ui
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "s1";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 0;
@@ -81,8 +81,9 @@ namespace HeartAttackApp.Ui
             this.chart2.Location = new System.Drawing.Point(388, 12);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "s2";
             this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 1;
@@ -97,8 +98,10 @@ namespace HeartAttackApp.Ui
             this.chart3.Location = new System.Drawing.Point(12, 339);
             this.chart3.Name = "chart3";
             series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";
-            series3.Name = "Series1";
+            series3.Name = "s3";
+            series3.YValuesPerPoint = 2;
             this.chart3.Series.Add(series3);
             this.chart3.Size = new System.Drawing.Size(300, 300);
             this.chart3.TabIndex = 2;
@@ -113,8 +116,9 @@ namespace HeartAttackApp.Ui
             this.chart4.Location = new System.Drawing.Point(388, 339);
             this.chart4.Name = "chart4";
             series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series4.Legend = "Legend1";
-            series4.Name = "Series1";
+            series4.Name = "s4";
             this.chart4.Series.Add(series4);
             this.chart4.Size = new System.Drawing.Size(300, 300);
             this.chart4.TabIndex = 3;
@@ -129,8 +133,9 @@ namespace HeartAttackApp.Ui
             this.chart5.Location = new System.Drawing.Point(772, 149);
             this.chart5.Name = "chart5";
             series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series5.Legend = "Legend1";
-            series5.Name = "Series1";
+            series5.Name = "s5";
             this.chart5.Series.Add(series5);
             this.chart5.Size = new System.Drawing.Size(300, 300);
             this.chart5.TabIndex = 4;

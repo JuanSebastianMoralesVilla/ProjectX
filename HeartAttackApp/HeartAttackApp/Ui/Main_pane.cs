@@ -14,7 +14,7 @@ namespace HeartAttackApp.Ui
 {
     public partial class Main_pane : Form
     {
-
+        private ControllerGUI c = new ControllerGUI();
 
         private Add_pane addPane;
 
@@ -157,5 +157,11 @@ namespace HeartAttackApp.Ui
             }
         }
 
+        private void btn_graphics_Click(object sender, EventArgs e)
+        {
+            Show_Chart ch = new Show_Chart(c.RetrieveCuadro1(), c.RetrieveCuadro2(), c.RetrieveCuadro3(), c.RetrieveCuadro4(), c.RetrieveCuadro5());
+            ch.Show();
+            MessageBox.Show("Se han generado las graficas");
+        }
     }
 }

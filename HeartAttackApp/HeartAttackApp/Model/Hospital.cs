@@ -49,6 +49,11 @@ namespace HeartAttackApp.Model
             AddRecordToHashTables(patient);
         }
 
+        public void clear()
+        {
+            patients.Clear();
+        }
+
         public List<Patient> classify(int id)
         {
             List<Patient> result = new List<Patient>();

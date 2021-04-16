@@ -14,28 +14,14 @@ namespace HeartAttackApp.Ui
 {
     public partial class Main_pane : Form
     {
-        private string path;
 
-        private Hospital miHospital;
-
-        //private AllPatients data;
-
-        OpenFileDialog file = new OpenFileDialog();
-
-
-        //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
 
         private Add_pane addPane;
 
-        // List<String> listPatients; 
 
         public Main_pane()
         {
-            miHospital = new Hospital();
-            //data = new AllPatients();
-
             InitializeComponent();
-            path = @"..\..\Dataset\DatasetLoad.csv";
             string[] values = Patient.matrixE();
             cb_filter.Items.AddRange(values);
         }
@@ -104,60 +90,32 @@ namespace HeartAttackApp.Ui
         private void btn_load_Click(object sender, EventArgs e)
         {
 
-            file.Filter = "CSV|*.csv";
-
-            if (file.ShowDialog() == DialogResult.OK)
-            {
-                textBoxLoad1.Text = file.FileName;
-                path = file.FileName;
-                textBoxLoad2.Text = file.SafeFileName;
-                MessageBox.Show("Datos cargados correctamente.");
-                miHospital = new Hospital();
-                loadGrid();
-            }
         }
+
+           
 
         private void loadGrid()
         {
-            try 
-            { 
-                var reader = new StreamReader(File.OpenRead(path));
-                string line = reader.ReadLine();
-                line = reader.ReadLine();
-                List<Patient> patients = new List<Patient>();
-                while (!string.IsNullOrEmpty(line))
-                {
-                    string[] array = line.Split(';');
-                    int idPatient = Int32.Parse(array[0]);
-                    int year = int.Parse(array[1]);
-                    string genre = (array[2]);
-                    int typePain = int.Parse(array[3]);
-                    int bloodPressure = int.Parse(array[4]);
-                    int cholesterol = int.Parse(array[5]);
-                    int levelSugar = int.Parse(array[6]);
-                    int resultElectro = int.Parse(array[7]);
-                    int heartRate = int.Parse(array[8]);
-                    int angina = int.Parse(array[9]);
-                    int result = int.Parse(array[10]);
-
-                    Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
-                    miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
-                    patients.Add(all);
-                    line = reader.ReadLine();
-                }
-                grid_data.DataSource = patients;
-                cb_filter.Visible = true;
-            }
-            catch (Exception exception1)
-            {
-                Console.WriteLine(exception1.ToString());
-            }
+            
+            grid_data.DataSource = patients;
+            cb_filter.Visible = true;
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
+            grid_data.DataSource = miHospital.patients;//llamar metodo
+            cb_choose.Visible = false;
+            txt_to.Visible = false;
+            tb_higger.Visible = false;
+            tb_lower.Visible = false;
+            tb_cadena.Visible = false;
+            cb_filter.Visible = false;
+            btn_search.Visible = false;
+            cb_filter.SelectedIndex=0;
+            cb_choose.Items.Clear();
 
         }
+        //NO LA TOQUEN
         private void btn_search_Click(object sender, EventArgs e)
         {
             string selected = cb_filter.SelectedItem.ToString();
@@ -185,7 +143,7 @@ namespace HeartAttackApp.Ui
                 {
                     int value = int.Parse(cb_choose.SelectedItem.ToString());
 
-                    patients = miHospital.classify(selected, value);
+                    patients = miHospital.classify(selected, value); 
                 }
                 else
                 {

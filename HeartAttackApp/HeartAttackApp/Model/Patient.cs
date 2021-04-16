@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 namespace HeartAttackApp.Model
 {
     class Patient
-
-
-
     {
-        // CONST
+        //  CONST
         public const string ID = "idPatient";
         public const string AGE = "age";
         public const string SEX = "sex";
@@ -22,7 +19,7 @@ namespace HeartAttackApp.Model
         public const string ANGINA = "angina";
         public const string RESULT_ELECTRO = "electrocardiographic results";
         public const string HEART_RATE = "heart rate";
-        //public const string RESULT = "result";
+        //  public const string RESULT = "result";
 
         public int id { get; set; }
         public int age { get; set; }
@@ -33,12 +30,9 @@ namespace HeartAttackApp.Model
         public int typePain { get; set; }
 
         public int bloodPressure { get; set; }
-
-
         public int cholesterol { get; set; }
 
         public int levelSugar { get; set; }
-        
 
         // boolean
         public int angina { get; set; } // 0 para no, 1 para si
@@ -68,7 +62,6 @@ namespace HeartAttackApp.Model
 
         public static string[] matrixE()
         {
-         
             string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE, 
                                 CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
                                 HEART_RATE};
@@ -84,7 +77,7 @@ namespace HeartAttackApp.Model
         public static string[] numericValues()
         {
 
-            string[] result = {AGE , BLOOD_PRESSURE,
+            string[] result =  {AGE,BLOOD_PRESSURE,
                                 CHOLESTEROL,
                                 HEART_RATE};
             return result;
@@ -104,6 +97,5 @@ namespace HeartAttackApp.Model
             return "" + id + age + sex +typePain + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
         }
     }
-
-    }
+}
 

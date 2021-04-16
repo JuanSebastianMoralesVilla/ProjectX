@@ -156,6 +156,17 @@ namespace HeartAttackApp.Ui
 
         private void btn_new_Click(object sender, EventArgs e)
         {
+            miHospital.clear();
+            grid_data.DataSource = miHospital.patients;
+            cb_choose.Visible = false;
+            txt_to.Visible = false;
+            tb_higger.Visible = false;
+            tb_lower.Visible = false;
+            tb_cadena.Visible = false;
+            cb_filter.Visible = false;
+            btn_search.Visible = false;
+            cb_filter.SelectedIndex=0;
+            cb_choose.Items.Clear();
 
         }
         private void btn_search_Click(object sender, EventArgs e)
@@ -185,7 +196,7 @@ namespace HeartAttackApp.Ui
                 {
                     int value = int.Parse(cb_choose.SelectedItem.ToString());
 
-                    patients = miHospital.classify(selected, value);
+                    patients = miHospital.classify(selected, value); 
                 }
                 else
                 {

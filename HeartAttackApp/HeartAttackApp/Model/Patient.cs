@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 namespace HeartAttackApp.Model
 {
     class Patient
-
-
-
     {
-        // CONST
+        //  CONST
         public const string ID = "idPatient";
         public const string AGE = "age";
         public const string GENRE = "genre";
@@ -22,25 +19,23 @@ namespace HeartAttackApp.Model
         public const string ANGINA = "angina";
         public const string RESULT_ELECTRO = "electrocardiographic results";
         public const string HEART_RATE = "heart rate";
-        //public const string RESULT = "result";
+        //  public const string RESULT = "result";
 
         public int id { get; set; }
         public string age { get; set; }
 
-        // bolean
+        //  boolean
         public string genre { get; set; }
-        // int
+        //  int
         public string typePain { get; set; }
 
         public string bloodPressure { get; set; }
 
-
         public string cholesterol { get; set; }
 
         public string levelSugar { get; set; }
-        
 
-        // boolean
+        //  boolean
         public string angina { get; set; }
 
         public string resultElectro { get; set; }
@@ -69,7 +64,7 @@ namespace HeartAttackApp.Model
         public static string[] matrixE()
         {
          
-            string[] result = { ID, AGE , GENRE, TYPE_PAIN,BLOOD_PRESSURE, 
+            string[] result =  {ID,AGE,GENRE,TYPE_PAIN,BLOOD_PRESSURE, 
                                 CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
                                 HEART_RATE};
             return result;
@@ -84,7 +79,7 @@ namespace HeartAttackApp.Model
         public static string[] numericValues()
         {
 
-            string[] result = {AGE , BLOOD_PRESSURE,
+            string[] result =  {AGE,BLOOD_PRESSURE,
                                 CHOLESTEROL,
                                 HEART_RATE};
             return result;
@@ -104,6 +99,5 @@ namespace HeartAttackApp.Model
             return id + age + genre +typePain + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
         }
     }
-
-    }
+}
 

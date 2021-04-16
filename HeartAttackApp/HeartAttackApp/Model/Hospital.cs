@@ -51,13 +51,33 @@ namespace HeartAttackApp.Model
         public void AddRecordToHashTables(Patient Pat)
         {
             int oneUnit = 1;
-            double[] arrayForAverage = { 0, 0 };
+            int[] arrayForAverage = { 0, 0 };
 
             if (Cuadro1.ContainsKey(Pat.genre))
             {
+                object objArray = Cuadro1[Pat.genre];
+                if (objArray != null)
+                {
+                    arrayForAverage = (int[])objArray;
 
+                    arrayForAverage[0] = arrayForAverage[0] + 1;
+
+                }
             }
         }
 
+
+        public List<string[]> Cuadro1Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in  Cuadro1)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+        }
     }
 }

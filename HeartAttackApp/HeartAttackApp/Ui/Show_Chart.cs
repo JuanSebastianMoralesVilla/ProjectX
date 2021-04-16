@@ -27,6 +27,7 @@ namespace HeartAttackApp.Ui
             chart3.Series["s3"].IsValueShownAsLabel = true;
             chart4.Series["s4"].IsValueShownAsLabel = true;
             chart5.Series["s5"].IsValueShownAsLabel = true;
+            
             /*
             chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;
             chart2.ChartAreas["ChartArea2"].AxisX.Interval = 1;

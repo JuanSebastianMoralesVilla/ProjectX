@@ -47,3 +47,5 @@ C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debu
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources
+C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources

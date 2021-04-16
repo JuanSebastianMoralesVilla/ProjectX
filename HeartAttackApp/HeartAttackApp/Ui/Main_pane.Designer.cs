@@ -148,7 +148,7 @@ namespace HeartAttackApp.Ui
             // cb_choose
             // 
             this.cb_choose.FormattingEnabled = true;
-            this.cb_choose.Location = new System.Drawing.Point(352, 56);
+            this.cb_choose.Location = new System.Drawing.Point(35, 55);
             this.cb_choose.Name = "cb_choose";
             this.cb_choose.Size = new System.Drawing.Size(162, 21);
             this.cb_choose.TabIndex = 10;
@@ -196,7 +196,7 @@ namespace HeartAttackApp.Ui
             // 
             // tb_cadena
             // 
-            this.tb_cadena.Location = new System.Drawing.Point(352, 13);
+            this.tb_cadena.Location = new System.Drawing.Point(35, 55);
             this.tb_cadena.Name = "tb_cadena";
             this.tb_cadena.Size = new System.Drawing.Size(162, 20);
             this.tb_cadena.TabIndex = 15;

@@ -145,6 +145,12 @@ namespace HeartAttackApp.Ui
                 {
                     int lower = Math.Abs(int.Parse(tb_lower.Text));
                     int higger = Math.Abs(int.Parse(tb_higger.Text));
+                    if (higger < lower)
+                    {
+                        int aux = lower;
+                        lower = higger;
+                        higger = aux;
+                    }
                     tb_lower.Text = lower.ToString();
                     tb_higger.Text = higger.ToString();
 

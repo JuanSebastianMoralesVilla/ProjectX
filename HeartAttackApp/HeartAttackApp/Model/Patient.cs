@@ -41,7 +41,7 @@ namespace HeartAttackApp.Model
 
         public int heartRate { get; set; }
 
-        public int result { get; set; }
+        public int? result { get ; set; }
 
         public Patient(int id, int age, string genre, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
@@ -55,7 +55,7 @@ namespace HeartAttackApp.Model
             this.angina = angina;
             this.resultElectro = resultElectro;
             this.heartRate = heartRate;
-            this.result = -1;
+            this.result = null;
         }
 
 

@@ -17,13 +17,15 @@ namespace HeartAttackApp.Ui
 
 
         private Add_pane addPane;
-
-
+        private ControllerGUI controller;
+        OpenFileDialog file;
         public Main_pane()
         {
+            controller = new ControllerGUI();
             InitializeComponent();
             string[] values = Patient.matrixE();
             cb_filter.Items.AddRange(values);
+            file = new OpenFileDialog();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -89,21 +91,29 @@ namespace HeartAttackApp.Ui
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-
+            file.Filter = "CSV|*.csv";
+            List<Patient> patients = new List<Patient>();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                textBoxLoad1.Text = file.FileName;
+                string path = file.FileName;
+                textBoxLoad2.Text = file.SafeFileName;
+                MessageBox.Show("Datos cargados correctamente.");
+                patients = controller.loadGrid(path);
+                Console.WriteLine(patients.Count);
+                loadGrid(patients);
+            }
         }
 
-           
-
-        private void loadGrid()
+        private void loadGrid(List<Patient> patients)
         {
-            
             grid_data.DataSource = patients;
             cb_filter.Visible = true;
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            grid_data.DataSource = miHospital.patients;//llamar metodo
+            grid_data.DataSource = controller.patient();//llamar metodo
             cb_choose.Visible = false;
             txt_to.Visible = false;
             tb_higger.Visible = false;
@@ -113,6 +123,7 @@ namespace HeartAttackApp.Ui
             btn_search.Visible = false;
             cb_filter.SelectedIndex=0;
             cb_choose.Items.Clear();
+            cb_choose.SelectedItem = "";
 
         }
         //NO LA TOQUEN
@@ -128,7 +139,7 @@ namespace HeartAttackApp.Ui
                 if (valuesC.Contains(selected))
                 {
                     int id = int.Parse(tb_cadena.Text);
-                    patients = miHospital.classify(id);
+                    patients = controller.search(id);
                 }
                 else if (valuesN.Contains(selected))
                 {
@@ -137,17 +148,16 @@ namespace HeartAttackApp.Ui
                     tb_lower.Text = lower.ToString();
                     tb_higger.Text = higger.ToString();
 
-                    patients = miHospital.classify(selected, lower, higger);
+                    patients = controller.search(selected, lower, higger);
                 }
                 else if (valuesB.Contains(selected))
                 {
                     int value = int.Parse(cb_choose.SelectedItem.ToString());
-
-                    patients = miHospital.classify(selected, value); 
+                    patients = controller.search(selected, value); 
                 }
                 else
                 {
-                    patients = miHospital.patients;
+                    patients = controller.patient();
                 }
                 grid_data.DataSource = patients;
             }

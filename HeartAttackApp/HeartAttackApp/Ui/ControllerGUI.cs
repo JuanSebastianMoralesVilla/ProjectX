@@ -17,7 +17,7 @@ namespace HeartAttackApp.Ui
 
         //private AllPatients data;
 
-        OpenFileDialog file = new OpenFileDialog();
+       
 
 
         //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
@@ -37,16 +37,14 @@ namespace HeartAttackApp.Ui
             addPane.ShowDialog();
         }
 
-
+        public List<Patient> patient()
+        {
+            return miHospital.patients;
+        }
         private void loadFile(string fileName, string safeFileName)
         {
-            file.Filter = "CSV|*.csv";
-           
-            MessageBox.Show("Datos cargados correctamente.");
-            miHospital = new Hospital();
-            loadGrid();
-        }
-        private List<Patient> loadGrid()
+        }  
+        public List<Patient> loadGrid(string path)
         {
             List<Patient> patients = new List<Patient>();
             try
@@ -76,57 +74,36 @@ namespace HeartAttackApp.Ui
                     line = reader.ReadLine();
                 }
             }
-            catch (Exception exception1)
+            catch (FormatException exception1)
             {
-                Console.WriteLine(exception1.ToString());
+                Console.WriteLine(exception1.Message);
             }
             return patients;
         }
 
-        public void method()
+        public List<Patient> search(int id)
         {
-            string selected = cb_filter.SelectedItem.ToString();//parametro
-            string[] valuesC = Patient.cadenaValues();
-            string[] valuesN = Patient.numericValues();
-            string[] valuesB = Patient.binariValue();
             List<Patient> patients = new List<Patient>();
-            try
-            {
-                if (valuesC.Contains(selected))
-                {
-                    int id = int.Parse(tb_cadena.Text);//paremetro
-                    patients = miHospital.classify(id);
-                }
-                else if (valuesN.Contains(selected))
-                {
-                    int lower = Math.Abs(int.Parse(tb_lower.Text));
-                    int higger = Math.Abs(int.Parse(tb_higger.Text));
-                    tb_lower.Text = lower.ToString();
-                    tb_higger.Text = higger.ToString();
-
-                    patients = miHospital.classify(selected, lower, higger);
-                }
-                else if (valuesB.Contains(selected))
-                {
-                    int value = int.Parse(cb_choose.SelectedItem.ToString());
-
-                    patients = miHospital.classify(selected, value);
-                }
-                else
-                {
-                    patients = miHospital.patients;
-                }
-                grid_data.DataSource = patients;
-            }
-            catch (FormatException t)
-            {
-                Console.WriteLine(t.Message);
-            }
+            patients = miHospital.classify(id);
+            return patients;
         }
-       
+
+        public List<Patient> search(string type,int lower,int higger)
+        {
+            List<Patient> patients = new List<Patient>();
+            patients = miHospital.classify(type,lower, higger);
+            return patients;
+        }
+
+        public List<Patient> search(string type,int id)
+        {
+            List<Patient> patients = new List<Patient>();
+            patients = miHospital.classify(type,id);
+            return patients;
+        }
     }
 
-
+    /*
     public List<string[]> RetrieveCuadro1()
     {
 
@@ -152,6 +129,7 @@ namespace HeartAttackApp.Ui
 
 
     }
+    */
 
 }
 

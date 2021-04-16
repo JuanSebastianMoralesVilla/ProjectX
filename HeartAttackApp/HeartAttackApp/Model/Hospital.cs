@@ -208,7 +208,7 @@ namespace HeartAttackApp.Model
                 break;
             }
 
-            if (Cuadro4.ContainsKey(Pat.angina))
+            if (Cuadro4.ContainsKey(angi))
             {
                 Cuadro4[angi] = ((int)Cuadro4[angi] + 1);
             }

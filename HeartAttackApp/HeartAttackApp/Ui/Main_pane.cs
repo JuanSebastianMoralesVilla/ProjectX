@@ -25,7 +25,7 @@ namespace HeartAttackApp.Ui
 
         //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
 
-      private Add_pane addPane;
+        private Add_pane addPane;
 
         // List<String> listPatients; 
 
@@ -43,7 +43,7 @@ namespace HeartAttackApp.Ui
         private void btn_add_Click(object sender, EventArgs e)
         {
          
-           addPane = new Add_pane();
+            addPane = new Add_pane();
             addPane.ShowDialog();
         }
 
@@ -158,10 +158,9 @@ namespace HeartAttackApp.Ui
         {
 
         }
-
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string selected =  cb_filter.SelectedItem.ToString();
+            string selected = cb_filter.SelectedItem.ToString();
             string[] valuesC = Patient.cadenaValues();
             string[] valuesN = Patient.numericValues();
             string[] valuesB = Patient.binariValue();
@@ -194,10 +193,11 @@ namespace HeartAttackApp.Ui
                 }
                 grid_data.DataSource = patients;
             }
-            catch(FormatException t)
+            catch (FormatException t)
             {
                 Console.WriteLine(t.Message);
             }
         }
+
     }
 }

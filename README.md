@@ -108,9 +108,9 @@ In this <!--<a href="https://youtu.be/JI9GTY5BCJA">Video</a>--> we show the func
 ## Contributors 
 <br />
   <p align="left">
-    - [*Juan Sebastian Morales*](https://github.com/JuanSebastianMoralesVilla)<br>
-    - [*Santiago Hurtado*](https://github.com/YoNoSoySantiago)<br>
-    - [*Miguel Andrés Sarasti*](https://github.com/MSarasti)<br>
-    - [*Juan Sebastián Barrera*](https://github.com/SebasBarrera)<br>
+    - <a href="https://github.com/JuanSebastianMoralesVilla">Juan Sebastian Morales</a><br>
+    - <a href="https://github.com/YoNoSoySantiago">Santiago Hurtado</a><br>
+    - <a href="https://github.com/MSarasti">Miguel Andrés Sarasti</a><br>
+    - <a href="https://github.com/SebasBarrera">Juan Sebastián Barrera</a><br>
   </p>
 <br />

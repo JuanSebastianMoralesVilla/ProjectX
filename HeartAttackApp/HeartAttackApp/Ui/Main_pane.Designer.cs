@@ -30,6 +30,8 @@ namespace HeartAttackApp.Ui
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.grid_data = new System.Windows.Forms.DataGridView();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
@@ -52,6 +54,9 @@ namespace HeartAttackApp.Ui
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+
             this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
@@ -200,7 +205,9 @@ namespace HeartAttackApp.Ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(827, 539);
+
             this.Controls.Add(this.tb_cadena);
             this.Controls.Add(this.textBoxLoad2);
             this.Controls.Add(this.textBoxLoad1);

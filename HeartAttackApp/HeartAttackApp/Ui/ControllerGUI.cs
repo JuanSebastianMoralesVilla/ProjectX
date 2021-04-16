@@ -9,4 +9,30 @@ namespace HeartAttackApp.Ui
     class ControllerGUI
     {
     }
+
+    public List<string[]> RetrieveCuadro1()
+    {
+
+    }
+
+    public List<string[]> RetrieveCuadro2()
+    {
+
+
+    }
+    public List<string[]> RetrieveCuadro3()
+    {
+
+    }
+
+    public List<string[]> RetrieveCuadro4()
+    {
+
+    }
+
+    public List<string[]> RetrieveCuadro5()
+    {
+
+
+    }
 }

@@ -25,7 +25,7 @@ namespace HeartAttackApp.Ui
 
         //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
 
-      private Add_pane addPane;
+        private Add_pane addPane;
 
         // List<String> listPatients; 
 
@@ -43,19 +43,18 @@ namespace HeartAttackApp.Ui
         private void btn_add_Click(object sender, EventArgs e)
         {
          
-           addPane = new Add_pane();
+            addPane = new Add_pane();
             addPane.ShowDialog();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selected = (string)cb_filter.SelectedItem;
+            string selected = cb_filter.SelectedItem.ToString(); 
             cb_choose.Visible = false;
             txt_to.Visible = false;
             tb_higger.Visible = false;
             tb_lower.Visible = false;
             tb_cadena.Visible = false;
-            btn_search.Visible = false;
             cb_choose.Items.Clear();
             if (!cb_filter.SelectedIndex.Equals(0))
             {
@@ -125,14 +124,14 @@ namespace HeartAttackApp.Ui
                 var reader = new StreamReader(File.OpenRead(path));
                 string line = reader.ReadLine();
                 line = reader.ReadLine();
-                List<AllPatients> patients = new List<AllPatients>();
+                List<Patient> patients = new List<Patient>();
                 while (!string.IsNullOrEmpty(line))
                 {
                     string[] array = line.Split(';');
                     int idPatient = Int32.Parse(array[0]);
                     string year = (array[1]);
                     string genre = (array[2]);
-                    string typeDolor = (array[3]);
+                    string typePain = (array[3]);
                     string bloodPressure = (array[4]);
                     string cholesterol = (array[5]);
                     string levelSugar = (array[6]);
@@ -141,13 +140,10 @@ namespace HeartAttackApp.Ui
                     string angina = (array[9]);
                     string result = (array[10]);
 
-                    AllPatients all = new AllPatients(idPatient, year, genre, typeDolor, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
-                    miHospital.add(idPatient, year, genre, typeDolor, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
+                    Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
+                    miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
                     patients.Add(all);
                     line = reader.ReadLine();
-
-
-
                 }
                 grid_data.DataSource = patients;
                 cb_filter.Visible = true;
@@ -162,10 +158,46 @@ namespace HeartAttackApp.Ui
         {
 
         }
-
-        private void btn_graphics_Click(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
+            string selected = cb_filter.SelectedItem.ToString();
+            string[] valuesC = Patient.cadenaValues();
+            string[] valuesN = Patient.numericValues();
+            string[] valuesB = Patient.binariValue();
+            List<Patient> patients = new List<Patient>();
+            try
+            {
+                if (valuesC.Contains(selected))
+                {
+                    int id = int.Parse(tb_cadena.Text);
+                    patients = miHospital.classify(id);
+                }
+                else if (valuesN.Contains(selected))
+                {
+                    int lower = Math.Abs(int.Parse(tb_lower.Text));
+                    int higger = Math.Abs(int.Parse(tb_higger.Text));
+                    tb_lower.Text = lower.ToString();
+                    tb_higger.Text = higger.ToString();
 
+                    patients = miHospital.classify(selected, lower, higger);
+                }
+                else if (valuesB.Contains(selected))
+                {
+                    int value = int.Parse(cb_choose.SelectedItem.ToString());
+
+                    patients = miHospital.classify(selected, value);
+                }
+                else
+                {
+                    patients = miHospital.patients;
+                }
+                grid_data.DataSource = patients;
+            }
+            catch (FormatException t)
+            {
+                Console.WriteLine(t.Message);
+            }
         }
+
     }
 }

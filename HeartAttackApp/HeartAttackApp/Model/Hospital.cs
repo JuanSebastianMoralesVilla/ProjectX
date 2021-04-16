@@ -30,7 +30,7 @@ namespace HeartAttackApp.Model
             Cuadro5 = new Hashtable();
         }
 
-        public void add(int idPatient, string age, string genre, string typeDolor, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate, string result)
+        public void add(int idPatient, int age, string genre, int typeDolor, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate, int result)
         {
             Patient patient = null;
             for (int i = 0; i < size; i++) {
@@ -46,6 +46,7 @@ namespace HeartAttackApp.Model
                 patients.Add(patient);
                 size++;
             }
+            AddRecordToHashTables(patient);
         }
 
         public void clear()
@@ -60,7 +61,7 @@ namespace HeartAttackApp.Model
             {
                 if (patient.id.Equals(id))
                 {
-                    result.Add(patient); ;
+                    result.Add(patient);
                     break;
                 }
             }
@@ -77,16 +78,16 @@ namespace HeartAttackApp.Model
                 switch (type)
                 {
                     case Patient.AGE:
-                        aux = int.Parse(patient.age);
+                        aux = (patient.age);
                         break;
                     case Patient.BLOOD_PRESSURE:
-                        aux = int.Parse(patient.bloodPressure);
+                        aux = (patient.bloodPressure);
                         break;
                     case Patient.CHOLESTEROL:
-                       aux = int.Parse(patient.cholesterol);
+                       aux = (patient.cholesterol);
                         break;
                     case Patient.HEART_RATE:
-                        aux = int.Parse(patient.heartRate);
+                        aux = (patient.heartRate);
                         break;
                     default:
                         aux = 0;
@@ -109,20 +110,20 @@ namespace HeartAttackApp.Model
             {
                 switch (type)
                 {
-                    case Patient.GENRE:
-                        aux = int.Parse(patient.genre);
+                    case Patient.SEX:
+                        aux = int.Parse(patient.sex);
                         break;
                     case Patient.TYPE_PAIN:
-                        aux = int.Parse(patient.typePain);
+                        aux = (patient.typePain);
                         break;
                     case Patient.LEVEL_SUGAR:
-                        aux = int.Parse(patient.levelSugar);
+                        aux = (patient.levelSugar);
                         break;
                     case Patient.RESULT_ELECTRO:
-                        aux = int.Parse(patient.resultElectro);
+                        aux = (patient.resultElectro);
                         break;
                     case Patient.ANGINA:
-                        aux = int.Parse(patient.angina);
+                        aux = (patient.angina);
                         break;
                     default:
                         aux = 0;
@@ -137,16 +138,178 @@ namespace HeartAttackApp.Model
             return result;
         }
 
+
         public void AddRecordToHashTables(Patient Pat)
         {
-            int oneUnit = 1;
-            double[] arrayForAverage = { 0, 0 };
+            int[] arrayForAverage = { 0, 0 };
 
-            if (Cuadro1.ContainsKey(Pat.genre))
+            if (Cuadro1.ContainsKey(Pat.sex))
             {
+                Cuadro1[Pat.sex] = ((int)Cuadro1[Pat.sex] + 1);
+            }
+            else
+            {
+                Cuadro1.Add(Pat.sex , 1);
+            }
 
+            string ang = "";
+            switch (Pat.angina)
+            {
+                case 0:
+                    ang = "no";
+                break;
+                case 1:
+                    ang = "yes";
+                break;
+            }
+            if (Cuadro2.ContainsKey(ang))
+            {
+                Cuadro2[ang] = ((int)Cuadro2[ang] + 1);
+            }
+            else
+            {
+                Cuadro2.Add(ang, 1);
+            }
+
+            string edad = "";
+            if(Pat.age < 30)
+            {
+                edad = "Young";
+            }
+            else if( Pat.age < 60)
+            {
+                edad = "adult";
+            } else
+            {
+                edad = "elder";
+            }
+
+            
+            if (Cuadro3.ContainsKey(edad))
+            {
+                Cuadro3[edad] = ((int)Cuadro3[edad] + 1);
+            }
+            else
+            {
+                Cuadro3.Add(edad, 1);
+            }
+
+            string angi = "";
+            switch (Pat.typePain)
+            {
+                case 0:
+                    angi = "typic";
+                    break;
+                case 1:
+                    angi = "atypic";
+                    break;
+                case 3:
+                    angi = "Asymptomatic";
+                break;
+            }
+
+            if (Cuadro4.ContainsKey(Pat.angina))
+            {
+                Cuadro4[angi] = ((int)Cuadro4[angi] + 1);
+            }
+            else
+            {
+                Cuadro4.Add(angi, 1);
+            }
+
+            string colesterol = "";
+            if (Pat.cholesterol < 200)
+            {
+                colesterol = "desirable";
+            }
+            else if (Pat.cholesterol < 239)
+            {
+                colesterol = "max limit";
+            }
+            else if (Pat.cholesterol < 300)
+            {
+                colesterol = "exceed limit";
+            }
+            else
+            {
+                colesterol = "extremly bad";
+            }
+            
+            if (Cuadro2.ContainsKey(colesterol))
+            {
+                Cuadro2[ colesterol] = ((int)Cuadro2[colesterol] + 1);
+            }
+            else
+            {
+                Cuadro2.Add(colesterol, 1);
             }
         }
 
+
+        public List<string[]> Cuadro1Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in  Cuadro1)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+        }
+
+        public List<string[]> Cuadro2Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in Cuadro2)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+        }
+
+        public List<string[]> Cuadro3Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in Cuadro3)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+        }
+
+        public List<string[]> Cuadro4Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in Cuadro4)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+
+        }
+
+        public List<string[]> Cuadro5Conversor()
+        {
+            List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in Cuadro5)
+            {
+                string[] dato = new string[2];
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
+            return datos;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace HeartAttackApp.Model
         //  CONST
         public const string ID = "idPatient";
         public const string AGE = "age";
-        public const string GENRE = "genre";
+        public const string SEX = "sex";
         public const string TYPE_PAIN = "typePain";
         public const string BLOOD_PRESSURE = "blood pressure";
         public const string CHOLESTEROL = "cholesterol";
@@ -22,33 +22,32 @@ namespace HeartAttackApp.Model
         //  public const string RESULT = "result";
 
         public int id { get; set; }
-        public string age { get; set; }
+        public int age { get; set; }
 
-        //  boolean
-        public string genre { get; set; }
-        //  int
-        public string typePain { get; set; }
+        // bolean
+        public string sex { get; set; } //man or woman
+        // int
+        public int typePain { get; set; }
 
-        public string bloodPressure { get; set; }
+        public int bloodPressure { get; set; }
+        public int cholesterol { get; set; }
 
-        public string cholesterol { get; set; }
+        public int levelSugar { get; set; }
 
-        public string levelSugar { get; set; }
+        // boolean
+        public int angina { get; set; } // 0 para no, 1 para si
 
-        //  boolean
-        public string angina { get; set; }
+        public int resultElectro { get; set; }
 
-        public string resultElectro { get; set; }
+        public int heartRate { get; set; }
 
-        public string heartRate { get; set; }
+        public int result { get; set; }
 
-        public string result { get; set; }
-
-        public Patient(int id, string age, string genre, string typePain, string bloodPressure, string cholesterol, string levelSugar, string angina, string resultElectro, string heartRate)
+        public Patient(int id, int age, string genre, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
             this.id = id;
             this.age = age;
-            this.genre = genre;
+            this.sex = genre;
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
@@ -56,15 +55,14 @@ namespace HeartAttackApp.Model
             this.angina = angina;
             this.resultElectro = resultElectro;
             this.heartRate = heartRate;
-            this.result = "N/A";
+            this.result = -1;
         }
 
 
 
         public static string[] matrixE()
         {
-         
-            string[] result =  {ID,AGE,GENRE,TYPE_PAIN,BLOOD_PRESSURE, 
+            string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE, 
                                 CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
                                 HEART_RATE};
             return result;
@@ -88,7 +86,7 @@ namespace HeartAttackApp.Model
         public static string[] binariValue()
         {
 
-            string[] result = { GENRE, TYPE_PAIN,
+            string[] result = { SEX, TYPE_PAIN,
                                 LEVEL_SUGAR,ANGINA,
                                 RESULT_ELECTRO};
             return result;
@@ -96,7 +94,7 @@ namespace HeartAttackApp.Model
 
         public String toString()
         {
-            return id + age + genre +typePain + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
+            return "" + id + age + sex +typePain + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
         }
     }
 }

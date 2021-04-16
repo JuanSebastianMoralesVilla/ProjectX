@@ -61,6 +61,12 @@
     <Compile Include="Ui\Main_pane.Designer.cs">
       <DependentUpon>Main_pane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Show_Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Show_Chart.Designer.cs">
+      <DependentUpon>Show_Chart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Start_pane.cs">
       <SubType>Form</SubType>
     </Compile>

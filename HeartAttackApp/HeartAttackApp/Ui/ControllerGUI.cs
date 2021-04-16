@@ -58,17 +58,17 @@ namespace HeartAttackApp.Ui
                 while (!string.IsNullOrEmpty(line))
                 {
                     string[] array = line.Split(';');
-                    int idPatient = Int32.Parse(array[0]);
-                    string year = (array[1]);
+                    int idPatient = int.Parse(array[0]);
+                    int year = int.Parse(array[1]);
                     string genre = (array[2]);
-                    string typePain = (array[3]);
-                    string bloodPressure = (array[4]);
-                    string cholesterol = (array[5]);
-                    string levelSugar = (array[6]);
-                    string resultElectro = (array[7]);
-                    string heartRate = (array[8]);
-                    string angina = (array[9]);
-                    string result = (array[10]);
+                    int typePain = int.Parse(array[3]);
+                    int bloodPressure = int.Parse(array[4]);
+                    int cholesterol = int.Parse(array[5]);
+                    int levelSugar = int.Parse(array[6]);
+                    int resultElectro = int.Parse(array[7]);
+                    int heartRate = int.Parse(array[8]);
+                    int angina = int.Parse(array[9]);
+                    int result = int.Parse(array[10]);
 
                     Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
                     miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
@@ -83,7 +83,46 @@ namespace HeartAttackApp.Ui
             return patients;
         }
 
-        
+        public void method()
+        {
+            string selected = cb_filter.SelectedItem.ToString();//parametro
+            string[] valuesC = Patient.cadenaValues();
+            string[] valuesN = Patient.numericValues();
+            string[] valuesB = Patient.binariValue();
+            List<Patient> patients = new List<Patient>();
+            try
+            {
+                if (valuesC.Contains(selected))
+                {
+                    int id = int.Parse(tb_cadena.Text);//paremetro
+                    patients = miHospital.classify(id);
+                }
+                else if (valuesN.Contains(selected))
+                {
+                    int lower = Math.Abs(int.Parse(tb_lower.Text));
+                    int higger = Math.Abs(int.Parse(tb_higger.Text));
+                    tb_lower.Text = lower.ToString();
+                    tb_higger.Text = higger.ToString();
+
+                    patients = miHospital.classify(selected, lower, higger);
+                }
+                else if (valuesB.Contains(selected))
+                {
+                    int value = int.Parse(cb_choose.SelectedItem.ToString());
+
+                    patients = miHospital.classify(selected, value);
+                }
+                else
+                {
+                    patients = miHospital.patients;
+                }
+                grid_data.DataSource = patients;
+            }
+            catch (FormatException t)
+            {
+                Console.WriteLine(t.Message);
+            }
+        }
        
     }
 

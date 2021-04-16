@@ -123,35 +123,35 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(t.Message);
             }
         }
-       
+        public List<string[]> RetrieveCuadro1()
+        {
+            return
+     }
+
+        public List<string[]> RetrieveCuadro2()
+        {
+
+
+        }
+        public List<string[]> RetrieveCuadro3()
+        {
+
+        }
+
+        public List<string[]> RetrieveCuadro4()
+        {
+
+        }
+
+        public List<string[]> RetrieveCuadro5()
+        {
+
+
+        }
     }
 
 
-    public List<string[]> RetrieveCuadro1()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro2()
-    {
-
-
-    }
-    public List<string[]> RetrieveCuadro3()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro4()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro5()
-    {
-
-
-    }
+    
 
 }
 

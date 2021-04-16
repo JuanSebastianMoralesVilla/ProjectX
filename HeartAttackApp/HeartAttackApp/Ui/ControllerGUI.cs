@@ -101,35 +101,34 @@ namespace HeartAttackApp.Ui
             patients = miHospital.classify(type,id);
             return patients;
         }
+
+        public List<string[]> RetrieveCuadro1()
+        {
+            return miHospital.Cuadro1Conversor();
+        }
+
+        public List<string[]> RetrieveCuadro2()
+        {
+            return miHospital.Cuadro2Conversor();
+
+        }
+        public List<string[]> RetrieveCuadro3()
+        {
+            return miHospital.Cuadro3Conversor();
+        }
+
+        public List<string[]> RetrieveCuadro4()
+        {
+            return miHospital.Cuadro4Conversor();
+        }
+
+        public List<string[]> RetrieveCuadro5()
+        {
+            return miHospital.Cuadro5Conversor();
+
+        }
     }
-
-    /*
-    public List<string[]> RetrieveCuadro1()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro2()
-    {
-
-
-    }
-    public List<string[]> RetrieveCuadro3()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro4()
-    {
-
-    }
-
-    public List<string[]> RetrieveCuadro5()
-    {
-
-
-    }
-    */
-
 }
+
+
 

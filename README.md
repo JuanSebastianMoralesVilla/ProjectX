@@ -103,7 +103,7 @@ In this document you can find :
 ## Video
 
 Here we have a 5 minutes <!--<a href="https:">Video</a>--> uploaded to youtube make it by the contributors of the project.
-In this <!--<a href="https://youtu.be/JI9GTY5BCJA">Video</a>--> we show the functionalities and how we see the model and the datastructures that we use.
+In this <!--<a href="https://youtu.be/NX_hr811Gl0">Video</a>--> we show the functionalities and how we see the model and the datastructures that we use.
 
 ## Contributors 
 <br />

@@ -68,11 +68,11 @@ Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the p
 
 ### Class Diagram
 
-<!--[Class Diagram](https://github.com/SebasBarrera/valle-temperatures/blob/master/docs/ValleTemperaturas_ClassDiagram.pdf)-->
+<!--[Class Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20Proyecto%20Integrador.png)-->
 
 ### Object Diagram
 
-<!--[Object Diagram](https://github.com/SebasBarrera/valle-temperatures/blob/master/docs/ValleTemperatura_ObjectDiagram.pdf)-->
+<!--[Object Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Object%20Diagram.pdf)-->
 
 ## Contributing
 
@@ -91,7 +91,7 @@ Aun no se toman los tiempos
 
 ## Software Requirements Specifications
 
-Here we have our <a href="https://docs.google.com/document/d/1pUwgihzNVWjvhX30MNFmpwzW5PyA7sn7IsUEjdneYKk/edit">Engineering Method</a> for this project
+Here we have our <a href="https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Proyecto%20integrador%20(1).pdf">Engineering Method</a> for this project
 In this document you can find :
 * The problem identification
 * Collection of the necessary information

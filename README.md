@@ -67,12 +67,10 @@ An awesome app to predict the risk to have a heart attack using machine learning
 Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the problem
 
 ### Class Diagram
-
-<!--[Class Diagram]https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20Proyecto%20Integrador.png-->
+https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20Proyecto%20Integrador.png
 
 ### Object Diagram
-
-<!--[Object Diagram]https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Object%20Diagram.pdf-->
+https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Object%20Diagram.pdf 
 
 ## Contributing
 
@@ -85,9 +83,6 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 ## Personal Software Process
-
-<!--Here we have our <a href="https://github.com/SebasBarrera/valle-temperatures/tree/master/psp">PSP0</a> that take the times that take to make this project-->
-Aun no se toman los tiempos
 
 ## Software Requirements Specifications
 

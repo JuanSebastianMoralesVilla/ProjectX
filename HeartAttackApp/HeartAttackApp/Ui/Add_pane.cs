@@ -36,5 +36,10 @@ namespace HeartAttackApp.Ui
         {
 
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ARE YOU SURE TO ADD A PATIENT?","Confirm add patient", MessageBoxButtons.YesNoCancel);
+        }
     }
 }

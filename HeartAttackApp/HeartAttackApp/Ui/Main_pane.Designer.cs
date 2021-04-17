@@ -29,7 +29,8 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_pane));
             this.grid_data = new System.Windows.Forms.DataGridView();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
@@ -50,8 +51,8 @@ namespace HeartAttackApp.Ui
             // 
             // grid_data
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
@@ -83,21 +84,25 @@ namespace HeartAttackApp.Ui
             // 
             // btn_solve
             // 
-            this.btn_solve.Location = new System.Drawing.Point(608, 372);
+            this.btn_solve.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_solve.Image = ((System.Drawing.Image)(resources.GetObject("btn_solve.Image")));
+            this.btn_solve.Location = new System.Drawing.Point(764, 372);
             this.btn_solve.Name = "btn_solve";
-            this.btn_solve.Size = new System.Drawing.Size(119, 46);
+            this.btn_solve.Size = new System.Drawing.Size(182, 138);
             this.btn_solve.TabIndex = 3;
             this.btn_solve.Text = "SOLVE";
-            this.btn_solve.UseVisualStyleBackColor = true;
+            this.btn_solve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_solve.UseVisualStyleBackColor = false;
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(733, 201);
+            this.btn_add.BackColor = System.Drawing.Color.White;
+            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
+            this.btn_add.Location = new System.Drawing.Point(764, 243);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(70, 34);
+            this.btn_add.Size = new System.Drawing.Size(182, 48);
             this.btn_add.TabIndex = 4;
-            this.btn_add.Text = "ADD";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // cb_filter
@@ -143,7 +148,7 @@ namespace HeartAttackApp.Ui
             // cb_choose
             // 
             this.cb_choose.FormattingEnabled = true;
-            this.cb_choose.Location = new System.Drawing.Point(352, 56);
+            this.cb_choose.Location = new System.Drawing.Point(35, 55);
             this.cb_choose.Name = "cb_choose";
             this.cb_choose.Size = new System.Drawing.Size(162, 21);
             this.cb_choose.TabIndex = 10;
@@ -162,12 +167,13 @@ namespace HeartAttackApp.Ui
             // 
             // btn_graphics
             // 
-            this.btn_graphics.Location = new System.Drawing.Point(652, 33);
+            this.btn_graphics.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_graphics.Image = ((System.Drawing.Image)(resources.GetObject("btn_graphics.Image")));
+            this.btn_graphics.Location = new System.Drawing.Point(764, 82);
             this.btn_graphics.Name = "btn_graphics";
-            this.btn_graphics.Size = new System.Drawing.Size(75, 23);
+            this.btn_graphics.Size = new System.Drawing.Size(182, 139);
             this.btn_graphics.TabIndex = 12;
-            this.btn_graphics.Text = "Graphics";
-            this.btn_graphics.UseVisualStyleBackColor = true;
+            this.btn_graphics.UseVisualStyleBackColor = false;
             this.btn_graphics.Click += new System.EventHandler(this.btn_graphics_Click);
             // 
             // textBoxLoad1
@@ -190,7 +196,7 @@ namespace HeartAttackApp.Ui
             // 
             // tb_cadena
             // 
-            this.tb_cadena.Location = new System.Drawing.Point(352, 13);
+            this.tb_cadena.Location = new System.Drawing.Point(35, 55);
             this.tb_cadena.Name = "tb_cadena";
             this.tb_cadena.Size = new System.Drawing.Size(162, 20);
             this.tb_cadena.TabIndex = 15;
@@ -200,7 +206,8 @@ namespace HeartAttackApp.Ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 539);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(977, 539);
             this.Controls.Add(this.tb_cadena);
             this.Controls.Add(this.textBoxLoad2);
             this.Controls.Add(this.textBoxLoad1);

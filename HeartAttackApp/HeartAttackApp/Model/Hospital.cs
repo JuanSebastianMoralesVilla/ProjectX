@@ -144,6 +144,7 @@ namespace HeartAttackApp.Model
             int[] arrayForAverage = { 0, 0 };
 
             string x = "";
+            int aux = 0;
             if (Pat.sex.Equals("0"))
             {
                 x = "Woman";
@@ -152,14 +153,17 @@ namespace HeartAttackApp.Model
             {
                 x = "man";
             }
-
+            if (Pat.result == 1)
+            {
+                aux = 1;
+            }
             if (Cuadro1.ContainsKey(x))
             {
-                Cuadro1[x] = ((int)Cuadro1[x] + 1);
+                Cuadro1[x] = ((int)Cuadro1[x] + aux);
             }
             else
             {
-                Cuadro1.Add(x, 1);
+                Cuadro1.Add(x, aux);
             }
 
             string ang = "";

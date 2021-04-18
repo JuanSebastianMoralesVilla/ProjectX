@@ -67,10 +67,10 @@ An awesome app to predict the risk to have a heart attack using machine learning
 Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the problem
 
 ### Class Diagram
-https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf
+[Class Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf)
 
 ### Object Diagram
-*https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf
+[Object Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf)
 
 ## Contributing
 
@@ -83,6 +83,8 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 ## Personal Software Process
+
+We dont take our times at the moment
 
 ## Software Requirements Specifications
 
@@ -97,9 +99,8 @@ In this document you can find :
 
 ## Video
 
-Here we have a 5 minutes <!--<a href="https:">Video</a>--> uploaded to youtube make it by the contributors of the project.
-In this <!--<a href="https://youtu.be/NX_hr811Gl0">Video</a>--> we show the functionalities and how we see the model and the datastructures that we use.
-Link: https://youtu.be/NX_hr811Gl0
+Here we have a 5 minutes <a href="https://youtu.be/NX_hr811Gl0">Video</a> uploaded to youtube make it by the contributors of the project.
+In this <a href="https://youtu.be/NX_hr811Gl0">Video</a> we show the functionalities and how we see the model and the datastructures that we use.
 
 ## Contributors 
 <br />

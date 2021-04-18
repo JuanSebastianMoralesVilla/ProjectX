@@ -86,7 +86,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Software Requirements Specifications
 
-Here we have our <a href="https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Proyecto%20integrador%20(1).pdf">Engineering Method</a> for this project
+Here we have our <a href="https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Proyecto%20integrador%20PDF.pdf">Engineering Method</a> for this project
 In this document you can find :
 * The problem identification
 * Collection of the necessary information

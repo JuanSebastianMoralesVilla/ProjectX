@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DecisionTree.cs" />
     <Compile Include="Model\Hospital.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Ui\Add_pane.cs">

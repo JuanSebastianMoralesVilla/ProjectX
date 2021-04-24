@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HeartAttackApp.Model
 {
-    class Hospital
+    public class Hospital
     {
         public List<Patient> patients{ get; set; }
 

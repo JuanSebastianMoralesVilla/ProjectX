@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HeartAttackApp.Model
 {
-    class Patient
+    public class Patient
     {
         //  CONST
         public const string ID = "idPatient";
@@ -41,13 +41,13 @@ namespace HeartAttackApp.Model
 
         public int heartRate { get; set; }
 
-        public int? result { get ; set; }
+        public int? result { get; set; }
 
-        public Patient(int id, int age, string genre, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
+        public Patient(int id, int age, string sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
             this.id = id;
             this.age = age;
-            this.sex = genre;
+            this.sex = sex;
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
@@ -58,11 +58,20 @@ namespace HeartAttackApp.Model
             this.result = null;
         }
 
-
+        public int get(int index)
+        {
+            string[] values =  toString().Split(' ');
+            int[] valuesInt = new int[values.Length];
+            
+            for (int i = 0; i < values.Length; i++) {
+                valuesInt[i] = int.Parse(values[i]);
+            }
+            return valuesInt[index];
+        }
 
         public static string[] matrixE()
         {
-            string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE, 
+            string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE,
                                 CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
                                 HEART_RATE};
             return result;
@@ -70,7 +79,7 @@ namespace HeartAttackApp.Model
 
         public static string[] cadenaValues()
         {
-            string[] result = {ID};
+            string[] result = { ID };
             return result;
         }
 
@@ -92,10 +101,37 @@ namespace HeartAttackApp.Model
             return result;
         }
 
-        public String toString()
+        public string toString()
         {
-            return "" + id + age + sex +typePain + bloodPressure + cholesterol + levelSugar + angina + resultElectro + heartRate + result;
+            return id + " " + age + " " + sex + " " + typePain + " " + bloodPressure + " " + cholesterol + " " + levelSugar + " " + angina + " " + resultElectro + " " + heartRate + " " + result;
         }
+
+        public 
+        /*
+        public string[] toTrain()
+        {
+            string[] aux = toString().Split(' ');
+            string[] result = new string[aux.Length - 1];
+            for (int i = 1; i < aux.Length; i++)
+            {
+                result[i - 1] = aux[i];
+            }
+
+            return result;
+        }
+
+        public string[] toTest()
+        {
+            string[] aux = toString().Split(' ');
+            string[] result = new string[aux.Length - 1];
+            for (int i = 0; i < aux.Length; i++)
+            {
+                result[i] = aux[i];
+            }
+
+            return result;
+        }
+        */
     }
 }
 

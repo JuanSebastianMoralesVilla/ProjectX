@@ -58,6 +58,21 @@ namespace HeartAttackApp.Model
             this.result = null;
         }
 
+        public Patient(int id, int age, string sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate,int result)
+        {
+            this.id = id;
+            this.age = age;
+            this.sex = sex;
+            this.typePain = typePain;
+            this.bloodPressure = bloodPressure;
+            this.cholesterol = cholesterol;
+            this.levelSugar = levelSugar;
+            this.angina = angina;
+            this.resultElectro = resultElectro;
+            this.heartRate = heartRate;
+            this.result = result;
+        }
+
         public int get(int index)
         {
             string[] values =  toString().Split(' ');
@@ -106,7 +121,7 @@ namespace HeartAttackApp.Model
             return id + " " + age + " " + sex + " " + typePain + " " + bloodPressure + " " + cholesterol + " " + levelSugar + " " + angina + " " + resultElectro + " " + heartRate + " " + result;
         }
 
-        public 
+         
         /*
         public string[] toTrain()
         {

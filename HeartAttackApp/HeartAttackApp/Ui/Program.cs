@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeartAttackApp.Test;
 
 namespace HeartAttackApp.Ui
 {
@@ -14,9 +15,10 @@ namespace HeartAttackApp.Ui
         [STAThread]
         static void Main()
         {
+            TestClass t = new TestClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_pane());
+            //Application.Run(new Main_pane());
         }
     }
 }

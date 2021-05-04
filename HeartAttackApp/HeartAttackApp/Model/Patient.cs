@@ -121,7 +121,14 @@ namespace HeartAttackApp.Model
             return id + " " + age + " " + sex + " " + typePain + " " + bloodPressure + " " + cholesterol + " " + levelSugar + " " + angina + " " + resultElectro + " " + heartRate + " " + result;
         }
 
-         
+        public static bool isCategoric(int i)
+        {
+            if (i == 4 || i == 5 || i == 9 )
+            {
+                return false;
+            }
+            return true;
+        }
         /*
         public string[] toTrain()
         {

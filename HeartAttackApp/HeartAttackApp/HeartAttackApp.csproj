@@ -69,11 +69,23 @@
     <Compile Include="Ui\Main_pane.Designer.cs">
       <DependentUpon>Main_pane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\MenuOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\MenuOptions.Designer.cs">
+      <DependentUpon>MenuOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Show_Chart.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ui\Show_Chart.Designer.cs">
       <DependentUpon>Show_Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\StartApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\StartApp.Designer.cs">
+      <DependentUpon>StartApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Start_pane.cs">
       <SubType>Form</SubType>
@@ -98,8 +110,14 @@
     <EmbeddedResource Include="Ui\Main_pane.resx">
       <DependentUpon>Main_pane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\MenuOptions.resx">
+      <DependentUpon>MenuOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Show_Chart.resx">
       <DependentUpon>Show_Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\StartApp.resx">
+      <DependentUpon>StartApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Start_pane.resx">
       <DependentUpon>Start_pane.cs</DependentUpon>

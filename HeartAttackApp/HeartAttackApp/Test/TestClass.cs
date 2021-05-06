@@ -27,8 +27,6 @@ namespace HeartAttackApp.Test
                 double result = test();
                 Console.WriteLine("# "+i+" " + result);
             }
-           
-            
         }
 
         private void train()

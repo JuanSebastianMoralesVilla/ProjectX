@@ -117,6 +117,7 @@ namespace HeartAttackApp.Model
                         }
                         if (column == 1)
                         {
+                            
                             if (value < 30)//Young
                             {
                                 value = 0;
@@ -175,57 +176,7 @@ namespace HeartAttackApp.Model
             }
         }
 
-        /*
-        private void splitContinuValues(int column)
-        {
-            double max = 0;
-            double total = 0;
-            foreach (Patient patient in trainingSet)
-            {
-                int value = patient.get(column);
-                max += value;
-                total++;
-            }
-            double mid = max / total;
-            double[] values = { mid, mid + (mid / 2), mid - (mid / 2) };
-            double minEntripy = double.MaxValue;
-            int index = 0;
-            for (int i = 0; i < values.Length; i++)
-            {
-                if (column == 4)
-                {
-                    splitBloodPressure = (int)values[i];
-                }
-                else if (column == 5)
-                {
-                    splitCholesterol = (int)values[i];
-                }
-                else if (column == 9)
-                {
-                    splitHeartRate = (int)values[i];
-                }
-                double aux = entropy(column);
-                if (aux < minEntripy)
-                {
-                    minEntripy = aux;
-                    index = i;
-                }
-            }
-            if (column == 4)
-            {
-                splitBloodPressure = (int)values[index];
-            }
-            else if (column == 5)
-            {
-                splitCholesterol = (int)values[index];
-            }
-            else if (column == 9)
-            {
-                splitHeartRate = (int)values[index];
-            }
-
-        }
-        */
+      
         private void splitContinuValues(int column)
         {
             
@@ -314,6 +265,7 @@ namespace HeartAttackApp.Model
                 //When is evaluating the age column
                 if (column == 1)
                 {
+                    
                     if (value < 30)//Young
                     {
                         value =0;
@@ -396,7 +348,8 @@ namespace HeartAttackApp.Model
             int value = patient.get(column); ;
             double value2 = 0;
             if (column == 1)
-            {
+            { 
+               
                 if (value < 30)//Young
                 {
                     value = 0;

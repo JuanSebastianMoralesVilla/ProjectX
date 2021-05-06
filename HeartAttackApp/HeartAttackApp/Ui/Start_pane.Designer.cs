@@ -37,7 +37,7 @@ namespace HeartAttackApp
             // 
             // pb_starting
             // 
-            this.pb_starting.Location = new System.Drawing.Point(223, 220);
+            this.pb_starting.Location = new System.Drawing.Point(216, 248);
             this.pb_starting.Name = "pb_starting";
             this.pb_starting.Size = new System.Drawing.Size(355, 23);
             this.pb_starting.TabIndex = 0;
@@ -45,7 +45,7 @@ namespace HeartAttackApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(364, 246);
+            this.label1.Location = new System.Drawing.Point(357, 274);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
@@ -53,7 +53,7 @@ namespace HeartAttackApp
             // 
             // pct_logo
             // 
-            this.pct_logo.Location = new System.Drawing.Point(346, 89);
+            this.pct_logo.Location = new System.Drawing.Point(339, 117);
             this.pct_logo.Name = "pct_logo";
             this.pct_logo.Size = new System.Drawing.Size(100, 99);
             this.pct_logo.TabIndex = 2;

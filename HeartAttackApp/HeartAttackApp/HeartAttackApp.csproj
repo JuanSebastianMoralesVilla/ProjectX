@@ -62,18 +62,42 @@
     <Compile Include="Ui\Add_pane.Designer.cs">
       <DependentUpon>Add_pane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\ButtonsOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ButtonsOptions.Designer.cs">
+      <DependentUpon>ButtonsOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\ControllerGUI.cs" />
+    <Compile Include="Ui\FilterOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\FilterOptions.Designer.cs">
+      <DependentUpon>FilterOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\GridPatients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\GridPatients.Designer.cs">
+      <DependentUpon>GridPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Main_pane.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ui\Main_pane.Designer.cs">
       <DependentUpon>Main_pane.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ui\MenuOptions.cs">
+    <Compile Include="Ui\ShowCharts.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ui\MenuOptions.Designer.cs">
-      <DependentUpon>MenuOptions.cs</DependentUpon>
+    <Compile Include="Ui\ShowCharts.Designer.cs">
+      <DependentUpon>ShowCharts.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Show_Chart.cs">
       <SubType>Form</SubType>
@@ -86,12 +110,6 @@
     </Compile>
     <Compile Include="Ui\StartApp.Designer.cs">
       <DependentUpon>StartApp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Start_pane.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ui\Start_pane.Designer.cs">
-      <DependentUpon>Start_pane.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,20 +125,29 @@
     <EmbeddedResource Include="Ui\Add_pane.resx">
       <DependentUpon>Add_pane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ButtonsOptions.resx">
+      <DependentUpon>ButtonsOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\FilterOptions.resx">
+      <DependentUpon>FilterOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\GridPatients.resx">
+      <DependentUpon>GridPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Main_pane.resx">
       <DependentUpon>Main_pane.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\MenuOptions.resx">
-      <DependentUpon>MenuOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Ui\ShowCharts.resx">
+      <DependentUpon>ShowCharts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Show_Chart.resx">
       <DependentUpon>Show_Chart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\StartApp.resx">
       <DependentUpon>StartApp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ui\Start_pane.resx">
-      <DependentUpon>Start_pane.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

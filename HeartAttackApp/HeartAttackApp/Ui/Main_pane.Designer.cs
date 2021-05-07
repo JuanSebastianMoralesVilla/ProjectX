@@ -93,6 +93,7 @@ namespace HeartAttackApp.Ui
             this.btn_solve.Text = "SOLVE";
             this.btn_solve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_solve.UseVisualStyleBackColor = false;
+            this.btn_solve.Click += new System.EventHandler(this.btn_solve_Click);
             // 
             // btn_add
             // 
@@ -130,7 +131,7 @@ namespace HeartAttackApp.Ui
             // 
             // tb_higger
             // 
-            this.tb_higger.Location = new System.Drawing.Point(150, 56);
+            this.tb_higger.Location = new System.Drawing.Point(150, 58);
             this.tb_higger.Name = "tb_higger";
             this.tb_higger.Size = new System.Drawing.Size(47, 20);
             this.tb_higger.TabIndex = 8;
@@ -148,7 +149,7 @@ namespace HeartAttackApp.Ui
             // cb_choose
             // 
             this.cb_choose.FormattingEnabled = true;
-            this.cb_choose.Location = new System.Drawing.Point(35, 55);
+            this.cb_choose.Location = new System.Drawing.Point(256, 12);
             this.cb_choose.Name = "cb_choose";
             this.cb_choose.Size = new System.Drawing.Size(162, 21);
             this.cb_choose.TabIndex = 10;
@@ -156,7 +157,7 @@ namespace HeartAttackApp.Ui
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(214, 33);
+            this.btn_search.Location = new System.Drawing.Point(455, 34);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
             this.btn_search.TabIndex = 11;
@@ -196,7 +197,7 @@ namespace HeartAttackApp.Ui
             // 
             // tb_cadena
             // 
-            this.tb_cadena.Location = new System.Drawing.Point(35, 55);
+            this.tb_cadena.Location = new System.Drawing.Point(256, 55);
             this.tb_cadena.Name = "tb_cadena";
             this.tb_cadena.Size = new System.Drawing.Size(162, 20);
             this.tb_cadena.TabIndex = 15;

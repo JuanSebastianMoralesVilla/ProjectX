@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HeartAttackApp.Ui
 {
-    public partial class MenuOptions : UserControl
+    public partial class ShowCharts : UserControl
     {
-        public MenuOptions()
+        public ShowCharts()
         {
             InitializeComponent();
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,7 +9,7 @@ using System.IO;
 
 namespace HeartAttackApp.Ui
 {
-    class ControllerGUI
+    public class ControllerGUI
     {
         private string path;
 
@@ -43,7 +43,12 @@ namespace HeartAttackApp.Ui
         }
         private void loadFile(string fileName, string safeFileName)
         {
-        }  
+        } 
+
+        public void training()
+        {
+            miHospital.training();
+        }
         public List<Patient> loadGrid(string path)
         {
             List<Patient> patients = new List<Patient>();

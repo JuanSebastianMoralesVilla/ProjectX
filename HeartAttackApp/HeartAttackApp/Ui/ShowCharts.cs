@@ -16,10 +16,5 @@ namespace HeartAttackApp.Ui
         {
             InitializeComponent();
         }
-
-        private void chart2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

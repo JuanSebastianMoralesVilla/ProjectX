@@ -21,10 +21,9 @@ namespace HeartAttackApp.Ui
             this.gridPatients = gridPatients;
             InitializeComponent();
         }
-
-        public FilterOptions(ControllerGUI controller)
+        public FilterOptions()
         {
-            this.controller = controller;
+            InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)

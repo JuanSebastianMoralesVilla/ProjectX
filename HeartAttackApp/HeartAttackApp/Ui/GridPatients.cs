@@ -20,10 +20,9 @@ namespace HeartAttackApp.Ui
             this.controller = controller;
             InitializeComponent();
         }
-
-        private void grid_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public GridPatients()
         {
-
+            InitializeComponent();
         }
 
         private void btn_graphics_Click(object sender, EventArgs e)
@@ -46,5 +45,7 @@ namespace HeartAttackApp.Ui
         {
             grid_data.DataSource = controller.patient();
         }
+
+       
     }
 }

@@ -18,7 +18,7 @@ namespace HeartAttackApp.Ui
             TestClass t = new TestClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Main_pane());
+            Application.Run(new Main_pane());
         }
     }
 }

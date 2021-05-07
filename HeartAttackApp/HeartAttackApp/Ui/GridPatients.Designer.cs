@@ -47,37 +47,35 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btn_graphics, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_add, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(776, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(753, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.00764F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.99237F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 220F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(253, 496);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.44186F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.55814F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(240, 317);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btn_graphics
             // 
-            this.btn_graphics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_graphics.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_graphics.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_graphics.Image = ((System.Drawing.Image)(resources.GetObject("btn_graphics.Image")));
-            this.btn_graphics.Location = new System.Drawing.Point(3, 76);
+            this.btn_graphics.Location = new System.Drawing.Point(27, 14);
             this.btn_graphics.Name = "btn_graphics";
-            this.btn_graphics.Size = new System.Drawing.Size(247, 139);
+            this.btn_graphics.Size = new System.Drawing.Size(185, 140);
             this.btn_graphics.TabIndex = 13;
             this.btn_graphics.UseVisualStyleBackColor = false;
             this.btn_graphics.Click += new System.EventHandler(this.btn_graphics_Click);
             // 
             // btn_add
             // 
-            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
-            this.btn_add.Location = new System.Drawing.Point(3, 278);
+            this.btn_add.Location = new System.Drawing.Point(27, 236);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(247, 48);
+            this.btn_add.Size = new System.Drawing.Size(185, 50);
             this.btn_add.TabIndex = 14;
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -87,7 +85,7 @@ namespace HeartAttackApp.Ui
             this.panel1.Controls.Add(this.grid_data);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(779, 496);
+            this.panel1.Size = new System.Drawing.Size(747, 320);
             this.panel1.TabIndex = 1;
             // 
             // grid_data
@@ -99,9 +97,8 @@ namespace HeartAttackApp.Ui
             this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.grid_data.Location = new System.Drawing.Point(3, 3);
             this.grid_data.Name = "grid_data";
-            this.grid_data.Size = new System.Drawing.Size(773, 490);
+            this.grid_data.Size = new System.Drawing.Size(744, 314);
             this.grid_data.TabIndex = 1;
-            this.grid_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_data_CellContentClick);
             // 
             // GridPatients
             // 
@@ -110,7 +107,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "GridPatients";
-            this.Size = new System.Drawing.Size(1029, 496);
+            this.Size = new System.Drawing.Size(995, 320);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).EndInit();

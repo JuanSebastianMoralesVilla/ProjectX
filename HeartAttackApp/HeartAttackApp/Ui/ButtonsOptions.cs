@@ -25,6 +25,11 @@ namespace HeartAttackApp.Ui
             file = new OpenFileDialog();
             this.filterOptions = filterOptions;
         }
+        public ButtonsOptions()
+        {
+           
+            InitializeComponent();
+        }
 
         private void btn_new_Click(object sender, EventArgs e)
         {

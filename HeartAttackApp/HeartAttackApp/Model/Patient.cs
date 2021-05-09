@@ -43,11 +43,11 @@ namespace HeartAttackApp.Model
 
         public int? result { get; set; }
 
-        public Patient(int id, int age, string sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
+        public Patient(int id, int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
             this.id = id;
             this.age = age;
-            this.sex = sex;
+            this.sex = sex == 0 ? "F" : "M";
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
@@ -58,11 +58,11 @@ namespace HeartAttackApp.Model
             this.result = null;
         }
 
-        public Patient(int id, int age, string sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate,int result)
+        public Patient(int id, int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate,int result)
         {
             this.id = id;
             this.age = age;
-            this.sex = sex;
+            this.sex = sex==0?"F": "M";
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;

@@ -15,18 +15,40 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         private GridPatients gridPatients;
-        public FilterOptions(ControllerGUI controller, GridPatients gridPatients)
-        {
-            this.controller = controller;
-            this.gridPatients = gridPatients;
-            InitializeComponent();
-        }
+        
         public FilterOptions()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void inicialize(ControllerGUI controller, GridPatients gridPatients)
+        {
+            string[] values = Patient.matrixE();
+            cb_filter.Items.AddRange(values);
+            this.controller = controller;
+            this.gridPatients = gridPatients;
+        }
+
+        public void cb_filterSetVisible(bool visible)
+        {
+            cb_filter.Visible = visible;
+        }
+        public void clear()
+        {
+            cb_choose.Visible = false;
+            txt_to.Visible = false;
+            tb_higger.Visible = false;
+            tb_lower.Visible = false;
+            tb_cadena.Visible = false;
+            cb_filter.Visible = false;
+            btn_search.Visible = false;
+            cb_filter.SelectedIndex = 0;
+            cb_choose.Items.Clear();
+            cb_choose.SelectedItem = "";
+        }
+        
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             string selected = cb_filter.SelectedItem.ToString();
             string[] valuesC = Patient.cadenaValues();
@@ -72,7 +94,53 @@ namespace HeartAttackApp.Ui
             }
         }
 
-        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_search_Click_1(object sender, EventArgs e)
+        {
+            string selected = cb_filter.SelectedItem.ToString();
+            string[] valuesC = Patient.cadenaValues();
+            string[] valuesN = Patient.numericValues();
+            string[] valuesB = Patient.binariValue();
+            List<Patient> patients = new List<Patient>();
+            try
+            {
+                if (valuesC.Contains(selected))
+                {
+                    int id = int.Parse(tb_cadena.Text);
+                    patients = controller.search(id);
+                }
+                else if (valuesN.Contains(selected))
+                {
+                    int lower = Math.Abs(int.Parse(tb_lower.Text));
+                    int higger = Math.Abs(int.Parse(tb_higger.Text));
+                    if (higger < lower)
+                    {
+                        int aux = lower;
+                        lower = higger;
+                        higger = aux;
+                    }
+                    tb_lower.Text = lower.ToString();
+                    tb_higger.Text = higger.ToString();
+
+                    patients = controller.search(selected, lower, higger);
+                }
+                else if (cb_choose.SelectedItem!=null && valuesB.Contains(selected))
+                {
+                    int value = int.Parse(cb_choose.SelectedItem.ToString());
+                    patients = controller.search(selected, value);
+                }
+                else
+                {
+                    patients = controller.patient();
+                }
+                gridPatients.loadGrid(patients);
+            }
+            catch (FormatException t)
+            {
+                Console.WriteLine(t.Message);
+            }
+        }
+
+        private void cb_filter_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string selected = cb_filter.SelectedItem.ToString();
             cb_choose.Visible = false;
@@ -106,82 +174,8 @@ namespace HeartAttackApp.Ui
                         cb_choose.Items.Add("2");
                     }
                 }
-
                 btn_search.Visible = true;
             }
-        }
-
-        public void cb_filterSetVisible(bool visible)
-        {
-            cb_filter.Visible = visible;
-        }
-        public void clear()
-        {
-            cb_choose.Visible = false;
-            txt_to.Visible = false;
-            tb_higger.Visible = false;
-            tb_lower.Visible = false;
-            tb_cadena.Visible = false;
-            cb_filter.Visible = false;
-            btn_search.Visible = false;
-            cb_filter.SelectedIndex = 0;
-            cb_choose.Items.Clear();
-            cb_choose.SelectedItem = "";
-        }
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            string selected = cb_filter.SelectedItem.ToString();
-            string[] valuesC = Patient.cadenaValues();
-            string[] valuesN = Patient.numericValues();
-            string[] valuesB = Patient.binariValue();
-            List<Patient> patients = new List<Patient>();
-            try
-            {
-                if (valuesC.Contains(selected))
-                {
-                    int id = int.Parse(tb_cadena.Text);
-                    patients = controller.search(id);
-                }
-                else if (valuesN.Contains(selected))
-                {
-                    int lower = Math.Abs(int.Parse(tb_lower.Text));
-                    int higger = Math.Abs(int.Parse(tb_higger.Text));
-                    if (higger < lower)
-                    {
-                        int aux = lower;
-                        lower = higger;
-                        higger = aux;
-                    }
-                    tb_lower.Text = lower.ToString();
-                    tb_higger.Text = higger.ToString();
-
-                    patients = controller.search(selected, lower, higger);
-                }
-                else if (valuesB.Contains(selected))
-                {
-                    int value = int.Parse(cb_choose.SelectedItem.ToString());
-                    patients = controller.search(selected, value);
-                }
-                else
-                {
-                    patients = controller.patient();
-                }
-                gridPatients.loadGrid(patients);
-            }
-            catch (FormatException t)
-            {
-                Console.WriteLine(t.Message);
-            }
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_search_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

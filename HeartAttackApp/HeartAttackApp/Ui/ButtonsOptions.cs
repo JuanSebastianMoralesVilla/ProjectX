@@ -17,17 +17,17 @@ namespace HeartAttackApp.Ui
         private GridPatients gridPatiens;
         private OpenFileDialog file;
         private FilterOptions filterOptions;
-        public ButtonsOptions(ControllerGUI controller, GridPatients gridPatiens, FilterOptions filterOptions)
+        
+
+        public void inicialize(ControllerGUI controller, GridPatients gridPatiens, FilterOptions filterOptions)
         {
             this.controller = controller;
             this.gridPatiens = gridPatiens;
-            InitializeComponent();
             file = new OpenFileDialog();
             this.filterOptions = filterOptions;
         }
         public ButtonsOptions()
         {
-           
             InitializeComponent();
         }
 
@@ -35,6 +35,7 @@ namespace HeartAttackApp.Ui
         {
             gridPatiens.newClick();
             filterOptions.clear();
+            controller.clear();
         }
 
         private void btn_load_Click(object sender, EventArgs e)

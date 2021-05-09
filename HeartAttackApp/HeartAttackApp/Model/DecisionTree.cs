@@ -137,7 +137,7 @@ namespace HeartAttackApp.Model
                             values[j] = patient.get(j);
                         }
                         values[column] = -1;
-                        Patient newPatient = new Patient(values[0], values[1], "" + values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10]);
+                        Patient newPatient = new Patient(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10]);
                         all[value].Add(newPatient);
                     }
                     for (int i = 0; i < childrenNode.Length; i++)

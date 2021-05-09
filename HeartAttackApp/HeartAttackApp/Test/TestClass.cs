@@ -51,7 +51,7 @@ namespace HeartAttackApp.Test
                 string[] array = line.Split(';');
                 int idPatient = int.Parse(array[0]);
                 int year = int.Parse(array[1]);
-                string genre = (array[2]);
+                int genre = int.Parse(array[2]);
                 int typePain = int.Parse(array[3]);
                 int bloodPressure = int.Parse(array[4]);
                 int cholesterol = int.Parse(array[5]);
@@ -80,7 +80,7 @@ namespace HeartAttackApp.Test
                 string[] array = line.Split(';');
                 int idPatient = int.Parse(array[0]);
                 int year = int.Parse(array[1]);
-                string genre = (array[2]);
+                int genre = int.Parse(array[2]);
                 int typePain = int.Parse(array[3]);
                 int bloodPressure = int.Parse(array[4]);
                 int cholesterol = int.Parse(array[5]);

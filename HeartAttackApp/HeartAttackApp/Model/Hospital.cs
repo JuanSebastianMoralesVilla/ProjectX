@@ -12,6 +12,7 @@ namespace HeartAttackApp.Model
     {
         public List<Patient> patients { get; set; }
         private List<Patient> trainingSet { get; set; }
+
         public double accuracity;
         private DecisionTree decision { get; set; }
         private List<Patient> testingSet { get; set; }
@@ -21,12 +22,9 @@ namespace HeartAttackApp.Model
         public Hashtable Cuadro4 { get; set; }
         public Hashtable Cuadro5 { get; set; }
 
-        public int size;
-
         public Hospital()
         {
             patients = new List<Patient>();
-            this.size = 0;
             Cuadro1 = new Hashtable();
             Cuadro2 = new Hashtable();
             Cuadro3 = new Hashtable();
@@ -34,10 +32,10 @@ namespace HeartAttackApp.Model
             Cuadro5 = new Hashtable();
         }
 
-        public void add(int idPatient, int age, string genre, int typeDolor, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate, int result)
+        public void add(int idPatient, int age, int genre, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate, int? result)
         {
             Patient patient = null;
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < patients.Count; i++)
             {
                 if (patients.ElementAt(i).id == idPatient)
                 {
@@ -47,9 +45,8 @@ namespace HeartAttackApp.Model
             }
             if (patient == null)
             {
-                patient = new Patient(idPatient, age, genre, typeDolor, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
+                patient = new Patient(idPatient, age, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
                 patients.Add(patient);
-                size++;
             }
             AddRecordToHashTables(patient);
         }
@@ -57,16 +54,39 @@ namespace HeartAttackApp.Model
         public void clear()
         {
             patients.Clear();
+            clearGrahpics();
         }
 
+        public void clearGrahpics()
+        {
+            Cuadro1.Clear();
+            Cuadro2.Clear();
+            Cuadro3.Clear();
+            Cuadro4.Clear();
+            Cuadro5.Clear();
+        }
+
+        public List<Patient> classify()
+        {
+            clearGrahpics();
+            List<Patient> result = new List<Patient>();
+            foreach (Patient patient in patients)
+            {
+                AddRecordToHashTables(patient);
+            }
+            result = patients;
+            return result;
+        }
         public List<Patient> classify(int id)
         {
+            clearGrahpics();
             List<Patient> result = new List<Patient>();
             foreach (Patient patient in patients)
             {
                 if (patient.id.Equals(id))
                 {
                     result.Add(patient);
+                    AddRecordToHashTables(patient);
                     break;
                 }
             }
@@ -76,6 +96,7 @@ namespace HeartAttackApp.Model
 
         public List<Patient> classify(string type, int lower, int higger)
         {
+            clearGrahpics();
             List<Patient> result = new List<Patient>();
             int aux = 0;
             foreach (Patient patient in patients)
@@ -100,6 +121,8 @@ namespace HeartAttackApp.Model
                 }
                 if (aux >= lower && aux <= higger)
                 {
+                    
+                    AddRecordToHashTables(patient);
                     result.Add(patient);
                 }
             }
@@ -109,6 +132,7 @@ namespace HeartAttackApp.Model
 
         public List<Patient> classify(string type, int value)
         {
+            clearGrahpics();
             List<Patient> result = new List<Patient>();
             int aux = 0;
             foreach (Patient patient in patients)
@@ -116,7 +140,7 @@ namespace HeartAttackApp.Model
                 switch (type)
                 {
                     case Patient.SEX:
-                        aux = int.Parse(patient.sex);
+                        aux = patient.sex=="F"?0:1;
                         break;
                     case Patient.TYPE_PAIN:
                         aux = (patient.typePain);
@@ -136,6 +160,7 @@ namespace HeartAttackApp.Model
                 }
                 if (aux == value)
                 {
+                    AddRecordToHashTables(patient);
                     result.Add(patient);
                 }
             }
@@ -150,13 +175,13 @@ namespace HeartAttackApp.Model
 
             string x = "";
             int aux = 0;
-            if (Pat.sex.Equals("0"))
+            if (Pat.sex.Equals("F"))
             {
-                x = "Woman";
+                x = "Female";
             }
             else
             {
-                x = "man";
+                x = "Male";
             }
             if (Pat.result == 1)
             {
@@ -347,7 +372,7 @@ namespace HeartAttackApp.Model
                 string[] array = line.Split(';');
                 int idPatient = int.Parse(array[0]);
                 int year = int.Parse(array[1]);
-                string genre = (array[2]);
+                int genre = int.Parse(array[2]);
                 int typePain = int.Parse(array[3]);
                 int bloodPressure = int.Parse(array[4]);
                 int cholesterol = int.Parse(array[5]);
@@ -376,7 +401,7 @@ namespace HeartAttackApp.Model
                 string[] array = line.Split(';');
                 int idPatient = int.Parse(array[0]);
                 int year = int.Parse(array[1]);
-                string genre = (array[2]);
+                int genre = int.Parse(array[2]);
                 int typePain = int.Parse(array[3]);
                 int bloodPressure = int.Parse(array[4]);
                 int cholesterol = int.Parse(array[5]);

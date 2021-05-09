@@ -58,7 +58,7 @@ namespace HeartAttackApp.Ui
             this.gridPatients1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridPatients1.Location = new System.Drawing.Point(0, 95);
             this.gridPatients1.Name = "gridPatients1";
-            this.gridPatients1.Size = new System.Drawing.Size(995, 472);
+            this.gridPatients1.Size = new System.Drawing.Size(995, 332);
             this.gridPatients1.TabIndex = 2;
             this.gridPatients1.Visible = false;
             // 
@@ -78,15 +78,14 @@ namespace HeartAttackApp.Ui
             this.showCharts1.Name = "showCharts1";
             this.showCharts1.Size = new System.Drawing.Size(995, 567);
             this.showCharts1.TabIndex = 4;
-            this.showCharts1.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 567);
-            this.Controls.Add(this.buttonsOptions1);
             this.Controls.Add(this.gridPatients1);
+            this.Controls.Add(this.buttonsOptions1);
             this.Controls.Add(this.filterOptions1);
             this.Controls.Add(this.startApp1);
             this.Controls.Add(this.showCharts1);

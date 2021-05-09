@@ -109,6 +109,7 @@ namespace HeartAttackApp.Ui
             this.cb_filter.TabIndex = 16;
             this.cb_filter.Text = "Filter by:";
             this.cb_filter.Visible = false;
+            this.cb_filter.SelectedIndexChanged += new System.EventHandler(this.cb_filter_SelectedIndexChanged_1);
             // 
             // tableLayoutPanel1
             // 

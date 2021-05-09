@@ -15,26 +15,25 @@ namespace HeartAttackApp.Ui
     {
         private Add_pane addPane;
         private ControllerGUI controller;
-        public GridPatients(ControllerGUI controller)
-        {
-            this.controller = controller;
-            InitializeComponent();
-        }
+        private Main main;
         public GridPatients()
         {
             InitializeComponent();
         }
+        public void initialize(ControllerGUI controller,Main main)
+        {
+            this.main = main;
+            this.controller = controller;
+        }
 
         private void btn_graphics_Click(object sender, EventArgs e)
         {
-            Show_Chart ch = new Show_Chart(controller.RetrieveCuadro1(), controller.RetrieveCuadro2(), controller.RetrieveCuadro3(), controller.RetrieveCuadro4(), controller.RetrieveCuadro5());
-            ch.Show();
-            MessageBox.Show("Se han generado las graficas");
+            main.loadCharts();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            addPane = new Add_pane();
+            addPane = new Add_pane(controller,this);
             addPane.ShowDialog();
         }
         public void loadGrid(List<Patient> patients)
@@ -43,9 +42,7 @@ namespace HeartAttackApp.Ui
         }
         public void newClick()
         {
-            grid_data.DataSource = controller.patient();
+            grid_data.DataSource = new List<Patient>();
         }
-
-       
     }
 }

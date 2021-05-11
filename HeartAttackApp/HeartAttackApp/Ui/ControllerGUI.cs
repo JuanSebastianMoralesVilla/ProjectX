@@ -11,7 +11,7 @@ namespace HeartAttackApp.Ui
 {
     class ControllerGUI
     {
-        private string path;
+        //private string path;
 
         private Hospital miHospital;
 

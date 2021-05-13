@@ -34,6 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -47,32 +52,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeavyTask\HeavyTask.cs" />
+    <Compile Include="HeavyTask\HeavyTaskResponse.cs" />
+    <Compile Include="Model\DecisionTree.cs" />
     <Compile Include="Model\Hospital.cs" />
     <Compile Include="Model\Patient.cs" />
+    <Compile Include="Test\TestClass.cs" />
     <Compile Include="Ui\Add_pane.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ui\Add_pane.Designer.cs">
       <DependentUpon>Add_pane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\ButtonsOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ButtonsOptions.Designer.cs">
+      <DependentUpon>ButtonsOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\ControllerGUI.cs" />
-    <Compile Include="Ui\Main_pane.cs">
+    <Compile Include="Ui\FilterOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\FilterOptions.Designer.cs">
+      <DependentUpon>FilterOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\GridPatients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\GridPatients.Designer.cs">
+      <DependentUpon>GridPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ui\Main_pane.Designer.cs">
-      <DependentUpon>Main_pane.cs</DependentUpon>
+    <Compile Include="Ui\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ui\Show_Chart.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Ui\ShowCharts.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ui\Show_Chart.Designer.cs">
-      <DependentUpon>Show_Chart.cs</DependentUpon>
+    <Compile Include="Ui\ShowCharts.Designer.cs">
+      <DependentUpon>ShowCharts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ui\Start_pane.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Ui\StartApp.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Ui\Start_pane.Designer.cs">
-      <DependentUpon>Start_pane.cs</DependentUpon>
+    <Compile Include="Ui\StartApp.Designer.cs">
+      <DependentUpon>StartApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Ui\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,15 +115,25 @@
     <EmbeddedResource Include="Ui\Add_pane.resx">
       <DependentUpon>Add_pane.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\Main_pane.resx">
-      <DependentUpon>Main_pane.cs</DependentUpon>
+    <EmbeddedResource Include="Ui\ButtonsOptions.resx">
+      <DependentUpon>ButtonsOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\Show_Chart.resx">
-      <DependentUpon>Show_Chart.cs</DependentUpon>
+    <EmbeddedResource Include="Ui\FilterOptions.resx">
+      <DependentUpon>FilterOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ui\Start_pane.resx">
-      <DependentUpon>Start_pane.cs</DependentUpon>
+    <EmbeddedResource Include="Ui\GridPatients.resx">
+      <DependentUpon>GridPatients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ShowCharts.resx">
+      <DependentUpon>ShowCharts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\StartApp.resx">
+      <DependentUpon>StartApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

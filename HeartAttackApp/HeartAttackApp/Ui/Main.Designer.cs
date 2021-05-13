@@ -29,29 +29,12 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            this.startApp1 = new HeartAttackApp.Ui.StartApp();
-            this.filterOptions1 = new HeartAttackApp.Ui.FilterOptions();
             this.gridPatients1 = new HeartAttackApp.Ui.GridPatients();
             this.buttonsOptions1 = new HeartAttackApp.Ui.ButtonsOptions();
+            this.filterOptions1 = new HeartAttackApp.Ui.FilterOptions();
+            this.startApp1 = new HeartAttackApp.Ui.StartApp();
             this.showCharts1 = new HeartAttackApp.Ui.ShowCharts();
             this.SuspendLayout();
-            // 
-            // startApp1
-            // 
-            this.startApp1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startApp1.Location = new System.Drawing.Point(0, 0);
-            this.startApp1.Name = "startApp1";
-            this.startApp1.Size = new System.Drawing.Size(995, 567);
-            this.startApp1.TabIndex = 0;
-            // 
-            // filterOptions1
-            // 
-            this.filterOptions1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.filterOptions1.Location = new System.Drawing.Point(0, 0);
-            this.filterOptions1.Name = "filterOptions1";
-            this.filterOptions1.Size = new System.Drawing.Size(995, 95);
-            this.filterOptions1.TabIndex = 1;
-            this.filterOptions1.Visible = false;
             // 
             // gridPatients1
             // 
@@ -70,6 +53,23 @@ namespace HeartAttackApp.Ui
             this.buttonsOptions1.Size = new System.Drawing.Size(995, 140);
             this.buttonsOptions1.TabIndex = 3;
             this.buttonsOptions1.Visible = false;
+            // 
+            // filterOptions1
+            // 
+            this.filterOptions1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.filterOptions1.Location = new System.Drawing.Point(0, 0);
+            this.filterOptions1.Name = "filterOptions1";
+            this.filterOptions1.Size = new System.Drawing.Size(995, 95);
+            this.filterOptions1.TabIndex = 1;
+            this.filterOptions1.Visible = false;
+            // 
+            // startApp1
+            // 
+            this.startApp1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startApp1.Location = new System.Drawing.Point(0, 0);
+            this.startApp1.Name = "startApp1";
+            this.startApp1.Size = new System.Drawing.Size(995, 567);
+            this.startApp1.TabIndex = 0;
             // 
             // showCharts1
             // 
@@ -91,6 +91,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.showCharts1);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 
         }

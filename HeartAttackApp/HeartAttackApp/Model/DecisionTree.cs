@@ -410,5 +410,15 @@ namespace HeartAttackApp.Model
             }
             return correct / total;
         }
+
+        public List<Patient> solve(List<Patient> patients)
+        {
+            foreach (Patient patient in patients)
+            {
+                int? output = this.output(patient);
+                patient.result = output;
+            }
+            return patients;
+        }
     }
 }

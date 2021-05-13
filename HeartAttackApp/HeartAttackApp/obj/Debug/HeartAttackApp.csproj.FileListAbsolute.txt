@@ -7,7 +7,6 @@ D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAtta
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Add_pane.resources
-D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main_pane.resources
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csprojAssemblyReference.cache
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Properties.Resources.resources
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Add_pane.resources
@@ -44,7 +43,6 @@ C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debu
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CoreCompileInputs.cache
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
-D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Show_Chart.resources
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.StartApp.resources
@@ -53,3 +51,4 @@ D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAtta
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.GridPatients.resources
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.ShowCharts.resources
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main.resources
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csprojAssemblyReference.cache

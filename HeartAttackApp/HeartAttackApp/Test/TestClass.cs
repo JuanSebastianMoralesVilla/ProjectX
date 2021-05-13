@@ -24,7 +24,7 @@ namespace HeartAttackApp.Test
             {
                 decision.depthLimit = i;
                 train();
-                double result = test();
+                double result = Math.Round(test(),2);
                 Console.WriteLine("# "+i+" " + result);
             }
         }
@@ -41,7 +41,7 @@ namespace HeartAttackApp.Test
 
         private void files()
         {
-            string path = "D:/ICESI/Integrador I/ProjectX/Dataset/Datasets/";
+            string path = @"../../../../Dataset/Datasets/";
             var reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetTrainingFull.csv"));
             string line = reader.ReadLine();
             line = reader.ReadLine();
@@ -71,7 +71,9 @@ namespace HeartAttackApp.Test
                 patientsTraing.Add(all);
                 line = reader.ReadLine();
             }
-            reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetValidFull.csv"));
+            string valid = "DataSetValidFull.csv";
+            string test = "DataSetTestingFull.csv";
+            reader = new System.IO.StreamReader(File.OpenRead(path + valid));
             line = reader.ReadLine();
             line = reader.ReadLine();
 

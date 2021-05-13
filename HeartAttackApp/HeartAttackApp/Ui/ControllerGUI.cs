@@ -11,13 +11,14 @@ namespace HeartAttackApp.Ui
 {
     public class ControllerGUI
     {
-        private Hospital miHospital;
+        public Hospital miHospital { get; private set; }
 
         public ControllerGUI()
         {
             miHospital = new Hospital();
         }
 
+       
         public List<Patient> patient()
         {
             return miHospital.classify();
@@ -26,6 +27,10 @@ namespace HeartAttackApp.Ui
         public void add(int idPatient, int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
             miHospital.add(idPatient, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
+        }
+        public void solve()
+        {
+            miHospital.resolve();
         }
         public void clear()
         {

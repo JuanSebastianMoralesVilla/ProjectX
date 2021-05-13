@@ -33,9 +33,9 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_new = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_load = new System.Windows.Forms.Button();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
             this.textBoxLoad2 = new System.Windows.Forms.TextBox();
+            this.btn_load = new System.Windows.Forms.Button();
             this.btn_solve = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -85,18 +85,6 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel2.Size = new System.Drawing.Size(266, 134);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // btn_load
-            // 
-            this.btn_load.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_load.Location = new System.Drawing.Point(3, 3);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(260, 46);
-            this.btn_load.TabIndex = 3;
-            this.btn_load.Text = "LOAD";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
-            // 
             // textBoxLoad1
             // 
             this.textBoxLoad1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -119,6 +107,18 @@ namespace HeartAttackApp.Ui
             this.textBoxLoad2.Size = new System.Drawing.Size(260, 20);
             this.textBoxLoad2.TabIndex = 16;
             // 
+            // btn_load
+            // 
+            this.btn_load.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_load.Location = new System.Drawing.Point(3, 3);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(260, 46);
+            this.btn_load.TabIndex = 3;
+            this.btn_load.Text = "LOAD";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
             // btn_solve
             // 
             this.btn_solve.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -131,6 +131,7 @@ namespace HeartAttackApp.Ui
             this.btn_solve.Text = "SOLVE";
             this.btn_solve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_solve.UseVisualStyleBackColor = false;
+            this.btn_solve.Click += new System.EventHandler(this.btn_solve_Click);
             // 
             // ButtonsOptions
             // 

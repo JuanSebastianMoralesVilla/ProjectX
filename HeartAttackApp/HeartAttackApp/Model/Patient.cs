@@ -79,7 +79,18 @@ namespace HeartAttackApp.Model
             int[] valuesInt = new int[values.Length];
             
             for (int i = 0; i < values.Length; i++) {
-                valuesInt[i] = int.Parse(values[i]);
+                if (i == 2)
+                {
+                    valuesInt[i] = values[i] == "F" ? 0 : 1;
+                }
+                else if (i == 10)
+                {
+                    valuesInt[i] = values[i] == "" ? -1 : int.Parse(values[i]);
+                }
+                else{
+                    valuesInt[i] = int.Parse(values[i]);
+                }
+                
             }
             return valuesInt[index];
         }
@@ -129,31 +140,7 @@ namespace HeartAttackApp.Model
             }
             return true;
         }
-        /*
-        public string[] toTrain()
-        {
-            string[] aux = toString().Split(' ');
-            string[] result = new string[aux.Length - 1];
-            for (int i = 1; i < aux.Length; i++)
-            {
-                result[i - 1] = aux[i];
-            }
-
-            return result;
-        }
-
-        public string[] toTest()
-        {
-            string[] aux = toString().Split(' ');
-            string[] result = new string[aux.Length - 1];
-            for (int i = 0; i < aux.Length; i++)
-            {
-                result[i] = aux[i];
-            }
-
-            return result;
-        }
-        */
+        
     }
 }
 

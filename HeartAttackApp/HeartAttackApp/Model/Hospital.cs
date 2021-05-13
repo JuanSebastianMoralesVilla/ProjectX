@@ -10,17 +10,18 @@ namespace HeartAttackApp.Model
 {
     public class Hospital
     {
-        public List<Patient> patients { get; set; }
+        public List<Patient> patients { get;private set; }
         private List<Patient> trainingSet { get; set; }
 
         public double accuracity;
+        public int advance;
         private DecisionTree decision { get; set; }
         private List<Patient> testingSet { get; set; }
-        public Hashtable Cuadro1 { get; set; }
-        public Hashtable Cuadro2 { get; set; }
-        public Hashtable Cuadro3 { get; set; }
-        public Hashtable Cuadro4 { get; set; }
-        public Hashtable Cuadro5 { get; set; }
+        public Hashtable Cuadro1 { get; private set; }
+        public Hashtable Cuadro2 { get; private set; }
+        public Hashtable Cuadro3 { get; private set; }
+        public Hashtable Cuadro4 { get; private set; }
+        public Hashtable Cuadro5 { get; private set; }
 
         public Hospital()
         {
@@ -362,7 +363,7 @@ namespace HeartAttackApp.Model
 
         private void files()
         {
-            string path = "D:/ICESI/Integrador I/ProjectX/Dataset/Datasets/";
+            string path = @"../../../../Dataset/Datasets/";
             var reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetTrainingFull.csv"));
             string line = reader.ReadLine();
             line = reader.ReadLine();
@@ -429,24 +430,32 @@ namespace HeartAttackApp.Model
             testingSet = new List<Patient>();
             decision = new DecisionTree();
             files();
+            advance = 1;
             double best = 0;
             int index = 0;
             for (int i = 2; i <= 9; i++)
             {
                 decision.depthLimit = i;
                 decision.training(trainingSet);
-                double result = decision.testing(testingSet);
+                double result = Math.Round(decision.testing(testingSet),2);
                 if (result > best)
                 {
                     best = result;
                     index = i;
                 }
-
+                advance = i;
                 Console.WriteLine("# " + i + " " + result);
             }
             decision.depthLimit = index;
             decision.training(trainingSet);
+            advance = 10;
             accuracity = best;
+        }
+
+        public void resolve()
+        {
+            decision.solve(patients);
+            Console.WriteLine("eoo");
         }
     }
 }

@@ -54,5 +54,12 @@ namespace HeartAttackApp.Ui
                 filterOptions.cb_filterSetVisible(true);
             }
         }
+
+
+        private void btn_solve_Click(object sender, EventArgs e)
+        {
+            controller.solve();
+            gridPatiens.loadGrid(controller.patient());
+        }
     }
 }

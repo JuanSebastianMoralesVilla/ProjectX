@@ -11,7 +11,9 @@ namespace HeartAttackApp.Ui
 {
     public class ControllerGUI
     {
+
         public Hospital miHospital { get; private set; }
+
 
         public ControllerGUI()
         {

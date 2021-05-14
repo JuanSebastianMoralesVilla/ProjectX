@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace HeartAttackApp.Ui
 {
-    public partial class Show_Chart : Form
+    public partial class ShowCharts : UserControl
     {
-        public Show_Chart(List<string[]> info1, List<string[]> info2, List<string[]> info3, List<string[]> info4, List<string[]> info5)
+        private Main main;
+        public ShowCharts()
         {
             InitializeComponent();
-
             chart1.Titles.Add("Amount of mans and womans that have a hight risk to get a heart attack");
             chart2.Titles.Add("patients that have an angina vs patients that not");
             chart3.Titles.Add("diferents ranges of ages");
@@ -27,7 +27,13 @@ namespace HeartAttackApp.Ui
             chart3.Series["s3"].IsValueShownAsLabel = true;
             chart4.Series["s4"].IsValueShownAsLabel = true;
             chart5.Series["s5"].IsValueShownAsLabel = true;
-            
+        }
+
+        public void initialize(List<string[]> info1, List<string[]> info2, List<string[]> info3, List<string[]> info4, List<string[]> info5,Main main)
+        {
+            this.main = main;
+
+
             /*
             chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;
             chart2.ChartAreas["ChartArea2"].AxisX.Interval = 1;
@@ -35,6 +41,11 @@ namespace HeartAttackApp.Ui
             chart4.ChartAreas["ChartArea4"].AxisX.Interval = 1;
             chart5.ChartAreas["ChartArea5"].AxisX.Interval = 1;
             */
+            chart1.Series["s1"].Points.Clear();
+            chart2.Series["s2"].Points.Clear();
+            chart3.Series["s3"].Points.Clear();
+            chart4.Series["s4"].Points.Clear();
+            chart5.Series["s5"].Points.Clear();
             C1(info1);
             C2(info2);
             C3(info3);
@@ -82,6 +93,9 @@ namespace HeartAttackApp.Ui
             }
         }
 
-
+        private void btn_backToMain_Click(object sender, EventArgs e)
+        {
+            main.loadMain();
+        }
     }
 }

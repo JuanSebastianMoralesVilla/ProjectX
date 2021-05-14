@@ -9,41 +9,39 @@ using System.IO;
 
 namespace HeartAttackApp.Ui
 {
-    class ControllerGUI
+    public class ControllerGUI
     {
-        //private string path;
 
-        private Hospital miHospital;
+        public Hospital miHospital { get; private set; }
 
-        //private AllPatients data;
-
-       
-
-
-        //  private const String path = @"..\..\..\ProjectX\Dataset\DataSetHeartAtack.xlsx";
-
-        private Add_pane addPane;
-
-        // List<String> listPatients; 
 
         public ControllerGUI()
         {
             miHospital = new Hospital();
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-            addPane = new Add_pane();
-            addPane.ShowDialog();
-        }
-
+       
         public List<Patient> patient()
         {
-            return miHospital.patients;
+            return miHospital.classify();
         }
-        private void loadFile(string fileName, string safeFileName)
+        
+        public void add(int idPatient, int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
-        }  
+            miHospital.add(idPatient, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
+        }
+        public void solve()
+        {
+            miHospital.resolve();
+        }
+        public void clear()
+        {
+            miHospital.clear();
+        }
+        public void training()
+        {
+            miHospital.training();
+        }
         public List<Patient> loadGrid(string path)
         {
             List<Patient> patients = new List<Patient>();
@@ -58,7 +56,7 @@ namespace HeartAttackApp.Ui
                     string[] array = line.Split(';');
                     int idPatient = int.Parse(array[0]);
                     int year = int.Parse(array[1]);
-                    string genre = (array[2]);
+                    int genre = int.Parse(array[2]);
                     int typePain = int.Parse(array[3]);
                     int bloodPressure = int.Parse(array[4]);
                     int cholesterol = int.Parse(array[5]);
@@ -81,6 +79,7 @@ namespace HeartAttackApp.Ui
             return patients;
         }
 
+        
         public List<Patient> search(int id)
         {
             List<Patient> patients = new List<Patient>();

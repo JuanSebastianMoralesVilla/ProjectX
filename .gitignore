@@ -1,2 +1,6 @@
-HeartAttackApp/HeartAttackApp/bin
-HeartAttackApp/HeartAttackApp/obj
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages

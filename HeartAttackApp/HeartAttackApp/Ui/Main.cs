@@ -79,5 +79,10 @@ namespace HeartAttackApp.Ui
             hvtask.Start();
             training();
         }
+
+        private void gridPatients1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

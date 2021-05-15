@@ -47,8 +47,8 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45977F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.54023F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
-            this.tableLayoutPanel1.Controls.Add(this.btn_new, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_new, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_solve, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -124,9 +124,9 @@ namespace HeartAttackApp.Ui
             this.btn_solve.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_solve.BackColor = System.Drawing.SystemColors.Window;
             this.btn_solve.Image = ((System.Drawing.Image)(resources.GetObject("btn_solve.Image")));
-            this.btn_solve.Location = new System.Drawing.Point(778, 10);
+            this.btn_solve.Location = new System.Drawing.Point(773, 3);
             this.btn_solve.Name = "btn_solve";
-            this.btn_solve.Size = new System.Drawing.Size(185, 120);
+            this.btn_solve.Size = new System.Drawing.Size(195, 134);
             this.btn_solve.TabIndex = 4;
             this.btn_solve.Text = "SOLVE";
             this.btn_solve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

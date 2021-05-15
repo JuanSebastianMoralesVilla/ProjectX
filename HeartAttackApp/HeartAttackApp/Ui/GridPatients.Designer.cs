@@ -46,7 +46,7 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btn_graphics, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_add, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btn_add, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(753, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -73,7 +73,7 @@ namespace HeartAttackApp.Ui
             this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
-            this.btn_add.Location = new System.Drawing.Point(27, 236);
+            this.btn_add.Location = new System.Drawing.Point(27, 160);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(185, 50);
             this.btn_add.TabIndex = 14;

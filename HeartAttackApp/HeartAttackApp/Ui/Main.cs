@@ -82,5 +82,10 @@ namespace HeartAttackApp.Ui
             hvtask.Start();
             training();
         }
+
+        private void buttonsOptions1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

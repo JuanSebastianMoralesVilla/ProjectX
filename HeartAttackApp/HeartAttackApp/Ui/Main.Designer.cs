@@ -29,6 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.gridPatients1 = new HeartAttackApp.Ui.GridPatients();
             this.buttonsOptions1 = new HeartAttackApp.Ui.ButtonsOptions();
             this.filterOptions1 = new HeartAttackApp.Ui.FilterOptions();
@@ -38,6 +39,7 @@ namespace HeartAttackApp.Ui
             // 
             // gridPatients1
             // 
+            this.gridPatients1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gridPatients1.BackgroundImage")));
             this.gridPatients1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridPatients1.Location = new System.Drawing.Point(0, 95);
             this.gridPatients1.Name = "gridPatients1";
@@ -47,12 +49,14 @@ namespace HeartAttackApp.Ui
             // 
             // buttonsOptions1
             // 
+            this.buttonsOptions1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonsOptions1.BackgroundImage")));
             this.buttonsOptions1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonsOptions1.Location = new System.Drawing.Point(0, 427);
             this.buttonsOptions1.Name = "buttonsOptions1";
             this.buttonsOptions1.Size = new System.Drawing.Size(995, 140);
             this.buttonsOptions1.TabIndex = 3;
             this.buttonsOptions1.Visible = false;
+            this.buttonsOptions1.Load += new System.EventHandler(this.buttonsOptions1_Load);
             // 
             // filterOptions1
             // 
@@ -73,6 +77,7 @@ namespace HeartAttackApp.Ui
             // 
             // showCharts1
             // 
+            this.showCharts1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("showCharts1.BackgroundImage")));
             this.showCharts1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showCharts1.Location = new System.Drawing.Point(0, 0);
             this.showCharts1.Name = "showCharts1";
@@ -89,6 +94,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.filterOptions1);
             this.Controls.Add(this.startApp1);
             this.Controls.Add(this.showCharts1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);

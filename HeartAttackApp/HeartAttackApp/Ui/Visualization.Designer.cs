@@ -29,6 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visualization));
             this.scroll_Vertical = new System.Windows.Forms.VScrollBar();
             this.ptb_TreeVisualitation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_TreeVisualitation)).BeginInit();
@@ -57,6 +58,7 @@ namespace HeartAttackApp.Ui
             this.ClientSize = new System.Drawing.Size(1064, 681);
             this.Controls.Add(this.ptb_TreeVisualitation);
             this.Controls.Add(this.scroll_Vertical);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Visualization";
             this.Text = "Visualization";
             this.Load += new System.EventHandler(this.Visualization_Load);

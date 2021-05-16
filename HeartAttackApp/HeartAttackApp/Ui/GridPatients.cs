@@ -24,7 +24,6 @@ namespace HeartAttackApp.Ui
         {
             this.main = main;
             this.controller = controller;
-            btn_add.Enabled = false;
         }
 
         private void btn_graphics_Click(object sender, EventArgs e)
@@ -44,11 +43,6 @@ namespace HeartAttackApp.Ui
         public void newClick()
         {
             grid_data.DataSource = new List<Patient>();
-        }
-
-        public void enablebuttonadd() {
-
-            btn_add.Enabled = true;
         }
     }
 }

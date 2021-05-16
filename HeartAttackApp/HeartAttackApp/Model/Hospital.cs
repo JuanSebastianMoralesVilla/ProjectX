@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HeartAttackApp.Model
 {
@@ -24,12 +23,8 @@ namespace HeartAttackApp.Model
         public Hashtable Cuadro4 { get; private set; }
         public Hashtable Cuadro5 { get; private set; }
 
-        public PictureBox ptb;
-        private Visualization visualization;
-        public Hospital(PictureBox ptb)
+        public Hospital()
         {
-            this.ptb = ptb;
-            visualization = new Visualization(ptb);
             patients = new List<Patient>();
             Cuadro1 = new Hashtable();
             Cuadro2 = new Hashtable();
@@ -174,6 +169,7 @@ namespace HeartAttackApp.Model
             return result;
         }
 
+
         public void AddRecordToHashTables(Patient Pat)
         {
             int[] arrayForAverage = { 0, 0 };
@@ -297,6 +293,7 @@ namespace HeartAttackApp.Model
                 Cuadro5.Add(colesterol, 1);
             }
         }
+
 
         public List<string[]> Cuadro1Conversor()
         {
@@ -427,12 +424,6 @@ namespace HeartAttackApp.Model
             }
         }
 
-        public void visualize()
-        {
-            decision.visualize(visualization);
-            visualization.visualize();
-        }
-
         public void training()
         {
             trainingSet = new List<Patient>();
@@ -464,6 +455,7 @@ namespace HeartAttackApp.Model
         public void resolve()
         {
             decision.solve(patients);
+            Console.WriteLine("eoo");
         }
     }
 }

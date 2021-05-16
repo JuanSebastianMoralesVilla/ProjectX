@@ -48,8 +48,9 @@ namespace HeartAttackApp.Model
             {
                 patient = new Patient(idPatient, age, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
                 patients.Add(patient);
+                AddRecordToHashTables(patient);
             }
-            AddRecordToHashTables(patient);
+            
         }
 
         public void clear()

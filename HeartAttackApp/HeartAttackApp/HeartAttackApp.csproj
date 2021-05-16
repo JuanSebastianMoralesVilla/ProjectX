@@ -158,9 +158,6 @@
     <None Include="Resources\Entrance2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Main 2 image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fondo 3.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +165,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verde menta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main 2 image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image Sala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informe medico %2864px%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

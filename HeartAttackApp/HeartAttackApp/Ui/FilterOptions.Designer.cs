@@ -44,6 +44,7 @@ namespace HeartAttackApp.Ui
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.panel1.Controls.Add(this.tb_cadena);
             this.panel1.Controls.Add(this.cb_choose);
             this.panel1.Controls.Add(this.tb_lower);
@@ -113,6 +114,7 @@ namespace HeartAttackApp.Ui
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.43094F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.56906F));

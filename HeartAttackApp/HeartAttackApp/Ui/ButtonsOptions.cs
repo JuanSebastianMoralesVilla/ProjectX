@@ -25,6 +25,8 @@ namespace HeartAttackApp.Ui
             this.gridPatiens = gridPatiens;
             file = new OpenFileDialog();
             this.filterOptions = filterOptions;
+            btn_solve.Enabled = false;
+            btn_new.Enabled = false;
         }
         public ButtonsOptions()
         {
@@ -36,6 +38,9 @@ namespace HeartAttackApp.Ui
             gridPatiens.newClick();
             filterOptions.clear();
             controller.clear();
+            textBoxLoad1.Clear();
+            textBoxLoad2.Clear();
+
         }
 
         private void btn_load_Click(object sender, EventArgs e)
@@ -52,6 +57,10 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(patients.Count);
                 gridPatiens.loadGrid(patients);
                 filterOptions.cb_filterSetVisible(true);
+                gridPatiens.enablebuttonadd();
+                btn_solve.Enabled = true;
+                 btn_new.Enabled = true;
+
             }
         }
 

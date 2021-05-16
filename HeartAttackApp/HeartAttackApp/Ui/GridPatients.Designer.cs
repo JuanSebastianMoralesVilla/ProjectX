@@ -29,24 +29,46 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GridPatients));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.grid_data = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_graphics = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.grid_data = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
+            this.panel1.Controls.Add(this.grid_data);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(747, 320);
+            this.panel1.TabIndex = 1;
+            // 
+            // grid_data
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grid_data.Location = new System.Drawing.Point(3, 3);
+            this.grid_data.Name = "grid_data";
+            this.grid_data.Size = new System.Drawing.Size(744, 314);
+            this.grid_data.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btn_graphics, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_add, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btn_add, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(753, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -73,44 +95,25 @@ namespace HeartAttackApp.Ui
             this.btn_add.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
-            this.btn_add.Location = new System.Drawing.Point(27, 236);
+            this.btn_add.Location = new System.Drawing.Point(27, 160);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(185, 50);
             this.btn_add.TabIndex = 14;
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.grid_data);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 320);
-            this.panel1.TabIndex = 1;
-            // 
-            // grid_data
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grid_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.grid_data.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.grid_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_data.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grid_data.Location = new System.Drawing.Point(3, 3);
-            this.grid_data.Name = "grid_data";
-            this.grid_data.Size = new System.Drawing.Size(744, 314);
-            this.grid_data.TabIndex = 1;
-            // 
             // GridPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "GridPatients";
             this.Size = new System.Drawing.Size(995, 320);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

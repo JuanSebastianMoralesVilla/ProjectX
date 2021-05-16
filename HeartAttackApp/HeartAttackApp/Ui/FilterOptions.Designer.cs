@@ -47,14 +47,15 @@ namespace HeartAttackApp.Ui
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.panel1.Controls.Add(this.tb_cadena);
             this.panel1.Controls.Add(this.cb_choose);
             this.panel1.Controls.Add(this.tb_lower);
             this.panel1.Controls.Add(this.tb_higger);
             this.panel1.Controls.Add(this.txt_to);
-            this.panel1.Location = new System.Drawing.Point(3, 62);
+            this.panel1.Location = new System.Drawing.Point(3, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 30);
+            this.panel1.Size = new System.Drawing.Size(181, 25);
             this.panel1.TabIndex = 0;
             // 
             // tb_cadena
@@ -106,7 +107,7 @@ namespace HeartAttackApp.Ui
             this.cb_filter.FormattingEnabled = true;
             this.cb_filter.Items.AddRange(new object[] {
             "Show all"});
-            this.cb_filter.Location = new System.Drawing.Point(3, 7);
+            this.cb_filter.Location = new System.Drawing.Point(3, 9);
             this.cb_filter.Name = "cb_filter";
             this.cb_filter.Size = new System.Drawing.Size(162, 21);
             this.cb_filter.TabIndex = 16;
@@ -116,10 +117,20 @@ namespace HeartAttackApp.Ui
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.43094F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.56906F));
+
+            /*
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.61456F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.38544F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
+            */
+
+          
+            
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btn_search, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cb_filter, 0, 0);
@@ -129,17 +140,21 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.85714F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.14286F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.5625F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.4375F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 95);
             this.tableLayoutPanel1.TabIndex = 1;
+            
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(230, 34);
+
+           // this.btn_search.Location = new System.Drawing.Point(230, 34);
+            this.btn_search.Location = new System.Drawing.Point(226, 36);
+
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(75, 22);
+            this.btn_search.Size = new System.Drawing.Size(161, 22);
             this.btn_search.TabIndex = 17;
             this.btn_search.Text = "search";
             this.btn_search.UseVisualStyleBackColor = true;

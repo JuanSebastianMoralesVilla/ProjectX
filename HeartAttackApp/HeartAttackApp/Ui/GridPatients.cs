@@ -44,6 +44,7 @@ namespace HeartAttackApp.Ui
         public void newClick()
         {
             grid_data.DataSource = new List<Patient>();
+            addPane.SetId(304);
         }
     }
 }

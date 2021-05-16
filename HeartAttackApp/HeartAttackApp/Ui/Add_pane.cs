@@ -97,5 +97,10 @@ namespace HeartAttackApp.Ui
         {
             txt_ID.Text = id+ "";
         }
+
+        public void SetId(int n)
+        {
+            id = n;
+        }
     }
 }

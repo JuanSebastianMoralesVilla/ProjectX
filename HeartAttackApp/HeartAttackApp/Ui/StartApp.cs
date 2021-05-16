@@ -27,10 +27,5 @@ namespace HeartAttackApp.Ui
         {
             pb_starting.Value = advance;
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

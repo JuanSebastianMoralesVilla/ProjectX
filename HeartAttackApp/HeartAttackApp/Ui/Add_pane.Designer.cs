@@ -43,13 +43,15 @@ namespace HeartAttackApp.Ui
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btn_add = new System.Windows.Forms.Button();
             this.cb_bloodSugar = new System.Windows.Forms.ComboBox();
-            this.txt_electroCardio = new System.Windows.Forms.TextBox();
             this.txt_maxHeart = new System.Windows.Forms.TextBox();
             this.cb_angina = new System.Windows.Forms.ComboBox();
             this.txt_ID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbResultElectro = new System.Windows.Forms.ComboBox();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,6 +66,7 @@ namespace HeartAttackApp.Ui
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(25, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
@@ -88,7 +91,6 @@ namespace HeartAttackApp.Ui
             this.txt_age.Size = new System.Drawing.Size(100, 20);
             this.txt_age.TabIndex = 3;
             this.txt_age.Tag = "";
-            this.txt_age.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_bloodPressure
             // 
@@ -108,6 +110,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_sex
             // 
+            this.cb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_sex.FormattingEnabled = true;
             this.cb_sex.Items.AddRange(new object[] {
             "0: F",
@@ -119,6 +122,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_painType
             // 
+            this.cb_painType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_painType.FormattingEnabled = true;
             this.cb_painType.Items.AddRange(new object[] {
             "0: angina típica",
@@ -135,9 +139,10 @@ namespace HeartAttackApp.Ui
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(25, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 13);
+            this.label5.Size = new System.Drawing.Size(215, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "cholestoral in mg/dl fetched via BMI sensor:";
+            this.label5.Text = "Cholestoral in mg/dl fetched via BMI sensor:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txt_colesterol
             // 
@@ -160,40 +165,32 @@ namespace HeartAttackApp.Ui
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(25, 283);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 13);
+            this.label7.Size = new System.Drawing.Size(178, 13);
             this.label7.TabIndex = 12;
-            this.label7.Text = "resting electrocardiographic results:";
+            this.label7.Text = "Resting electrocardiographic results:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(25, 318);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 13);
+            this.label9.Size = new System.Drawing.Size(149, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "maximum heart rate achieved:";
+            this.label9.Text = "Maximum heart rate achieved:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(25, 353);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 13);
+            this.label10.Size = new System.Drawing.Size(126, 13);
             this.label10.TabIndex = 15;
-            this.label10.Text = "exercise induced angina:";
-            // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(150, 401);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_add.TabIndex = 16;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.label10.Text = "Exercise induced angina:";
             // 
             // cb_bloodSugar
             // 
+            this.cb_bloodSugar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_bloodSugar.FormattingEnabled = true;
             this.cb_bloodSugar.Items.AddRange(new object[] {
             "0: False",
@@ -202,13 +199,6 @@ namespace HeartAttackApp.Ui
             this.cb_bloodSugar.Name = "cb_bloodSugar";
             this.cb_bloodSugar.Size = new System.Drawing.Size(100, 21);
             this.cb_bloodSugar.TabIndex = 17;
-            // 
-            // txt_electroCardio
-            // 
-            this.txt_electroCardio.Location = new System.Drawing.Point(263, 280);
-            this.txt_electroCardio.Name = "txt_electroCardio";
-            this.txt_electroCardio.Size = new System.Drawing.Size(100, 20);
-            this.txt_electroCardio.TabIndex = 18;
             // 
             // txt_maxHeart
             // 
@@ -219,6 +209,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_angina
             // 
+            this.cb_angina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_angina.FormattingEnabled = true;
             this.cb_angina.Items.AddRange(new object[] {
             "0: False",
@@ -237,27 +228,59 @@ namespace HeartAttackApp.Ui
             this.txt_ID.Size = new System.Drawing.Size(100, 20);
             this.txt_ID.TabIndex = 22;
             this.txt_ID.Tag = "";
-            this.txt_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Location = new System.Drawing.Point(25, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 21;
             this.label8.Text = "ID:";
             // 
+            // cbResultElectro
+            // 
+            this.cbResultElectro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbResultElectro.FormattingEnabled = true;
+            this.cbResultElectro.Items.AddRange(new object[] {
+            "0 normal",
+            "1 Tiene una anomalia de la onda ST\'T",
+            "2 Muestra Hipertrofia venticular"});
+            this.cbResultElectro.Location = new System.Drawing.Point(263, 275);
+            this.cbResultElectro.Name = "cbResultElectro";
+            this.cbResultElectro.Size = new System.Drawing.Size(100, 21);
+            this.cbResultElectro.TabIndex = 23;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(150, 401);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 16;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HeartAttackApp.Properties.Resources.fondo_3;
+            this.pictureBox1.Location = new System.Drawing.Point(-88, -19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(798, 497);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // Add_pane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 450);
+            this.Controls.Add(this.cbResultElectro);
             this.Controls.Add(this.txt_ID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cb_angina);
             this.Controls.Add(this.txt_maxHeart);
-            this.Controls.Add(this.txt_electroCardio);
             this.Controls.Add(this.cb_bloodSugar);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label10);
@@ -274,8 +297,11 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Add_pane";
             this.Text = "Add_pane";
+            this.Load += new System.EventHandler(this.Add_pane_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,10 +325,11 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.ComboBox cb_bloodSugar;
-        private System.Windows.Forms.TextBox txt_electroCardio;
         private System.Windows.Forms.TextBox txt_maxHeart;
         private System.Windows.Forms.ComboBox cb_angina;
         private System.Windows.Forms.TextBox txt_ID;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbResultElectro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

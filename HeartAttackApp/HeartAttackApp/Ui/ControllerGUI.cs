@@ -45,6 +45,7 @@ namespace HeartAttackApp.Ui
         }
         public List<Patient> loadGrid(string path)
         {
+
             List<Patient> patients = new List<Patient>();
             try
             {
@@ -78,6 +79,7 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(exception1.Message);
             }
             return patients;
+           
         }
 
         

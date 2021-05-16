@@ -119,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ui\Add_pane.resx">
       <DependentUpon>Add_pane.cs</DependentUpon>
@@ -159,5 +160,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Recourses\addUser.png" />
+    <None Include="Recourses\atras.png" />
+    <None Include="Recourses\Entrance.jpg" />
+    <None Include="Recourses\Entrance1.jpg" />
+    <None Include="Recourses\Entrance2.jpg" />
+    <None Include="Recourses\fondo 3.jpg" />
+    <None Include="Recourses\Image Sala.jpg" />
+    <None Include="Recourses\informe medico %2864px%29.png" />
+    <None Include="Recourses\Main 2 image.jpg" />
+    <None Include="Recourses\plus %281%29.png" />
+    <None Include="Recourses\verde menta.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

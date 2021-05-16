@@ -24,6 +24,7 @@ namespace HeartAttackApp.Ui
         {
             this.main = main;
             this.controller = controller;
+            addPane = new Add_pane(controller, this);
         }
 
         private void btn_graphics_Click(object sender, EventArgs e)
@@ -33,11 +34,11 @@ namespace HeartAttackApp.Ui
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            addPane = new Add_pane(controller,this);
             addPane.ShowDialog();
         }
         public void loadGrid(List<Patient> patients)
         {
+            grid_data.DataSource = null;
             grid_data.DataSource = patients;
         }
         public void newClick()

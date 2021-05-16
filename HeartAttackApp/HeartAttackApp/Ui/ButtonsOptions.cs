@@ -48,7 +48,8 @@ namespace HeartAttackApp.Ui
                 string path = file.FileName;
                 textBoxLoad2.Text = file.SafeFileName;
                 MessageBox.Show("Datos cargados correctamente.");
-                patients = controller.loadGrid(path);
+                controller.loadGrid(path);
+                patients = controller.patient();
                 Console.WriteLine(patients.Count);
                 gridPatiens.loadGrid(patients);
                 filterOptions.cb_filterSetVisible(true);
@@ -59,6 +60,8 @@ namespace HeartAttackApp.Ui
         private void btn_solve_Click(object sender, EventArgs e)
         {
             controller.solve();
+            filterOptions.clear();
+            filterOptions.cb_filterSetVisible(true);
             gridPatiens.loadGrid(controller.patient());
         }
     }

@@ -49,6 +49,9 @@ namespace HeartAttackApp.Ui
             btn_search.Visible = false;
             cb_filter.SelectedIndex = 0;
             cb_choose.Items.Clear();
+            tb_cadena.Clear();
+            tb_higger.Clear();
+            tb_lower.Clear();
             cb_choose.SelectedItem = "";
         }
         
@@ -147,14 +150,22 @@ namespace HeartAttackApp.Ui
 
         private void cb_filter_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            
             string selected = cb_filter.SelectedItem.ToString();
             cb_choose.Visible = false;
             txt_to.Visible = false;
             tb_higger.Visible = false;
             tb_lower.Visible = false;
             tb_cadena.Visible = false;
+            btn_search.Visible = false;
+            cb_choose.SelectedItem ="";
+            cb_choose.SelectedIndex = -1;
             cb_choose.Items.Clear();
-            if (!cb_filter.SelectedIndex.Equals(0))
+            tb_cadena.Clear();
+            tb_higger.Clear();
+            tb_lower.Clear();
+
+            if (!cb_filter.SelectedIndex.Equals(-1))
             {
                 string[] valuesC = Patient.cadenaValues();
                 string[] valuesN = Patient.numericValues();

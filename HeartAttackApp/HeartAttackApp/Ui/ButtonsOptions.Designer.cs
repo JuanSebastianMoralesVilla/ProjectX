@@ -43,6 +43,7 @@ namespace HeartAttackApp.Ui
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45977F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.54023F));
@@ -70,6 +71,7 @@ namespace HeartAttackApp.Ui
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxLoad1, 0, 2);
@@ -137,6 +139,7 @@ namespace HeartAttackApp.Ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ButtonsOptions";
             this.Size = new System.Drawing.Size(995, 140);

@@ -31,11 +31,11 @@ namespace HeartAttackApp.Ui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonsOptions));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_new = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
             this.textBoxLoad2 = new System.Windows.Forms.TextBox();
             this.btn_load = new System.Windows.Forms.Button();
+            this.btn_new = new System.Windows.Forms.Button();
             this.btn_solve = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -56,17 +56,6 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 140);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // btn_new
-            // 
-            this.btn_new.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_new.Location = new System.Drawing.Point(83, 3);
-            this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(137, 46);
-            this.btn_new.TabIndex = 2;
-            this.btn_new.Text = "NEW";
-            this.btn_new.UseVisualStyleBackColor = true;
-            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -119,6 +108,17 @@ namespace HeartAttackApp.Ui
             this.btn_load.UseVisualStyleBackColor = true;
             this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
+            // btn_new
+            // 
+            this.btn_new.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_new.Location = new System.Drawing.Point(83, 3);
+            this.btn_new.Name = "btn_new";
+            this.btn_new.Size = new System.Drawing.Size(137, 46);
+            this.btn_new.TabIndex = 2;
+            this.btn_new.Text = "NEW";
+            this.btn_new.UseVisualStyleBackColor = true;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
+            // 
             // btn_solve
             // 
             this.btn_solve.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -129,7 +129,7 @@ namespace HeartAttackApp.Ui
             this.btn_solve.Size = new System.Drawing.Size(195, 134);
             this.btn_solve.TabIndex = 4;
             this.btn_solve.Text = "SOLVE";
-            this.btn_solve.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_solve.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_solve.UseVisualStyleBackColor = false;
             this.btn_solve.Click += new System.EventHandler(this.btn_solve_Click);
             // 

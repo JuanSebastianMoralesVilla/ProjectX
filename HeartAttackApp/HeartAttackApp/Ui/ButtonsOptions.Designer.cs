@@ -29,7 +29,6 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ButtonsOptions));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxLoad1 = new System.Windows.Forms.TextBox();
@@ -48,9 +47,9 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45977F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.54023F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_new, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_solve, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -60,13 +59,14 @@ namespace HeartAttackApp.Ui
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxLoad1, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBoxLoad2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btn_load, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(301, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(384, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.90476F));
@@ -125,10 +125,10 @@ namespace HeartAttackApp.Ui
             // 
             this.btn_solve.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_solve.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_solve.Image = ((System.Drawing.Image)(resources.GetObject("btn_solve.Image")));
-            this.btn_solve.Location = new System.Drawing.Point(767, 3);
+            this.btn_solve.Image = global::HeartAttackApp.Properties.Resources.informe_medico__64px_;
+            this.btn_solve.Location = new System.Drawing.Point(814, 20);
             this.btn_solve.Name = "btn_solve";
-            this.btn_solve.Size = new System.Drawing.Size(195, 134);
+            this.btn_solve.Size = new System.Drawing.Size(100, 100);
             this.btn_solve.TabIndex = 4;
             this.btn_solve.Text = "SOLVE";
             this.btn_solve.TextAlign = System.Drawing.ContentAlignment.TopCenter;

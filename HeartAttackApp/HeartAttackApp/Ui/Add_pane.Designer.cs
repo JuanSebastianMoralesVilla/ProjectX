@@ -110,6 +110,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_sex
             // 
+            this.cb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_sex.FormattingEnabled = true;
             this.cb_sex.Items.AddRange(new object[] {
             "0: F",
@@ -121,6 +122,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_painType
             // 
+            this.cb_painType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_painType.FormattingEnabled = true;
             this.cb_painType.Items.AddRange(new object[] {
             "0: angina típica",
@@ -188,6 +190,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_bloodSugar
             // 
+            this.cb_bloodSugar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_bloodSugar.FormattingEnabled = true;
             this.cb_bloodSugar.Items.AddRange(new object[] {
             "0: False",
@@ -206,6 +209,7 @@ namespace HeartAttackApp.Ui
             // 
             // cb_angina
             // 
+            this.cb_angina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_angina.FormattingEnabled = true;
             this.cb_angina.Items.AddRange(new object[] {
             "0: False",
@@ -237,6 +241,7 @@ namespace HeartAttackApp.Ui
             // 
             // cbResultElectro
             // 
+            this.cbResultElectro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbResultElectro.FormattingEnabled = true;
             this.cbResultElectro.Items.AddRange(new object[] {
             "0 normal",

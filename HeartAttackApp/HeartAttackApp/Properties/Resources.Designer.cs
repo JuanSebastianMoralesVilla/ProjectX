@@ -133,6 +133,16 @@ namespace HeartAttackApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap informe_medico__64px_ {
+            get {
+                object obj = ResourceManager.GetObject("informe medico (64px)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Main_2_image {
             get {
                 object obj = ResourceManager.GetObject("Main 2 image", resourceCulture);

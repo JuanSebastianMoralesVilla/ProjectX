@@ -178,5 +178,8 @@
   <ItemGroup>
     <None Include="Resources\atras.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informe medico %2864px%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

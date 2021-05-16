@@ -53,7 +53,7 @@ namespace HeartAttackApp.Ui
                 int heartRate = int.Parse(txt_maxHeart.Text);
                 int angina = cb_angina.SelectedIndex;
 
-                if (age < 18 || age >= 130 || bloodPressure <= 30 || bloodPressure >= 260 || cholesterol <= 30 || cholesterol >= 350 || heartRate <= 60 || heartRate >= 280 ||
+                if (age < 18 || age >= 130 || bloodPressure <= 30 || bloodPressure >= 260 || cholesterol <= 30 || cholesterol >= 700 || heartRate <= 60 || heartRate >= 280 ||
                     sex == -1 || typePain == -1 || bloodSugar == -1|| electro== -1 || angina == -1)
                 {
                     throw new FormatException();

@@ -293,7 +293,7 @@ namespace HeartAttackApp.Ui
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 13);
             this.label13.TabIndex = 26;
-            this.label13.Text = "30< value < 350";
+            this.label13.Text = "30< value < 700";
             // 
             // label14
             // 

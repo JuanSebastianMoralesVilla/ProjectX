@@ -15,20 +15,25 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         private GridPatients gridPatients;
-        
+        private Visualization visualization;
         public FilterOptions()
         {
             InitializeComponent();
         }
 
-        public void inicialize(ControllerGUI controller, GridPatients gridPatients)
+        public void inicialize(ControllerGUI controller, GridPatients gridPatients,Visualization visualization)
         {
             string[] values = Patient.matrixE();
             cb_filter.Items.AddRange(values);
             this.controller = controller;
             this.gridPatients = gridPatients;
+            this.visualization = visualization;
+           
         }
-
+        public void setAccuracy()
+        {
+            txt_accuracy.Text = controller.miHospital.accuracity * 100 + "%";
+        }
         public void cb_filterSetVisible(bool visible)
         {
             cb_filter.Visible = visible;
@@ -176,6 +181,11 @@ namespace HeartAttackApp.Ui
                 }
                 btn_search.Visible = true;
             }
+        }
+
+        private void btn_showDecisionTree_Click(object sender, EventArgs e)
+        {
+            visualization.ShowDialog();
         }
     }
 }

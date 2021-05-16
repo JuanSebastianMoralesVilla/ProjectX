@@ -49,9 +49,13 @@ D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAtta
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.ShowCharts.resources
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main.resources
 D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csprojAssemblyReference.cache
+<<<<<<< HEAD
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Visualization.resources
+=======
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.ButtonsOptions.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.FilterOptions.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.GridPatients.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.ShowCharts.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.StartApp.resources
+>>>>>>> c5209b2fe8b448ea7c57b6f9b7221328da8cd78c

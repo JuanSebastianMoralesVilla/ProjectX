@@ -44,7 +44,6 @@ namespace HeartAttackApp.Ui
             this.gridPatients1.Size = new System.Drawing.Size(995, 332);
             this.gridPatients1.TabIndex = 2;
             this.gridPatients1.Visible = false;
-            this.gridPatients1.Load += new System.EventHandler(this.gridPatients1_Load);
             // 
             // buttonsOptions1
             // 

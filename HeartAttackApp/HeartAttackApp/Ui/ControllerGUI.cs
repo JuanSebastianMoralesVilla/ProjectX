@@ -15,9 +15,9 @@ namespace HeartAttackApp.Ui
         public Hospital miHospital { get; private set; }
 
 
-        public ControllerGUI()
+        public ControllerGUI(PictureBox ptb)
         {
-            miHospital = new Hospital();
+            miHospital = new Hospital(ptb);
         }
 
        
@@ -41,6 +41,7 @@ namespace HeartAttackApp.Ui
         public void training()
         {
             miHospital.training();
+            miHospital.visualize();
         }
         public List<Patient> loadGrid(string path)
         {

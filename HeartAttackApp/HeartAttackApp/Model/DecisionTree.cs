@@ -13,6 +13,7 @@ namespace HeartAttackApp.Model
         private DecisionTree[] childrenNode;
         private List<Patient> trainingSet;
         private int column;
+        private double mainEntropy;
         private int splitBloodPressure;
         private int splitCholesterol;
         private int splitHeartRate;
@@ -38,7 +39,7 @@ namespace HeartAttackApp.Model
             bool haveAtributes = false;
             for (int i = 1; i <= 9 && haveAtributes==false && trainingSet.Count>0 && depth<=depthLimit; i++)
             {
-                if (trainingSet.ElementAt(0).get(i) != -1)
+                if (trainingSet.ElementAt(0).get(i) != -1 )
                 {
                     haveAtributes = true;
                 }
@@ -46,8 +47,7 @@ namespace HeartAttackApp.Model
             
             if (haveAtributes)
             {
-                double mainEntropy = entropy();
-
+                mainEntropy = entropy();
                 if (mainEntropy == 0)
                 {
                     asnswer = trainingSet.ElementAt(0).result;
@@ -136,9 +136,14 @@ namespace HeartAttackApp.Model
                         {
                             values[j] = patient.get(j);
                         }
+                        
                         values[column] = -1;
                         Patient newPatient = new Patient(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10]);
                         all[value].Add(newPatient);
+                    }
+                    if (column == 2)
+                    {
+
                     }
                     for (int i = 0; i < childrenNode.Length; i++)
                     {
@@ -411,6 +416,137 @@ namespace HeartAttackApp.Model
             return correct / total;
         }
 
+        public void visualize(Visualization visualization)
+        {
+            visualization.insert(creadeTree());
+        }
+
+        public Node creadeTree()
+        {
+            Node node = new Node();
+            node.entropy = Math.Round(mainEntropy,2);
+            node.value = column;
+            node.height = 1;
+            node.nodes = new Node[childrenNode.Length];
+            createTree(node, this);
+            return node;
+        }
+         private void createTree(Node currentNode, DecisionTree currentDecision)
+        {
+            if (currentDecision.childrenNode != null)
+            {
+                for (int i = 0; i < currentDecision.childrenNode.Length; i++)
+                {
+                    int distX = 2 * Visualization.SIZE + 10 * currentDecision.childrenNode.Length;
+                    currentNode.distX = distX;
+                    Node node = new Node();
+                    if (currentDecision.childrenNode[i].childrenNode != null){
+                        node.nodes = new Node[currentDecision.childrenNode[i].childrenNode.Length];
+                    }
+                    else
+                    {
+                        node.answer = currentDecision.childrenNode[i].asnswer;
+                    }
+                    node.parent = currentNode;
+                    node.value = currentDecision.childrenNode[i].column;
+                    node.entropy = Math.Round(currentDecision.childrenNode[i].mainEntropy,2);
+                    if(node.value != column)
+                    {
+                        defineMessage(node, i, currentDecision.childrenNode[i]);
+                    }
+                    node.height = currentNode.height +1;
+                    currentNode.nodes[i] = node;
+                    node.posY = currentNode.posY + Visualization.DIST_Y;
+                    createTree(node, currentDecision.childrenNode[i]);
+                }
+            }
+        }
+
+        private void defineMessage(Node node,int number,DecisionTree decisionTree)
+        {
+            string value = "";
+            switch (node.parent.value)
+            {
+                case 1:
+                    if (number == 0)
+                    {
+                        value = "Age < 30";
+                    }else if( number == 1)
+                    {
+                        value = "Age < 60";
+                    }else
+                    {
+                        value = "Age >= 60";
+                    }
+                    break;
+                case 2:
+                    if(number == 0)
+                    {
+                        value = "F";
+                    }
+                    else
+                    {
+                        value = "M";
+                    }
+                    break;
+                case 3:
+                    value =  "Type " + number;
+                    break;
+                case 4:
+                    if (number == 0)
+                    {
+                        value = "Blood pressure < "+decisionTree.splitBloodPressure;
+                    }else
+                    {
+                        value = "Blood Pressure >= " + decisionTree.splitBloodPressure;
+                    }
+                    break;
+                case 5:
+                    if(number == 0)
+                    {
+                        value = "Cholesterol < " + decisionTree.splitCholesterol;
+                    }
+                    else
+                    {
+                        value = "Cholesterol >= " + decisionTree.splitCholesterol;
+                    }
+                    break;
+                case 6:
+                    if(number == 0)
+                    {
+                        value = "Level sugar < 120 mg/dl";
+                    }
+                    else
+                    {
+                        value = "Level sugar >= 120 mg/dl";
+                    }
+                    break;
+                case 7:
+                    if (number == 0)
+                    {
+                        value = "NO";
+                    }
+                    else
+                    {
+                        value = "YES";
+                    }
+                    break;
+                case 8:
+                    value = "Value " + number;
+                    break;
+                case 9:
+                    if (number == 0)
+                    {
+                        value = "Heart rate max < " + decisionTree.splitHeartRate;
+                    }
+                    else
+                    {
+                        value = "Heart rate max >= " + decisionTree.splitHeartRate;
+                    }
+                    break;
+            }
+            node.message = value;
+        }
         public List<Patient> solve(List<Patient> patients)
         {
             foreach (Patient patient in patients)

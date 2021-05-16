@@ -16,16 +16,18 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         public bool stop;
+        private Visualization visualizationPane;
         public Main()
         {
             stop = false;
             InitializeComponent();
-            controller = new ControllerGUI();
+            visualizationPane = new Visualization();
+            controller = new ControllerGUI(visualizationPane.getPtb());
             startApp1.initialize(this);
             gridPatients1.initialize(controller,this);
-            filterOptions1.inicialize(controller, gridPatients1);
+            filterOptions1.inicialize(controller, gridPatients1,visualizationPane);
             buttonsOptions1.inicialize(controller, gridPatients1, filterOptions1);
-            
+            visualizationPane.initialize(controller);
         }
         
         public void training()
@@ -42,6 +44,7 @@ namespace HeartAttackApp.Ui
             {
                 stop = true;
                 loadMain();
+                filterOptions1.setAccuracy();
             }
         }
         public void loadMain()

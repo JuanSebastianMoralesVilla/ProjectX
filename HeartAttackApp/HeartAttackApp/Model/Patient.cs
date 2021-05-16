@@ -12,12 +12,12 @@ namespace HeartAttackApp.Model
         public const string ID = "idPatient";
         public const string AGE = "age";
         public const string SEX = "sex";
-        public const string TYPE_PAIN = "typePain";
+        public const string TYPE_PAIN = "type Pain";
         public const string BLOOD_PRESSURE = "blood pressure";
         public const string CHOLESTEROL = "cholesterol";
-        public const string LEVEL_SUGAR = "level of sugar";
+        public const string LEVEL_SUGAR = "level sugar";
         public const string ANGINA = "angina";
-        public const string RESULT_ELECTRO = "electrocardiographic results";
+        public const string RESULT_ELECTRO = "electro results";
         public const string HEART_RATE = "heart rate";
         //  public const string RESULT = "result";
 
@@ -47,7 +47,7 @@ namespace HeartAttackApp.Model
         {
             this.id = id;
             this.age = age;
-            this.sex = sex == 0 ? "F" : "M";
+            this.sex = sex == 0 ? "F" : sex == 1?"M":null;
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
@@ -62,7 +62,7 @@ namespace HeartAttackApp.Model
         {
             this.id = id;
             this.age = age;
-            this.sex = sex==0?"F": "M";
+            this.sex = sex == 0 ? "F" : sex == 1 ? "M" : null;
             this.typePain = typePain;
             this.bloodPressure = bloodPressure;
             this.cholesterol = cholesterol;
@@ -81,7 +81,7 @@ namespace HeartAttackApp.Model
             for (int i = 0; i < values.Length; i++) {
                 if (i == 2)
                 {
-                    valuesInt[i] = values[i] == "F" ? 0 : 1;
+                    valuesInt[i] = values[i] == "F" ? 0 : values[i] == "M"? 1:-1;
                 }
                 else if (i == 10)
                 {
@@ -95,6 +95,18 @@ namespace HeartAttackApp.Model
             return valuesInt[index];
         }
 
+        public static string getNamesColums(int index)
+        {
+            string[] matrix = matrixE();
+            matrix = matrix[index].Split(' ');
+            string result = "";
+            for(int i= 0; i < matrix.Length; i++)
+            {
+                
+                result += matrix[i] + "\n";
+            }
+            return result;
+        }
         public static string[] matrixE()
         {
             string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE,

@@ -15,6 +15,6 @@ namespace HeartAttackApp.HeavyTask
             this.message = 0;
         }
 
-        public int Message { get { return message; } }
+
     }
 }

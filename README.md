@@ -67,10 +67,16 @@ An awesome app to predict the risk to have a heart attack using machine learning
 Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the problem
 
 ### Class Diagram
-[Class Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf)
+[Class Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/ClassDiagram.pdf)
 
 ### Object Diagram
-[Object Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20clases%20y%20objetos%20.pdf)
+[Object Diagram](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Diagrama%20de%20objetos%20heart%20atack%20.pdf)
+
+### Engineering Method
+[Engineering Method ](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Met%C3%B3do%20de%20la%20ingenieria%20Proyecto%20x.pdf)
+
+### Sequence Diagrams
+[Engineering Method ](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Sequence%20Diagrams.pdf)
 
 ## Contributing
 
@@ -88,7 +94,7 @@ We dont take our times at the moment
 
 ## Software Requirements Specifications
 
-Here we have our <a href="https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Proyecto%20integrador%20PDF.pdf">Engineering Method</a> for this project
+Here we have our <a href="https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Met%C3%B3do%20de%20la%20ingenieria%20Proyecto%20x.pdf">Engineering Method</a> for this project
 In this document you can find :
 * The problem identification
 * Collection of the necessary information

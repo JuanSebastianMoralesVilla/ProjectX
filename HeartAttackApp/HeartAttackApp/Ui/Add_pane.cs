@@ -71,11 +71,12 @@ namespace HeartAttackApp.Ui
                 txt_electroCardio.Text = electro + "";
                 txt_maxHeart.Text = heartRate + "";
                 */
-                controller.add(id, age, sex, typePain, bloodPressure, cholesterol, bloodSugar, angina, electro, heartRate);
-                List<Patient> patients = controller.patient();
-                DialogResult result = MessageBox.Show("ARE YOU SURE TO ADD A PATIENT?", "Confirm add patient", MessageBoxButtons.YesNo);
+                
+                DialogResult result = MessageBox.Show("ARE YOU SURE YOU WANT TO ADD THAT PATIENT?", "Confirm add patient", MessageBoxButtons.YesNo);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
+                    controller.add(id, age, sex, typePain, bloodPressure, cholesterol, bloodSugar, angina, electro, heartRate);
+                    List<Patient> patients = controller.patient();
                     grid.loadGrid(patients);
                     id++;
                     clear();

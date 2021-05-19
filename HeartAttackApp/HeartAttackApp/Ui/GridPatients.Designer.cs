@@ -34,9 +34,9 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_graphics = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
+            this.bt_export = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grid_data = new System.Windows.Forms.DataGridView();
-            this.bt_export = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
@@ -83,6 +83,19 @@ namespace HeartAttackApp.Ui
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // bt_export
+            // 
+            this.bt_export.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bt_export.BackColor = System.Drawing.Color.White;
+            this.bt_export.Enabled = false;
+            this.bt_export.Image = ((System.Drawing.Image)(resources.GetObject("bt_export.Image")));
+            this.bt_export.Location = new System.Drawing.Point(33, 236);
+            this.bt_export.Name = "bt_export";
+            this.bt_export.Size = new System.Drawing.Size(174, 50);
+            this.bt_export.TabIndex = 15;
+            this.bt_export.UseVisualStyleBackColor = false;
+            this.bt_export.Click += new System.EventHandler(this.bt_export_Click);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
@@ -103,18 +116,6 @@ namespace HeartAttackApp.Ui
             this.grid_data.Name = "grid_data";
             this.grid_data.Size = new System.Drawing.Size(744, 314);
             this.grid_data.TabIndex = 1;
-            // 
-            // bt_export
-            // 
-            this.bt_export.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bt_export.BackColor = System.Drawing.Color.White;
-            this.bt_export.Enabled = false;
-            this.bt_export.Image = ((System.Drawing.Image)(resources.GetObject("bt_export.Image")));
-            this.bt_export.Location = new System.Drawing.Point(33, 236);
-            this.bt_export.Name = "bt_export";
-            this.bt_export.Size = new System.Drawing.Size(174, 50);
-            this.bt_export.TabIndex = 15;
-            this.bt_export.UseVisualStyleBackColor = false;
             // 
             // GridPatients
             // 

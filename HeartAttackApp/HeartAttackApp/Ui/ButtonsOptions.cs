@@ -61,6 +61,7 @@ namespace HeartAttackApp.Ui
                 filterOptions.cb_filterSetVisible(true);
                 btn_new.Enabled = true;
                 btn_solve.Enabled = true;
+                gridPatiens.enableExport();
             }
         }
 

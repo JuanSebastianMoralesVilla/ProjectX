@@ -50,3 +50,14 @@ C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\Hea
 C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
 C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.ResolveComReference.cache
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.dll
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.MachineLearning.dll
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.Core.dll
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.dll
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Statistics.dll
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.xml
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.MachineLearning.xml
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.xml
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.Core.xml
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Statistics.xml
+C:\Users\user\Desktop\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CopyComplete

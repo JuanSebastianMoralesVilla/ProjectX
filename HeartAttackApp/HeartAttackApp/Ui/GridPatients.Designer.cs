@@ -31,15 +31,15 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GridPatients));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btExcelExport = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.bt_export = new System.Windows.Forms.Button();
             this.btn_graphics = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grid_data = new System.Windows.Forms.DataGridView();
-            this.btExcelExport = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_data)).BeginInit();
@@ -67,6 +67,19 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.Size = new System.Drawing.Size(240, 320);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // btExcelExport
+            // 
+            this.btExcelExport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btExcelExport.BackColor = System.Drawing.Color.White;
+            this.btExcelExport.Enabled = false;
+            this.btExcelExport.Image = ((System.Drawing.Image)(resources.GetObject("btExcelExport.Image")));
+            this.btExcelExport.Location = new System.Drawing.Point(90, 207);
+            this.btExcelExport.Name = "btExcelExport";
+            this.btExcelExport.Size = new System.Drawing.Size(59, 50);
+            this.btExcelExport.TabIndex = 16;
+            this.btExcelExport.UseVisualStyleBackColor = false;
+            this.btExcelExport.Click += new System.EventHandler(this.btExcelExport_Click);
             // 
             // btn_add
             // 
@@ -97,7 +110,7 @@ namespace HeartAttackApp.Ui
             // btn_graphics
             // 
             this.btn_graphics.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_graphics.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_graphics.BackColor = System.Drawing.Color.White;
             this.btn_graphics.Image = ((System.Drawing.Image)(resources.GetObject("btn_graphics.Image")));
             this.btn_graphics.Location = new System.Drawing.Point(33, 35);
             this.btn_graphics.Name = "btn_graphics";
@@ -126,19 +139,6 @@ namespace HeartAttackApp.Ui
             this.grid_data.Name = "grid_data";
             this.grid_data.Size = new System.Drawing.Size(744, 314);
             this.grid_data.TabIndex = 1;
-            // 
-            // btExcelExport
-            // 
-            this.btExcelExport.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btExcelExport.BackColor = System.Drawing.Color.White;
-            this.btExcelExport.Enabled = false;
-            this.btExcelExport.Image = ((System.Drawing.Image)(resources.GetObject("btExcelExport.Image")));
-            this.btExcelExport.Location = new System.Drawing.Point(90, 207);
-            this.btExcelExport.Name = "btExcelExport";
-            this.btExcelExport.Size = new System.Drawing.Size(59, 50);
-            this.btExcelExport.TabIndex = 16;
-            this.btExcelExport.UseVisualStyleBackColor = false;
-            this.btExcelExport.Click += new System.EventHandler(this.btExcelExport_Click);
             // 
             // GridPatients
             // 

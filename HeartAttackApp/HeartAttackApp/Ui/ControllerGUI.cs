@@ -30,6 +30,9 @@ namespace HeartAttackApp.Ui
         {
             miHospital.add(idPatient, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
         }
+
+        
+
         public void solve()
         {
             miHospital.resolve();
@@ -77,6 +80,7 @@ namespace HeartAttackApp.Ui
         }
 
         
+
         public List<Patient> search(int id)
         {
             List<Patient> patients = new List<Patient>();
@@ -122,6 +126,26 @@ namespace HeartAttackApp.Ui
         {
             return miHospital.Cuadro5Conversor();
 
+        }
+
+        public string[] valuesC()
+        {
+            return miHospital.valuesC();
+        }
+
+        public string[] valuesN()
+        {
+            return miHospital.valuesN();
+        }
+
+        public string[] valuesB()
+        {
+            return miHospital.valuesB();
+        }
+
+        public string[] matrixE()
+        {
+            return miHospital.matrixE();
         }
     }
 }

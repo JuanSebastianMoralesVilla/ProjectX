@@ -137,6 +137,8 @@ namespace HeartAttackApp.Model
             return result;
         }
 
+       
+
         public List<Patient> classify(string type, int value)
         {
             clearGrahpics();
@@ -465,6 +467,27 @@ namespace HeartAttackApp.Model
         public void resolve()
         {
             decision.solve(patients);
+        }
+
+
+        public string[] valuesB()
+        {
+            return patients.ElementAt(0).binariValue();
+        }
+
+        public string[] valuesN()
+        {
+            return patients.ElementAt(0).numericValues();
+        }
+
+        public string[] valuesC()
+        {
+            return patients.ElementAt(0).binariValue();
+        }
+
+        public string[] matrixE()
+        {
+            return patients.ElementAt(0).matrixE();
         }
     }
 }

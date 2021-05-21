@@ -23,7 +23,7 @@ namespace HeartAttackApp.Ui
 
         public void inicialize(ControllerGUI controller, GridPatients gridPatients,Visualization visualization)
         {
-            string[] values = Patient.matrixE();
+            string[] values = controller.matrixE();
             cb_filter.Items.AddRange(values);
             this.controller = controller;
             this.gridPatients = gridPatients;
@@ -59,10 +59,10 @@ namespace HeartAttackApp.Ui
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             string selected = cb_filter.SelectedItem.ToString();
-            string[] valuesC = Patient.cadenaValues();
-            string[] valuesN = Patient.numericValues();
-            string[] valuesB = Patient.binariValue();
-            List<Patient> patients = new List<Patient>();
+            string[] valuesC = controller.valuesC();
+            string[] valuesN = controller.valuesN();
+            string[] valuesB = controller.valuesB();
+            List<Patient> patients;
             try
             {
                 if (valuesC.Contains(selected))
@@ -105,9 +105,9 @@ namespace HeartAttackApp.Ui
         private void btn_search_Click_1(object sender, EventArgs e)
         {
             string selected = cb_filter.SelectedItem.ToString();
-            string[] valuesC = Patient.cadenaValues();
-            string[] valuesN = Patient.numericValues();
-            string[] valuesB = Patient.binariValue();
+            string[] valuesC = controller.valuesC();
+            string[] valuesN = controller.valuesN();
+            string[] valuesB = controller.valuesB();
             List<Patient> patients = new List<Patient>();
             try
             {
@@ -167,9 +167,9 @@ namespace HeartAttackApp.Ui
 
             if (!cb_filter.SelectedIndex.Equals(-1))
             {
-                string[] valuesC = Patient.cadenaValues();
-                string[] valuesN = Patient.numericValues();
-                string[] valuesB = Patient.binariValue();
+                string[] valuesC = controller.valuesC();
+                string[] valuesN = controller.valuesN();
+                string[] valuesB = controller.valuesB();
                 if (valuesC.Contains(selected))
                 {
                     tb_cadena.Visible = true;

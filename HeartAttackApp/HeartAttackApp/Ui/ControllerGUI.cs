@@ -43,9 +43,8 @@ namespace HeartAttackApp.Ui
             miHospital.training();
             miHospital.visualize();
         }
-        public List<Patient> loadGrid(string path)
+        public void loadGrid(string path)
         {
-            List<Patient> patients = new List<Patient>();
             try
             {
                 var reader = new System.IO.StreamReader(File.OpenRead(path));
@@ -67,9 +66,7 @@ namespace HeartAttackApp.Ui
                     int angina = int.Parse(array[9]);
                     int result = int.Parse(array[10]);
 
-                    Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
                     miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
-                    patients.Add(all);
                     line = reader.ReadLine();
                 }
             }
@@ -77,7 +74,6 @@ namespace HeartAttackApp.Ui
             {
                 Console.WriteLine(exception1.Message);
             }
-            return patients;
         }
 
         

@@ -61,7 +61,7 @@ namespace HeartAttackApp.Model
                     {
                         if (trainingSet.ElementAt(0).get(i) != -1)
                         {
-                            if (!Patient.isCategoric(i))
+                            if (!isCategoric(i))
                             {
                                 splitContinuValues(i);
                             }
@@ -91,7 +91,7 @@ namespace HeartAttackApp.Model
                     {
                         int value = patient.get(column);
                         double safe = 0;
-                        if (!Patient.isCategoric(column))
+                        if (!isCategoric(column))
                         {
                             if (column == 4)
                             {
@@ -369,7 +369,7 @@ namespace HeartAttackApp.Model
                 }
             }
 
-            if (!Patient.isCategoric(column))
+            if (!isCategoric(column))
             {
                 if (column == 4)
                 {
@@ -555,6 +555,15 @@ namespace HeartAttackApp.Model
                 patient.result = output;
             }
             return patients;
+        }
+
+        public bool isCategoric(int i)
+        {
+            if (i == 4 || i == 5 || i == 9)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

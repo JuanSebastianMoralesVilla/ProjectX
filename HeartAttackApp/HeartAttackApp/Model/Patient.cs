@@ -107,7 +107,8 @@ namespace HeartAttackApp.Model
             }
             return result;
         }
-        public string[] matrixE()
+
+        public static string[] matrixE()
         {
             string[] result = { ID, AGE , SEX, TYPE_PAIN,BLOOD_PRESSURE,
                                 CHOLESTEROL,LEVEL_SUGAR,ANGINA,RESULT_ELECTRO,
@@ -144,14 +145,7 @@ namespace HeartAttackApp.Model
             return id + " " + age + " " + sex + " " + typePain + " " + bloodPressure + " " + cholesterol + " " + levelSugar + " " + angina + " " + resultElectro + " " + heartRate + " " + result;
         }
 
-        public static bool isCategoric(int i)
-        {
-            if (i == 4 || i == 5 || i == 9 )
-            {
-                return false;
-            }
-            return true;
-        }
+        
         
     }
 }

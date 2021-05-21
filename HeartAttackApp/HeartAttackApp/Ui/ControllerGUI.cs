@@ -143,10 +143,7 @@ namespace HeartAttackApp.Ui
             return miHospital.valuesB();
         }
 
-        public string[] matrixE()
-        {
-            return miHospital.matrixE();
-        }
+        
     }
 }
 

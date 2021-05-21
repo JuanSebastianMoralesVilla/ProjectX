@@ -482,12 +482,8 @@ namespace HeartAttackApp.Model
 
         public string[] valuesC()
         {
-            return patients.ElementAt(0).binariValue();
+            return patients.ElementAt(0).cadenaValues();
         }
 
-        public string[] matrixE()
-        {
-            return patients.ElementAt(0).matrixE();
-        }
     }
 }

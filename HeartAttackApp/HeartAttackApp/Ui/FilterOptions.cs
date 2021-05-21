@@ -23,7 +23,9 @@ namespace HeartAttackApp.Ui
 
         public void inicialize(ControllerGUI controller, GridPatients gridPatients,Visualization visualization)
         {
-            string[] values = Patient.matrixE();
+            string[] values = { Patient.ID, Patient.AGE , Patient.SEX, Patient.TYPE_PAIN, Patient.BLOOD_PRESSURE,
+                                Patient.CHOLESTEROL, Patient.LEVEL_SUGAR, Patient.ANGINA, Patient.RESULT_ELECTRO,
+                                Patient.HEART_RATE};
             cb_filter.Items.AddRange(values);
             this.controller = controller;
             this.gridPatients = gridPatients;

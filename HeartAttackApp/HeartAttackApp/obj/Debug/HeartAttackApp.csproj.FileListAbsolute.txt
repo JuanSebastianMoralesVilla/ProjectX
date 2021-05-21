@@ -90,3 +90,4 @@ C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debu
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CopyComplete
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
+C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.dll.config

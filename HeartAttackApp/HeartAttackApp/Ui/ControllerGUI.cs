@@ -28,6 +28,9 @@ namespace HeartAttackApp.Ui
         {
             miHospital.add(idPatient, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
         }
+
+        
+
         public void solve()
         {
             miHospital.resolve();
@@ -41,9 +44,8 @@ namespace HeartAttackApp.Ui
             miHospital.training();
             miHospital.visualize();
         }
-        public List<Patient> loadGrid(string path)
+        public void loadGrid(string path)
         {
-            List<Patient> patients = new List<Patient>();
             try
             {
                 var reader = new System.IO.StreamReader(File.OpenRead(path));
@@ -65,9 +67,7 @@ namespace HeartAttackApp.Ui
                     int angina = int.Parse(array[9]);
                     int result = int.Parse(array[10]);
 
-                    Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate);
                     miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
-                    patients.Add(all);
                     line = reader.ReadLine();
                 }
             }
@@ -75,10 +75,10 @@ namespace HeartAttackApp.Ui
             {
                 Console.WriteLine(exception1.Message);
             }
-            return patients;
         }
 
         
+
         public List<Patient> search(int id)
         {
             List<Patient> patients = new List<Patient>();
@@ -125,6 +125,23 @@ namespace HeartAttackApp.Ui
             return miHospital.Cuadro5Conversor();
 
         }
+
+        public string[] valuesC()
+        {
+            return miHospital.valuesC();
+        }
+
+        public string[] valuesN()
+        {
+            return miHospital.valuesN();
+        }
+
+        public string[] valuesB()
+        {
+            return miHospital.valuesB();
+        }
+
+        
     }
 }
 

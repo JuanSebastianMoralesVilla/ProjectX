@@ -147,6 +147,8 @@ namespace HeartAttackApp.Model
             return result;
         }
 
+       
+
         public List<Patient> classify(string type, int value)
         {
             clearGrahpics();
@@ -544,6 +546,7 @@ namespace HeartAttackApp.Model
             decision.solve(patients);
         }
 
+<<<<<<< HEAD
         public Node DecisionNodeToNodeClass(DecisionNode root)
         {
             Node result = new Node();
@@ -587,5 +590,23 @@ namespace HeartAttackApp.Model
                 currentNode.answer = currentNode.answer == null ? -1 : currentNode.answer;
             }
         }
+=======
+
+        public string[] valuesB()
+        {
+            return patients.ElementAt(0).binariValue();
+        }
+
+        public string[] valuesN()
+        {
+            return patients.ElementAt(0).numericValues();
+        }
+
+        public string[] valuesC()
+        {
+            return patients.ElementAt(0).cadenaValues();
+        }
+
+>>>>>>> bd82f514511ab4a1984374445663ef0091b8b411
     }
 }

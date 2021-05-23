@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Accord.MachineLearning.DecisionTrees;
+using Accord.MachineLearning.DecisionTrees.Learning;
+using Accord.Math.Optimization.Losses;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HeartAttackApp.Model
@@ -14,7 +15,11 @@ namespace HeartAttackApp.Model
         public List<Patient> patients { get;private set; }
         private List<Patient> trainingSet { get; set; }
 
-        public double accuracity;
+        private C45Learning c45Learning;   
+
+        public double accuracyDecision;
+        public double accuracyC45lib;
+
         public int advance;
         private DecisionTree decision { get; set; }
         private List<Patient> testingSet { get; set; }
@@ -24,12 +29,17 @@ namespace HeartAttackApp.Model
         public Hashtable Cuadro4 { get; private set; }
         public Hashtable Cuadro5 { get; private set; }
 
-        public PictureBox ptb;
-        private Visualization visualization;
-        public Hospital(PictureBox ptb)
+        public PictureBox ptbDecision;
+        public PictureBox ptbC45Learning;
+
+        private Visualization visualizationDecision;
+        private Visualization visualizationC45Learning;
+        public Hospital(PictureBox ptbDecision, PictureBox ptbC45Learning)
         {
-            this.ptb = ptb;
-            visualization = new Visualization(ptb);
+            this.ptbDecision = ptbDecision;
+            this.ptbC45Learning = ptbC45Learning;
+            visualizationDecision = new Visualization(ptbDecision);
+            visualizationC45Learning = new Visualization(ptbC45Learning);
             patients = new List<Patient>();
             Cuadro1 = new Hashtable();
             Cuadro2 = new Hashtable();
@@ -430,14 +440,82 @@ namespace HeartAttackApp.Model
 
         public void visualize()
         {
-            decision.visualize(visualization);
-            visualization.visualize();
+            decision.createTree(visualizationDecision);
+            visualizationDecision.visualize();
+            visualizationC45Learning.insert(DecisionNodeToNodeClass(c45Learning.Model.Root));
+            visualizationC45Learning.visualize();
         }
 
         public void training()
         {
             trainingSet = new List<Patient>();
             testingSet = new List<Patient>();
+            trainingDecision();
+            trainingC45lib();
+        }
+
+        private void trainingC45lib()
+        {
+            c45Learning = new C45Learning()
+                {
+                new DecisionVariable("1", 3),
+                new DecisionVariable("2", 2),
+                new DecisionVariable("3", 4),
+                new DecisionVariable("4", DecisionVariableKind.Continuous),
+                new DecisionVariable("5", DecisionVariableKind.Continuous),
+                new DecisionVariable("6", 2),
+                new DecisionVariable("7", 2),
+                new DecisionVariable("8", 3),
+                new DecisionVariable("9", DecisionVariableKind.Continuous),
+                };
+            double[][] inputs1 = new double[trainingSet.Count][];
+            double[][] inputs2 = new double[testingSet.Count][];
+            int[] outputs1 = new int[trainingSet.Count];
+            int[] outputs2 = new int[testingSet.Count];
+            int i = 0;
+            foreach (Patient patient in trainingSet)
+            {
+                double[] aux = new double[9];
+                for (int j = 1; j <= 9; j++)
+                {
+                    if (j == 1)
+                    {
+                        aux[j - 1] = patient.get(j) < 30 ? 0 : patient.get(j) < 60 ? 1 : 2;
+                    }
+                    else aux[j - 1] = patient.get(j);
+                }
+                inputs1[i] = aux;
+                outputs1[i] = patient.get(10);
+                i++;
+            }
+            i = 0;
+            foreach (Patient patient in testingSet)
+            {
+                double[] aux = new double[9];
+                for (int j = 1; j <= 9; j++)
+                {
+                    if (j == 1)
+                    {
+                        aux[j - 1] = patient.get(j) < 30 ? 0 : patient.get(j) < 60 ? 1 : 2;
+                    }
+                    else aux[j - 1] = patient.get(j);
+                }
+                inputs2[i] = aux;
+                outputs2[i] = patient.get(10);
+                i++;
+            }
+
+            var tree = c45Learning.Learn(inputs1, outputs1);
+
+            int[] predicted = tree.Decide(inputs2);
+
+            double error = new ZeroOneLoss(outputs2).Loss(predicted);
+            accuracyC45lib = Math.Round(1 - error, 2) * 100;
+            Console.WriteLine(accuracyC45lib);
+        }
+
+        private void trainingDecision()
+        {
             decision = new DecisionTree();
             files();
             advance = 1;
@@ -447,7 +525,7 @@ namespace HeartAttackApp.Model
             {
                 decision.depthLimit = i;
                 decision.training(trainingSet);
-                double result = Math.Round(decision.testing(testingSet),2);
+                double result = Math.Round(decision.testing(testingSet), 2);
                 if (result > best)
                 {
                     best = result;
@@ -459,12 +537,55 @@ namespace HeartAttackApp.Model
             decision.depthLimit = index;
             decision.training(trainingSet);
             advance = 10;
-            accuracity = best;
+            accuracyDecision = best;
         }
-
         public void resolve()
         {
             decision.solve(patients);
+        }
+
+        public Node DecisionNodeToNodeClass(DecisionNode root)
+        {
+            Node result = new Node();
+            DecisionNodeToNodeClass(root, result);
+            return result;
+        }
+
+        private void  DecisionNodeToNodeClass(DecisionNode decisionNode, Node currentNode)
+        {
+           
+            if (!decisionNode.IsRoot)
+            {
+                string comparation = decisionNode.ToString();
+                string[] aux = comparation.Split(' ');
+                currentNode.parent.value = int.Parse(aux[0]);
+                currentNode.message = Patient.getNamesColums(int.Parse(aux[0])) + " " + aux[1] + " " + aux[2];
+
+            }
+            else
+            {
+                currentNode.height = 1;
+            }
+            currentNode.answer = decisionNode.Output;
+            currentNode.nodes = new Node[decisionNode.Branches.Count];
+            int distX = 2 * Visualization.SIZE + 10 * currentNode.nodes.Length;
+            currentNode.distX = distX;
+            int i = 0;
+            foreach(DecisionNode childNode in decisionNode.Branches)
+            {
+                Node newNode = new Node();
+                currentNode.nodes[i] = newNode;
+                newNode.parent = currentNode;
+                newNode.height = newNode.parent.height + 1;
+                newNode.posY = newNode.parent.posY + Visualization.DIST_Y;
+                DecisionNodeToNodeClass(childNode, newNode);
+                i++;
+            }
+            if (decisionNode.IsLeaf)
+            {
+                currentNode.value = null;
+                currentNode.answer = currentNode.answer == null ? -1 : currentNode.answer;
+            }
         }
     }
 }

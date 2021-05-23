@@ -20,7 +20,6 @@ namespace HeartAttackApp.Model
 
         public Visualization(PictureBox ptb)
         {
-            
             this.ptb = ptb;
             pen = new Pen(Color.Purple, 5);
             bitmap = new Bitmap(ptb.Width, ptb.Height);
@@ -141,6 +140,10 @@ namespace HeartAttackApp.Model
                 else if(node.answer == 0)
                 {
                     SolidBrush trueBrush = new SolidBrush(Color.Red);
+                    graphics.FillRectangle(trueBrush, rect);
+                }else if(node.answer == -1)
+                {
+                    SolidBrush trueBrush = new SolidBrush(Color.Black);
                     graphics.FillRectangle(trueBrush, rect);
                 }
                 else

@@ -13,7 +13,7 @@ namespace HeartAttackApp.Model
         public string message;
         public int? answer;
         public Node parent;
-        public int value;
+        public int? value;
         public Node[] nodes;
         public int posX;
         public int posY;
@@ -23,32 +23,7 @@ namespace HeartAttackApp.Model
         {
             posY = 10;
             nodes = new Node[0];
-            answer = -1;
-        }
-        public Node searchNode(int value)
-        {
-            if (this.value.Equals(value))
-            {
-                return this;
-            }
-            else
-            {
-                if (nodes != null)
-                {
-                    foreach (Node node in nodes)
-                    {
-                        if (node != null)
-                        {
-                            Node findNode = node.searchNode(value);
-                            if (findNode != null)
-                            {
-                                return findNode;
-                            }
-                        }
-                    }
-                }
-                return null;
-            }
+            answer = null;
         }
     }
 }

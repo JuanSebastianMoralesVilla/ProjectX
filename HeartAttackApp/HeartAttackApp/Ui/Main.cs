@@ -22,7 +22,7 @@ namespace HeartAttackApp.Ui
             stop = false;
             InitializeComponent();
             visualizationPane = new Visualization();
-            controller = new ControllerGUI(visualizationPane.getPtb());
+            controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
             gridPatients1.initialize(controller,this);
             filterOptions1.inicialize(controller, gridPatients1,visualizationPane);

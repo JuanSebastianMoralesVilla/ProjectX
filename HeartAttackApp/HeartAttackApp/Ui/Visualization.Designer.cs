@@ -30,25 +30,39 @@ namespace HeartAttackApp.Ui
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visualization));
-            this.scroll_Vertical = new System.Windows.Forms.VScrollBar();
+            this.ptb_C45TreeVisualization = new System.Windows.Forms.PictureBox();
             this.ptb_TreeVisualitation = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_C45TreeVisualization)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_TreeVisualitation)).BeginInit();
             this.SuspendLayout();
             // 
-            // scroll_Vertical
+            // ptb_C45TreeVisualization
             // 
-            this.scroll_Vertical.Location = new System.Drawing.Point(733, 146);
-            this.scroll_Vertical.Name = "scroll_Vertical";
-            this.scroll_Vertical.Size = new System.Drawing.Size(17, 80);
-            this.scroll_Vertical.TabIndex = 0;
+            this.ptb_C45TreeVisualization.Location = new System.Drawing.Point(30, 30);
+            this.ptb_C45TreeVisualization.Name = "ptb_C45TreeVisualization";
+            this.ptb_C45TreeVisualization.Size = new System.Drawing.Size(15000, 1500);
+            this.ptb_C45TreeVisualization.TabIndex = 0;
+            this.ptb_C45TreeVisualization.TabStop = false;
             // 
             // ptb_TreeVisualitation
             // 
-            this.ptb_TreeVisualitation.Location = new System.Drawing.Point(8, 8);
+            this.ptb_TreeVisualitation.Location = new System.Drawing.Point(30, 30);
             this.ptb_TreeVisualitation.Name = "ptb_TreeVisualitation";
             this.ptb_TreeVisualitation.Size = new System.Drawing.Size(7500, 1500);
-            this.ptb_TreeVisualitation.TabIndex = 2;
+            this.ptb_TreeVisualitation.TabIndex = 1;
             this.ptb_TreeVisualitation.TabStop = false;
+            this.ptb_TreeVisualitation.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(30, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Visualization
             // 
@@ -56,12 +70,14 @@ namespace HeartAttackApp.Ui
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ptb_TreeVisualitation);
-            this.Controls.Add(this.scroll_Vertical);
+            this.Controls.Add(this.ptb_C45TreeVisualization);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Visualization";
             this.Text = "Visualization";
             this.Load += new System.EventHandler(this.Visualization_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_C45TreeVisualization)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_TreeVisualitation)).EndInit();
             this.ResumeLayout(false);
 
@@ -69,7 +85,8 @@ namespace HeartAttackApp.Ui
 
         #endregion
 
-        private System.Windows.Forms.VScrollBar scroll_Vertical;
+        private System.Windows.Forms.PictureBox ptb_C45TreeVisualization;
         private System.Windows.Forms.PictureBox ptb_TreeVisualitation;
+        private System.Windows.Forms.Button button1;
     }
 }

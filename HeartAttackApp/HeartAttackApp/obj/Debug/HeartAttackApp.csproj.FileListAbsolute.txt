@@ -49,3 +49,15 @@ C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\Hea
 C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CoreCompileInputs.cache
 C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Miguel Sarasti\git\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.dll.config
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.dll
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.MachineLearning.dll
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.Core.dll
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.dll
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Statistics.dll
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.xml
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.MachineLearning.xml
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.xml
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Math.Core.xml
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\bin\Debug\Accord.Statistics.xml
+D:\ICESI\Integrador I\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CopyComplete

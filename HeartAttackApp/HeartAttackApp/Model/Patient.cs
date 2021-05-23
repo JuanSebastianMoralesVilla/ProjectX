@@ -95,15 +95,18 @@ namespace HeartAttackApp.Model
             return valuesInt[index];
         }
 
-        public static string getNamesColums(int index)
+        public static string getNamesColums(int? index)
         {
-            string[] matrix = matrixE();
-            matrix = matrix[index].Split(' ');
             string result = "";
-            for(int i= 0; i < matrix.Length; i++)
+            int aux = index == null? -1 : int.Parse(index+"");
+            if (index != null)
             {
-                
-                result += matrix[i] + "\n";
+                string[] matrix = matrixE();
+                matrix = matrix[aux].Split(' ');
+                for (int i = 0; i < matrix.Length; i++)
+                {
+                    result += matrix[i] + "\n";
+                }
             }
             return result;
         }

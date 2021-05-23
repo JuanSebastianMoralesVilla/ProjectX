@@ -15,12 +15,10 @@ namespace HeartAttackApp.Ui
         public Hospital miHospital { get; private set; }
 
 
-        public ControllerGUI(PictureBox ptb)
+        public ControllerGUI(PictureBox ptbDecision,PictureBox ptbC45Learning)
         {
-            miHospital = new Hospital(ptb);
+            miHospital = new Hospital(ptbDecision,ptbC45Learning);
         }
-
-       
         public List<Patient> patient()
         {
             return miHospital.classify();

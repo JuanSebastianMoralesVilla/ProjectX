@@ -32,7 +32,7 @@ namespace HeartAttackApp.Ui
         }
         public void setAccuracy()
         {
-            txt_accuracy.Text = controller.miHospital.accuracity * 100 + "%";
+            txt_accuracy.Text = controller.miHospital.accuracyDecision * 100 + "%";
         }
         public void cb_filterSetVisible(bool visible)
         {

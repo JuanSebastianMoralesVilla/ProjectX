@@ -15,7 +15,7 @@ namespace HeartAttackApp.Ui
         [STAThread]
         static void Main()
         {
-            //TestClass t = new TestClass();
+           // TestClass t = new TestClass();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());

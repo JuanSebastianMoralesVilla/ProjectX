@@ -416,12 +416,7 @@ namespace HeartAttackApp.Model
             return correct / total;
         }
 
-        public void visualize(Visualization visualization)
-        {
-            visualization.insert(creadeTree());
-        }
-
-        public Node creadeTree()
+        public void createTree(Visualization visualization)
         {
             Node node = new Node();
             node.entropy = Math.Round(mainEntropy,2);
@@ -429,7 +424,7 @@ namespace HeartAttackApp.Model
             node.height = 1;
             node.nodes = new Node[childrenNode.Length];
             createTree(node, this);
-            return node;
+            visualization.insert(node);
         }
          private void createTree(Node currentNode, DecisionTree currentDecision)
         {

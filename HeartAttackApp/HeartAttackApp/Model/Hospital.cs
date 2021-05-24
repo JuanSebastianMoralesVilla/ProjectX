@@ -546,7 +546,6 @@ namespace HeartAttackApp.Model
             decision.solve(patients);
         }
 
-<<<<<<< HEAD
         public Node DecisionNodeToNodeClass(DecisionNode root)
         {
             Node result = new Node();
@@ -590,7 +589,6 @@ namespace HeartAttackApp.Model
                 currentNode.answer = currentNode.answer == null ? -1 : currentNode.answer;
             }
         }
-=======
 
         public string[] valuesB()
         {
@@ -606,7 +604,5 @@ namespace HeartAttackApp.Model
         {
             return patients.ElementAt(0).cadenaValues();
         }
-
->>>>>>> bd82f514511ab4a1984374445663ef0091b8b411
     }
 }

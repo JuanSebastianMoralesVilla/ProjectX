@@ -32,7 +32,6 @@ namespace HeartAttackApp.Ui
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visualization));
             this.ptb_C45TreeVisualization = new System.Windows.Forms.PictureBox();
             this.ptb_TreeVisualitation = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_C45TreeVisualization)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_TreeVisualitation)).BeginInit();
             this.SuspendLayout();
@@ -54,23 +53,12 @@ namespace HeartAttackApp.Ui
             this.ptb_TreeVisualitation.TabStop = false;
             this.ptb_TreeVisualitation.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(30, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Visualization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ptb_TreeVisualitation);
             this.Controls.Add(this.ptb_C45TreeVisualization);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -87,6 +75,5 @@ namespace HeartAttackApp.Ui
 
         private System.Windows.Forms.PictureBox ptb_C45TreeVisualization;
         private System.Windows.Forms.PictureBox ptb_TreeVisualitation;
-        private System.Windows.Forms.Button button1;
     }
 }

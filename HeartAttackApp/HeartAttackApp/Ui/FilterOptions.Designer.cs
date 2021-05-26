@@ -41,6 +41,9 @@ namespace HeartAttackApp.Ui
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_showDecisionTree = new System.Windows.Forms.Button();
             this.txt_accuracy = new System.Windows.Forms.Label();
+            this.labelDTree = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbDecisionTree = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -56,7 +59,7 @@ namespace HeartAttackApp.Ui
             this.panel1.Controls.Add(this.tb_cadena);
             this.panel1.Location = new System.Drawing.Point(3, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 27);
+            this.panel1.Size = new System.Drawing.Size(177, 27);
             this.panel1.TabIndex = 0;
             // 
             // cb_choose
@@ -121,15 +124,18 @@ namespace HeartAttackApp.Ui
             // 
             this.tableLayoutPanel1.BackgroundImage = global::HeartAttackApp.Properties.Resources.verde_menta;
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.61456F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.38544F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.04453F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.95547F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 272F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btn_search, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cb_filter, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_showDecisionTree, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_accuracy, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelDTree, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbDecisionTree, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_accuracy, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_showDecisionTree, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -139,10 +145,11 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 95);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(221, 32);
+            this.btn_search.Location = new System.Drawing.Point(186, 32);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 20);
             this.btn_search.TabIndex = 17;
@@ -157,7 +164,7 @@ namespace HeartAttackApp.Ui
             this.btn_showDecisionTree.BackColor = System.Drawing.Color.White;
             this.btn_showDecisionTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_showDecisionTree.Image = ((System.Drawing.Image)(resources.GetObject("btn_showDecisionTree.Image")));
-            this.btn_showDecisionTree.Location = new System.Drawing.Point(685, 58);
+            this.btn_showDecisionTree.Location = new System.Drawing.Point(786, 58);
             this.btn_showDecisionTree.Name = "btn_showDecisionTree";
             this.btn_showDecisionTree.Size = new System.Drawing.Size(144, 34);
             this.btn_showDecisionTree.TabIndex = 18;
@@ -173,24 +180,62 @@ namespace HeartAttackApp.Ui
             this.txt_accuracy.Font = new System.Drawing.Font("Stencil", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_accuracy.ForeColor = System.Drawing.Color.Red;
             this.txt_accuracy.Image = ((System.Drawing.Image)(resources.GetObject("txt_accuracy.Image")));
-            this.txt_accuracy.Location = new System.Drawing.Point(730, 29);
+            this.txt_accuracy.Location = new System.Drawing.Point(831, 29);
             this.txt_accuracy.Name = "txt_accuracy";
             this.txt_accuracy.Size = new System.Drawing.Size(54, 25);
             this.txt_accuracy.TabIndex = 20;
             this.txt_accuracy.Text = "80%";
             this.txt_accuracy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelDTree
+            // 
+            this.labelDTree.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelDTree.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDTree.Image = ((System.Drawing.Image)(resources.GetObject("labelDTree.Image")));
+            this.labelDTree.Location = new System.Drawing.Point(795, 0);
+            this.labelDTree.Name = "labelDTree";
+            this.labelDTree.Size = new System.Drawing.Size(127, 28);
+            this.labelDTree.TabIndex = 19;
+            this.labelDTree.Text = "Accuracy";
+            this.labelDTree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDTree.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(275, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 28);
+            this.label2.TabIndex = 21;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbDecisionTree
+            // 
+            this.cbDecisionTree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDecisionTree.FormattingEnabled = true;
+            this.cbDecisionTree.Items.AddRange(new object[] {
+            "Decision tree library",
+            "Decision tree our"});
+            this.cbDecisionTree.Location = new System.Drawing.Point(497, 32);
+            this.cbDecisionTree.Name = "cbDecisionTree";
+            this.cbDecisionTree.Size = new System.Drawing.Size(149, 21);
+            this.cbDecisionTree.TabIndex = 22;
+            this.cbDecisionTree.SelectedIndexChanged += new System.EventHandler(this.cbDecisionTree_SelectedIndexChanged);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(694, 0);
+            this.label1.Location = new System.Drawing.Point(506, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 28);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Accuracy";
+            this.label1.Size = new System.Drawing.Size(203, 28);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Select Decision Tree:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // FilterOptions
             // 
@@ -219,7 +264,10 @@ namespace HeartAttackApp.Ui
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_showDecisionTree;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDTree;
         private System.Windows.Forms.Label txt_accuracy;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbDecisionTree;
+        private System.Windows.Forms.Label label1;
     }
 }

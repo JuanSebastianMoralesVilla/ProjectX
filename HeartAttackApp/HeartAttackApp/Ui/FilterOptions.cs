@@ -26,6 +26,9 @@ namespace HeartAttackApp.Ui
             string[] values = { Patient.ID, Patient.AGE , Patient.SEX, Patient.TYPE_PAIN, Patient.BLOOD_PRESSURE,
                                 Patient.CHOLESTEROL, Patient.LEVEL_SUGAR, Patient.ANGINA, Patient.RESULT_ELECTRO,
                                 Patient.HEART_RATE};
+
+            txt_accuracy.Visible = false;
+            btn_showDecisionTree.Enabled = false;
             cb_filter.Items.AddRange(values);
             this.controller = controller;
             this.gridPatients = gridPatients;
@@ -34,6 +37,7 @@ namespace HeartAttackApp.Ui
         }
         public void setAccuracy()
         {
+
             txt_accuracy.Text = controller.miHospital.accuracyDecision * 100 + "%";
         }
         public void cb_filterSetVisible(bool visible)
@@ -197,11 +201,63 @@ namespace HeartAttackApp.Ui
             }
         }
 
+
         private void btn_showDecisionTree_Click(object sender, EventArgs e)
         {
+            if (cbDecisionTree.SelectedIndex == 0)
+            {
+
+                visualization.getPtbC45().Visible = false;
+                visualization.getPtbDecision().Visible=true;
+
+
+
+
+            }
+            else if (cbDecisionTree.SelectedIndex == 1)
+            {
+                visualization.getPtbC45().Visible = true;
+                visualization.getPtbDecision().Visible = false;
+
+
+
+            }
+
             visualization.ShowDialog();
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbDecisionTree_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDecisionTree.SelectedIndex == 0) {
+
+                txt_accuracy.Visible = true;
+                setAccuracy();
+                btn_showDecisionTree.Enabled = true;
+           
+
+            
+
+            }else if (cbDecisionTree.SelectedIndex == 1)
+            {
+                txt_accuracy.Visible = true;
+                txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
+                btn_showDecisionTree.Enabled = true;
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

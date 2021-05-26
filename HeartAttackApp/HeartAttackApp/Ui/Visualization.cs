@@ -37,12 +37,15 @@ namespace HeartAttackApp.Ui
             return ptb_C45TreeVisualization;
         }
 
-       
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            ptb_C45TreeVisualization.Visible = !ptb_C45TreeVisualization.Visible;
-            ptb_TreeVisualitation.Visible = !ptb_TreeVisualitation.Visible;
-        }
+
+
+
+
+
+
+        // ptb_TreeVisualitation.Visible = !ptb_TreeVisualitation.Visible;
+        // ptb_TreeVisualitation.Visible = !ptb_TreeVisualitation.Visible;
+
     }
 }

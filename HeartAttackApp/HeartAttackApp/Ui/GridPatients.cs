@@ -53,21 +53,15 @@ namespace HeartAttackApp.Ui
         }
       
         
-        public void bt_export_Click(object sender, EventArgs e)
-        {
-
-          
-
-
-            }
+      
 
         // LO HABILITA CUANDO VOY A EXPORTAR UNO O MAS PACIENTES SIN HABER CARGDO LA BD 
         public void enableexportADD() {
-            bt_export.Enabled = true;
+          //  bt_export.Enabled = true;
         }
 
     public void enableExport() {
-            bt_export.Enabled = false;
+          //  bt_export.Enabled = false;
             btExcelExport.Enabled = true;
         }
 

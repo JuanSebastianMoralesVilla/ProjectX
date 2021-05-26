@@ -15,11 +15,16 @@ namespace HeartAttackApp.Ui
     {
         ControllerGUI controller;
         GridPatients grid;
+        ButtonsOptions btopt;
+        
+
         private int id;
-        public Add_pane(ControllerGUI controller, GridPatients grid)
+        
+        public Add_pane(ControllerGUI controller, GridPatients grid,ButtonsOptions btopt)
         {
             InitializeComponent();
             this.controller = controller;
+            this.btopt = btopt;
             this.grid = grid;
             id = 304;
         }
@@ -80,6 +85,9 @@ namespace HeartAttackApp.Ui
                     grid.loadGrid(patients);
                     id++;
                     clear();
+                    grid.enableExport();
+                    ButtonsOptions.enableButtons();
+
                     this.Close();
                 }
             }
@@ -103,5 +111,9 @@ namespace HeartAttackApp.Ui
         {
             id = n;
         }
+
+
+       
+
     }
 }

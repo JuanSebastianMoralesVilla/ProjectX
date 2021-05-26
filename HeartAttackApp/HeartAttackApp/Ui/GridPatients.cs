@@ -27,7 +27,7 @@ namespace HeartAttackApp.Ui
         {
             this.main = main;
             this.controller = controller;
-            addPane = new Add_pane(controller, this);
+            addPane = new Add_pane(controller, this, this);
         }
 
         private void btn_graphics_Click(object sender, EventArgs e)
@@ -58,8 +58,11 @@ namespace HeartAttackApp.Ui
 
 
             }
-           
 
+        // LO HABILITA CUANDO VOY A EXPORTAR UNO O MAS PACIENTES SIN HABER CARGDO LA BD 
+        public void enableexportADD() {
+            bt_export.Enabled = true;
+        }
 
     public void enableExport() {
             bt_export.Enabled = false;

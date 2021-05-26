@@ -49,6 +49,7 @@ namespace HeartAttackApp.Ui
             tb_cadena.Visible = false;
             cb_filter.Visible = false;
             btn_search.Visible = false;
+            Console.WriteLine("entreeee");
             cb_filter.SelectedIndex = 0;
             cb_choose.Items.Clear();
             tb_cadena.Clear();
@@ -106,6 +107,7 @@ namespace HeartAttackApp.Ui
 
         private void btn_search_Click_1(object sender, EventArgs e)
         {
+           
             string selected = cb_filter.SelectedItem.ToString();
             string[] valuesC = controller.valuesC();
             string[] valuesN = controller.valuesN();

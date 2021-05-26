@@ -103,15 +103,14 @@ In this document you can find :
 * Evaluation and selection of the best solution
 * Functional requirements
 
-## Video
+## Videos
 
-Here we have a 5 minutes <a href="">Video</a> uploaded to youtube make it by the contributors of the project.
-In this <a href="">Video</a> we show the functionalities and how we see the model and the datastructures that we use.
+Here we have some 5 minutes videos uploaded to youtube make it by the contributors of the project.
+In this videos we show the functionalities and how we see the model and the datastructures that we use.
 
-
-
-### [Video 1](https://youtu.be/NX_hr811Gl0)
-### [Video 2](https://youtu.be/8ViVyqaJcxQ)
+### [Video - Milestone 1](https://youtu.be/NX_hr811Gl0)
+### [Video - Milestone 2](https://youtu.be/8ViVyqaJcxQ)
+### [Pitch](https://youtu.be/ZayVhv_tCLU)
 
 ## Contributors 
 <br />

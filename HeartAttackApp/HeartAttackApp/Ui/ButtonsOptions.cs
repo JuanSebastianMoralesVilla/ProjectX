@@ -66,7 +66,7 @@ namespace HeartAttackApp.Ui
                 textBoxLoad1.Text = file.FileName;
                 string path = file.FileName;
                 textBoxLoad2.Text = file.SafeFileName;
-                MessageBox.Show("Datos cargados correctamente.");
+                MessageBox.Show("Data loaded succesfully.");
                 controller.loadGrid(path);
                 patients = controller.patient();
                 Console.WriteLine(patients.Count);

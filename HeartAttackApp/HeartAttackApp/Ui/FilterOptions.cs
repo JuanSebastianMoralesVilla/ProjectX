@@ -243,6 +243,9 @@ namespace HeartAttackApp.Ui
                 txt_accuracy.Visible = true;
                 setAccuracy();
                 btn_showDecisionTree.Enabled = true;
+                DialogResult mes = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+  
            
 
             
@@ -252,6 +255,7 @@ namespace HeartAttackApp.Ui
                 txt_accuracy.Visible = true;
                 txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
                 btn_showDecisionTree.Enabled = true;
+                DialogResult mes2 = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

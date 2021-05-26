@@ -592,17 +592,17 @@ namespace HeartAttackApp.Model
 
         public string[] valuesB()
         {
-            return patients.ElementAt(0).binariValue();
+            return trainingSet.ElementAt(0).binariValue();
         }
 
         public string[] valuesN()
         {
-            return patients.ElementAt(0).numericValues();
+            return trainingSet.ElementAt(0).numericValues();
         }
 
         public string[] valuesC()
         {
-            return patients.ElementAt(0).cadenaValues();
+            return trainingSet.ElementAt(0).cadenaValues();
         }
     }
 }

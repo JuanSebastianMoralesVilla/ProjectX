@@ -24,12 +24,14 @@ namespace HeartAttackApp.Ui
             visualizationPane = new Visualization();
             controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
-            gridPatients1.initialize(controller,this);
+            gridPatients1.initialize(controller,this, buttonsOptions1, filterOptions1);
             filterOptions1.inicialize(controller, gridPatients1,visualizationPane);
             buttonsOptions1.inicialize(controller, gridPatients1, filterOptions1);
             visualizationPane.initialize(controller);
         }
         
+
+
         public void training()
         {
             Thread t = new Thread(new ThreadStart(controller.training));

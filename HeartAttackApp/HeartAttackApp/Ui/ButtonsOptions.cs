@@ -72,8 +72,7 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(patients.Count);
                 gridPatiens.loadGrid(patients);
                 filterOptions.cb_filterSetVisible(true);
-                btn_new.Enabled = true;
-                btn_solve.Enabled = true;
+                enableButtons();
                 gridPatiens.enableExport();
             }
         }

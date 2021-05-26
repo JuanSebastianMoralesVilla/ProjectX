@@ -23,12 +23,14 @@ namespace HeartAttackApp.Ui
         {
             InitializeComponent();
         }
-        public void initialize(ControllerGUI controller,Main main)
+        public void initialize(ControllerGUI controller,Main main, ButtonsOptions btnopt, FilterOptions ft)
         {
             this.main = main;
             this.controller = controller;
-            addPane = new Add_pane(controller, this, this);
+            addPane = new Add_pane(controller, this, btnopt, ft);
         }
+
+
 
         private void btn_graphics_Click(object sender, EventArgs e)
         {

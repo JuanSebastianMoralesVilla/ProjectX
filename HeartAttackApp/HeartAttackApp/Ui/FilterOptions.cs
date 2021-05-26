@@ -42,6 +42,7 @@ namespace HeartAttackApp.Ui
         }
         public void clear()
         {
+            cb_filter.SelectedIndex = 0;
             cb_choose.Visible = false;
             txt_to.Visible = false;
             tb_higger.Visible = false;
@@ -49,8 +50,6 @@ namespace HeartAttackApp.Ui
             tb_cadena.Visible = false;
             cb_filter.Visible = false;
             btn_search.Visible = false;
-            Console.WriteLine("entreeee");
-            cb_filter.SelectedIndex = 0;
             cb_choose.Items.Clear();
             tb_cadena.Clear();
             tb_higger.Clear();
@@ -203,9 +202,6 @@ namespace HeartAttackApp.Ui
             visualization.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

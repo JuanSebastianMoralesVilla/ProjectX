@@ -11,7 +11,6 @@ namespace HeartAttackApp.HeavyTask
 {
     public class HeavyTask
     {
-        private bool HeavyProcessStopped;
 
         private readonly SynchronizationContext SyncContext;
 
@@ -30,12 +29,6 @@ namespace HeartAttackApp.HeavyTask
             thread.IsBackground = true;
             thread.Start();
         }
-
-        public void Stop()
-        {
-            HeavyProcessStopped = true;
-        }
-
         private void Run()
         {
             while (!main.stop)

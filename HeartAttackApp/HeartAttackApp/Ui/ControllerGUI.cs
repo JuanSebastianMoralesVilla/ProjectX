@@ -31,9 +31,9 @@ namespace HeartAttackApp.Ui
 
         
 
-        public void solve()
+        public void solve(int selected)
         {
-            miHospital.resolve();
+            miHospital.resolve(selected);
         }
         public void clear()
         {

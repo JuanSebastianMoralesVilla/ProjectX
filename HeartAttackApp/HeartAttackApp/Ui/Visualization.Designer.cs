@@ -48,7 +48,7 @@ namespace HeartAttackApp.Ui
             // 
             this.ptb_TreeVisualitation.Location = new System.Drawing.Point(30, 30);
             this.ptb_TreeVisualitation.Name = "ptb_TreeVisualitation";
-            this.ptb_TreeVisualitation.Size = new System.Drawing.Size(7500, 1500);
+            this.ptb_TreeVisualitation.Size = new System.Drawing.Size(10000, 1500);
             this.ptb_TreeVisualitation.TabIndex = 1;
             this.ptb_TreeVisualitation.TabStop = false;
             this.ptb_TreeVisualitation.Visible = false;

@@ -447,7 +447,7 @@ namespace HeartAttackApp.Model
                     node.entropy = Math.Round(currentDecision.childrenNode[i].mainEntropy,2);
                     if(node.value != column)
                     {
-                        defineMessage(node, i, currentDecision.childrenNode[i]);
+                        defineMessage(node, i, currentDecision);
                     }
                     node.height = currentNode.height +1;
                     currentNode.nodes[i] = node;
@@ -457,7 +457,7 @@ namespace HeartAttackApp.Model
             }
         }
 
-        private void defineMessage(Node node,int number,DecisionTree decisionTree)
+        private void defineMessage(Node node,int number,DecisionTree decisionTreeParent)
         {
             string value = "";
             switch (node.parent.value)
@@ -490,20 +490,20 @@ namespace HeartAttackApp.Model
                 case 4:
                     if (number == 0)
                     {
-                        value = "Blood pressure < "+decisionTree.splitBloodPressure;
+                        value = "Blood pressure < "+ decisionTreeParent.splitBloodPressure;
                     }else
                     {
-                        value = "Blood Pressure >= " + decisionTree.splitBloodPressure;
+                        value = "Blood Pressure >= " + decisionTreeParent.splitBloodPressure;
                     }
                     break;
                 case 5:
                     if(number == 0)
                     {
-                        value = "Cholesterol < " + decisionTree.splitCholesterol;
+                        value = "Cholesterol < " + decisionTreeParent.splitCholesterol;
                     }
                     else
                     {
-                        value = "Cholesterol >= " + decisionTree.splitCholesterol;
+                        value = "Cholesterol >= " + decisionTreeParent.splitCholesterol;
                     }
                     break;
                 case 6:
@@ -532,11 +532,11 @@ namespace HeartAttackApp.Model
                 case 9:
                     if (number == 0)
                     {
-                        value = "Heart rate max < " + decisionTree.splitHeartRate;
+                        value = "Heart rate max < " + decisionTreeParent.splitHeartRate;
                     }
                     else
                     {
-                        value = "Heart rate max >= " + decisionTree.splitHeartRate;
+                        value = "Heart rate max >= " + decisionTreeParent.splitHeartRate;
                     }
                     break;
             }

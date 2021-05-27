@@ -43,18 +43,12 @@ namespace HeartAttackApp.Ui
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-
-            
             gridPatiens.newClick();
-          
             controller.clear();
             textBoxLoad1.Clear();
             textBoxLoad2.Clear();
             btn_solve.Enabled = false;
-            
             filterOptions.clear();
-
-
         }
 
         private void btn_load_Click(object sender, EventArgs e)
@@ -80,7 +74,8 @@ namespace HeartAttackApp.Ui
 
         private void btn_solve_Click(object sender, EventArgs e)
         {
-            controller.solve();
+            int aux = filterOptions.decisionTreeSelected();
+            controller.solve(aux);
             filterOptions.clear();
             filterOptions.cb_filterSetVisible(true);
             gridPatiens.loadGrid(controller.patient());

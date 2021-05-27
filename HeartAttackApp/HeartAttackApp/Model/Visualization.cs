@@ -152,15 +152,20 @@ namespace HeartAttackApp.Model
                     graphics.DrawRectangle(new Pen(Color.Black, 1), rect);
                 }
                 graphics.DrawLine(new Pen(Color.Black, 1), node.parent.posX, node.parent.posY + SIZE, node.posX, node.posY);
-                int xMesssage = node.posX + (node.parent.posX-node.posX)/2;
+
+                int xMesssage = node.posX + (node.parent.posX - node.posX) / 2;
                 int yMessage = node.posY + (node.parent.posY + SIZE - node.posY) / 2;
-                if ((position + 1) % 2 == 0 && node.height > 2)
+                if (node.parent.posX >= node.posX)
                 {
-                    yMessage += 20;
-                    xMesssage += 20;
+                    xMesssage -= node.message.Length*2;
                 }
                 
-                graphics.DrawString(node.message, new Font("Comic Sans", 10, FontStyle.Italic), new SolidBrush(Color.DarkBlue), xMesssage-3*(node.message.Length),yMessage) ;
+                if ((position + 1) % 2 == 0 && node.height > 2)
+                {
+                    yMessage -= 10;
+                }
+                
+                graphics.DrawString(node.message, new Font("Comic Sans", 10, FontStyle.Italic), new SolidBrush(Color.DarkBlue), xMesssage,yMessage) ;
 
             }
             for (int i = 0; i< node.nodes.Length;i++)

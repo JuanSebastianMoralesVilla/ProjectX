@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace HeartAttackApp.Ui
 {
@@ -66,8 +67,9 @@ namespace HeartAttackApp.Ui
         }
 
         
-        private void ExportarDatosExcel(DataGridView datagrid)
+        private void ExportarDatosExcel()
         {
+            DataGridView datagrid = grid_data;
             try
             {
                 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -97,16 +99,10 @@ namespace HeartAttackApp.Ui
             }
         }
 
-      
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btExcelExport_Click(object sender, EventArgs e)
         {
-            ExportarDatosExcel(
-                grid_data);
+            Thread t = new Thread(new ThreadStart(ExportarDatosExcel));
+            t.Start();
         }
   
     }

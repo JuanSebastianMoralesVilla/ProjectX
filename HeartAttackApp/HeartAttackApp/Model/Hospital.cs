@@ -20,6 +20,7 @@ namespace HeartAttackApp.Model
         public double accuracyDecision;
         public double accuracyC45lib;
 
+        Accord.MachineLearning.DecisionTrees.DecisionTree decisionTreeLib;
         public int advance;
         private DecisionTree decision { get; set; }
         private List<Patient> testingSet { get; set; }
@@ -458,8 +459,8 @@ namespace HeartAttackApp.Model
 
         private void trainingC45lib()
         {
-            c45Learning = new C45Learning()
-                {
+            /*
+             {
                 new DecisionVariable("1", 3),
                 new DecisionVariable("2", 2),
                 new DecisionVariable("3", 4),
@@ -470,6 +471,9 @@ namespace HeartAttackApp.Model
                 new DecisionVariable("8", 3),
                 new DecisionVariable("9", DecisionVariableKind.Continuous),
                 };
+             */
+            c45Learning = new C45Learning();
+               
             double[][] inputs1 = new double[trainingSet.Count][];
             double[][] inputs2 = new double[testingSet.Count][];
             int[] outputs1 = new int[trainingSet.Count];
@@ -507,9 +511,9 @@ namespace HeartAttackApp.Model
                 i++;
             }
 
-            var tree = c45Learning.Learn(inputs1, outputs1);
+            decisionTreeLib = c45Learning.Learn(inputs1, outputs1);
 
-            int[] predicted = tree.Decide(inputs2);
+            int[] predicted = decisionTreeLib.Decide(inputs2);
 
             double error = new ZeroOneLoss(outputs2).Loss(predicted);
             accuracyC45lib = Math.Round(1 - error, 2) * 100;
@@ -541,9 +545,29 @@ namespace HeartAttackApp.Model
             advance = 10;
             accuracyDecision = best;
         }
-        public void resolve()
+        public void resolve(int selected)
         {
-            decision.solve(patients);
+            if (selected == 0)
+            {
+                decision.solve(patients);
+            }else if(selected == 1)
+            {
+                
+                foreach (Patient patient in patients)
+                {
+                    double[] aux = new double[9];
+                    for (int j = 1; j <= 9; j++)
+                    {
+                        if (j == 1)
+                        {
+                            aux[j - 1] = patient.get(j) < 30 ? 0 : patient.get(j) < 60 ? 1 : 2;
+                        }
+                        else aux[j - 1] = patient.get(j);
+                    }
+                    patient.result=decisionTreeLib.Decide(aux);
+                }
+                
+            }
         }
 
         public Node DecisionNodeToNodeClass(DecisionNode root)

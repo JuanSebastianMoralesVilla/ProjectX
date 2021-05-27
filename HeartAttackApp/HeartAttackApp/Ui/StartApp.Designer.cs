@@ -39,7 +39,7 @@ namespace HeartAttackApp.Ui
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(469, 384);
+            this.label1.Location = new System.Drawing.Point(470, 387);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 4;
@@ -48,7 +48,7 @@ namespace HeartAttackApp.Ui
             // pb_starting
             // 
             this.pb_starting.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pb_starting.Location = new System.Drawing.Point(318, 342);
+            this.pb_starting.Location = new System.Drawing.Point(320, 345);
             this.pb_starting.Maximum = 10;
             this.pb_starting.Name = "pb_starting";
             this.pb_starting.Size = new System.Drawing.Size(355, 23);
@@ -70,7 +70,7 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(992, 577);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 580);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // StartApp

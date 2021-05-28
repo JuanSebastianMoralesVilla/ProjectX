@@ -221,14 +221,14 @@ namespace HeartAttackApp.Ui
                 txt_accuracy.Visible = true;
                 setAccuracy();
                 btn_showDecisionTree.Enabled = true;
-                DialogResult mes = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult mes = MessageBox.Show("The data will be classified according to our implementation of decision tree.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }else if (cbDecisionTree.SelectedIndex == 1 && controller != null)
             {
                 txt_accuracy.Visible = true;
                 txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
                 btn_showDecisionTree.Enabled = true;
-                DialogResult mes2 = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult mes2 = MessageBox.Show("The data will be classified according to the library's decision tree.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

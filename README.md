@@ -76,7 +76,7 @@ Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the p
 [Engineering Method](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Met%C3%B3do%20de%20la%20ingenieria%20Proyecto%20x.pdf)
 
 ### Sequence Diagrams
-[Sequence Diagrams](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Sequence%20Diagrams.pdf)
+[Sequence Diagrams](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/SequenceDiagrams.pdf)
 
 ## Contributing
 

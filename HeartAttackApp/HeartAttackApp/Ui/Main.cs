@@ -16,16 +16,16 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         public bool stop;
-        private Visualization visualizationPane;
+        private VisualizationForm visualizationPane;
         public Main()
         {
             stop = false;
             InitializeComponent();
-            visualizationPane = new Visualization();
+            visualizationPane = new VisualizationForm();
             controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
             gridPatients1.initialize(controller,this, buttonsOptions1, filterOptions1);
-            filterOptions1.inicialize(controller, gridPatients1,visualizationPane);
+            filterOptions1.inicialize(controller, gridPatients1);
             buttonsOptions1.inicialize(controller, gridPatients1, filterOptions1);
             visualizationPane.initialize(controller);
         }
@@ -88,6 +88,22 @@ namespace HeartAttackApp.Ui
         private void buttonsOptions1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void ourTree(bool our)
+        {
+            if (our)
+            {
+                visualizationPane.getPtbC45().Visible = false;
+                visualizationPane.getPtbDecision().Visible = true;
+            }
+            else
+            {
+                visualizationPane.getPtbC45().Visible = true;
+                visualizationPane.getPtbDecision().Visible = false;
+            }
+
+            visualizationPane.ShowDialog();
         }
     }
 }

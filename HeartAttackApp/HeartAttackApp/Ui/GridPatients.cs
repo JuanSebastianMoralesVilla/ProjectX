@@ -104,6 +104,10 @@ namespace HeartAttackApp.Ui
             Thread t = new Thread(new ThreadStart(ExportarDatosExcel));
             t.Start();
         }
-  
+
+        public void ourTree(bool our)
+        {
+            main.ourTree(our);
+        }
     }
 }

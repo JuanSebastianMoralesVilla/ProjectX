@@ -15,13 +15,12 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         private GridPatients gridPatients;
-        private Visualization visualization;
         public FilterOptions()
         {
             InitializeComponent();
         }
 
-        public void inicialize(ControllerGUI controller, GridPatients gridPatients,Visualization visualization)
+        public void inicialize(ControllerGUI controller, GridPatients gridPatients)
         {
             string[] values = { Patient.ID, Patient.AGE , Patient.SEX, Patient.TYPE_PAIN, Patient.BLOOD_PRESSURE,
                                 Patient.CHOLESTEROL, Patient.LEVEL_SUGAR, Patient.ANGINA, Patient.RESULT_ELECTRO,
@@ -33,7 +32,6 @@ namespace HeartAttackApp.Ui
             cbDecisionTree.SelectedIndex = 0;
             this.controller = controller;
             this.gridPatients = gridPatients;
-            this.visualization = visualization;
         }
         public void setAccuracy()
         {
@@ -202,17 +200,12 @@ namespace HeartAttackApp.Ui
         {
             if (cbDecisionTree.SelectedIndex == 0)
             {
-                visualization.getPtbC45().Visible = false;
-                visualization.getPtbDecision().Visible=true;
-
+                gridPatients.ourTree(true);
             }
             else if (cbDecisionTree.SelectedIndex == 1)
             {
-                visualization.getPtbC45().Visible = true;
                 visualization.getPtbDecision().Visible = false;
             }
-
-            visualization.ShowDialog();
         }
         private void cbDecisionTree_SelectedIndexChanged(object sender, EventArgs e)
         {

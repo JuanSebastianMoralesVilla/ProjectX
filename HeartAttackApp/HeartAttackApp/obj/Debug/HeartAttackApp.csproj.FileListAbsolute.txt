@@ -111,9 +111,9 @@ C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debu
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Main.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.ShowCharts.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.StartApp.resources
-C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.Visualization.resources
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.GenerateResource.cache
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CoreCompileInputs.cache
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.csproj.CopyComplete
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.exe
 C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.pdb
+C:\Users\Sebastián\source\repos\ProjectX\HeartAttackApp\HeartAttackApp\obj\Debug\HeartAttackApp.Ui.VisualizationForm.resources

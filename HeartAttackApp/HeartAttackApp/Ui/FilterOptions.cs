@@ -204,7 +204,7 @@ namespace HeartAttackApp.Ui
             }
             else if (cbDecisionTree.SelectedIndex == 1)
             {
-                visualization.getPtbDecision().Visible = false;
+                gridPatients.ourTree(false);
             }
         }
         private void cbDecisionTree_SelectedIndexChanged(object sender, EventArgs e)

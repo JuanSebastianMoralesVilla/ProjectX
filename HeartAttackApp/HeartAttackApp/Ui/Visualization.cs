@@ -23,11 +23,6 @@ namespace HeartAttackApp.Ui
             this.controller = controller;
             ptb_TreeVisualitation = controller.miHospital.ptbDecision;
         }
-        private void Visualization_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public PictureBox getPtbDecision()
         {
             return ptb_TreeVisualitation;
@@ -37,15 +32,10 @@ namespace HeartAttackApp.Ui
             return ptb_C45TreeVisualization;
         }
 
-
-
-
-
-
-
-
-        // ptb_TreeVisualitation.Visible = !ptb_TreeVisualitation.Visible;
-        // ptb_TreeVisualitation.Visible = !ptb_TreeVisualitation.Visible;
-
+        private void Visualization_Load(object sender, EventArgs e)
+        {
+            AutoScrollPosition = new Point(3000, 0);
+            Console.WriteLine(AutoScrollPosition.X);
+        }
     }
 }

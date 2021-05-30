@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HeartAttackApp.HeavyTask
 {
-    public class HeavyTask
+    public class HeavyTaskTraning
     {
 
         private readonly SynchronizationContext SyncContext;
@@ -17,7 +17,7 @@ namespace HeartAttackApp.HeavyTask
         public event EventHandler<HeavyTaskResponse> Callback;
 
         private Main main;
-        public HeavyTask(Main main)
+        public HeavyTaskTraning(Main main)
         {
             this.main = main;
             SyncContext = AsyncOperationManager.SynchronizationContext;

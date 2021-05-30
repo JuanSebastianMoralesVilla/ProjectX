@@ -8,10 +8,8 @@ namespace HeartAttackApp.Model
     public class Visualization
     {
         private Node root;
-        private PictureBox ptb;
         private Bitmap bitmap;
         private Graphics graphics;
-        private Pen pen;
         public const int DIST_Y = 130;
         private int rootX;
         private int rootY;
@@ -20,8 +18,6 @@ namespace HeartAttackApp.Model
 
         public Visualization(PictureBox ptb)
         {
-            this.ptb = ptb;
-            pen = new Pen(Color.Purple, 5);
             bitmap = new Bitmap(ptb.Width, ptb.Height);
             rootX = ptb.Width / 2;
             rootY = 20;
@@ -39,6 +35,7 @@ namespace HeartAttackApp.Model
         
         public void visualize()
         {
+            reduceRedundanceR(root);
             changeSonsSize(root);
             adjustSize();
             show(root,0);
@@ -122,6 +119,34 @@ namespace HeartAttackApp.Model
             }
         }
 
+        private int? reduceRedundanceR(Node cuurentNode)
+        {
+            if (cuurentNode.answer == null)
+            {
+                int? answer = -1;
+                foreach(Node node in cuurentNode.nodes)
+                {
+                    if (answer == -1)
+                    {
+                        answer = reduceRedundanceR(node);
+                    }
+                    else
+                    {
+                        int? aux = reduceRedundanceR(node);
+                        if (aux != answer)
+                        {
+                            answer = null;
+                        }
+                    }
+                }
+                if (answer != null)
+                {
+                    cuurentNode.answer = answer;
+                    cuurentNode.nodes = new Node[0];
+                }
+            }
+            return cuurentNode.answer;
+        }
         private void show(Node node,int position)
         {
             if (node == root)

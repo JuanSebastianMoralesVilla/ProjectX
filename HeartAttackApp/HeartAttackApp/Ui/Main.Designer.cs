@@ -56,7 +56,6 @@ namespace HeartAttackApp.Ui
             this.buttonsOptions1.Size = new System.Drawing.Size(995, 140);
             this.buttonsOptions1.TabIndex = 3;
             this.buttonsOptions1.Visible = false;
-            this.buttonsOptions1.Load += new System.EventHandler(this.buttonsOptions1_Load);
             // 
             // filterOptions1
             // 

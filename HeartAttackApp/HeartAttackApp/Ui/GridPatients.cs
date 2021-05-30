@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using HeartAttackApp.HeavyTask;
 
 namespace HeartAttackApp.Ui
 {
@@ -19,18 +20,18 @@ namespace HeartAttackApp.Ui
         private Add_pane addPane;
         private ControllerGUI controller;
         private Main main;
-    
+        private HeavyTaskExcel heavy;
         public GridPatients()
         {
             InitializeComponent();
         }
-        public void initialize(ControllerGUI controller,Main main, ButtonsOptions btnopt, FilterOptions ft)
+        public void initialize(ControllerGUI controller,Main main, ButtonsOptions btnopt, FilterOptions ft,HeavyTaskExcel heavy)
         {
             this.main = main;
             this.controller = controller;
             addPane = new Add_pane(controller, this, btnopt, ft);
+            this.heavy = heavy;
         }
-
 
 
         private void btn_graphics_Click(object sender, EventArgs e)
@@ -53,7 +54,12 @@ namespace HeartAttackApp.Ui
             addPane.SetId(304);
         }
       
-        
+        public void enableAll(bool enable)
+        {
+            btExcelExport.Enabled = enable;
+            btn_add.Enabled = enable;
+            btn_graphics.Enabled = enable;
+        }
       
 
         // LO HABILITA CUANDO VOY A EXPORTAR UNO O MAS PACIENTES SIN HABER CARGDO LA BD 
@@ -62,12 +68,12 @@ namespace HeartAttackApp.Ui
         }
 
     public void enableExport() {
-          //  bt_export.Enabled = false;
+          //bt_export.Enabled = false;
             btExcelExport.Enabled = true;
         }
 
         
-        private void ExportarDatosExcel()
+        public void ExportarDatosExcel()
         {
             DataGridView datagrid = grid_data;
             try
@@ -101,8 +107,7 @@ namespace HeartAttackApp.Ui
 
         private void btExcelExport_Click(object sender, EventArgs e)
         {
-            Thread t = new Thread(new ThreadStart(ExportarDatosExcel));
-            t.Start();
+            heavy.Start();
         }
   
     }

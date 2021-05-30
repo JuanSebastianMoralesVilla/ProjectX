@@ -16,6 +16,7 @@ namespace HeartAttackApp.Ui
         private ControllerGUI controller;
         private GridPatients gridPatients;
         private Visualization visualization;
+        private bool first;
         public FilterOptions()
         {
             InitializeComponent();
@@ -26,14 +27,15 @@ namespace HeartAttackApp.Ui
             string[] values = { Patient.ID, Patient.AGE , Patient.SEX, Patient.TYPE_PAIN, Patient.BLOOD_PRESSURE,
                                 Patient.CHOLESTEROL, Patient.LEVEL_SUGAR, Patient.ANGINA, Patient.RESULT_ELECTRO,
                                 Patient.HEART_RATE};
-            this.controller = null;
+            first = true;
             txt_accuracy.Visible = false;
             btn_showDecisionTree.Enabled = false;
             cb_filter.Items.AddRange(values);
-            cbDecisionTree.SelectedIndex = 0;
             this.controller = controller;
             this.gridPatients = gridPatients;
             this.visualization = visualization;
+            cbDecisionTree.SelectedIndex = 0;
+            first = false;
         }
         public void setAccuracy()
         {
@@ -197,6 +199,11 @@ namespace HeartAttackApp.Ui
             }
         }
 
+        public void eneableAll(bool enable)
+        {
+            btn_search.Enabled = enable;
+            btn_showDecisionTree.Enabled = enable;
+        }
 
         private void btn_showDecisionTree_Click(object sender, EventArgs e)
         {
@@ -204,31 +211,33 @@ namespace HeartAttackApp.Ui
             {
                 visualization.getPtbC45().Visible = false;
                 visualization.getPtbDecision().Visible=true;
-
             }
             else if (cbDecisionTree.SelectedIndex == 1)
             {
-                visualization.getPtbC45().Visible = true;
                 visualization.getPtbDecision().Visible = false;
+                visualization.getPtbC45().Visible = true;
             }
-
-            visualization.ShowDialog();
+            visualization.ShowDialog();      
         }
         private void cbDecisionTree_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDecisionTree.SelectedIndex == 0 && controller!=null) {
+            if (cbDecisionTree.SelectedIndex == 0 ) {
 
                 txt_accuracy.Visible = true;
                 setAccuracy();
                 btn_showDecisionTree.Enabled = true;
-                DialogResult mes = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }else if (cbDecisionTree.SelectedIndex == 1 && controller != null)
+                
+            }else if (cbDecisionTree.SelectedIndex == 1 )
             {
                 txt_accuracy.Visible = true;
                 txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
                 btn_showDecisionTree.Enabled = true;
-                DialogResult mes2 = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            if(!first)
+            {
+                DialogResult mes = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

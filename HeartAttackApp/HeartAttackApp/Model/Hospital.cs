@@ -459,19 +459,7 @@ namespace HeartAttackApp.Model
 
         private void trainingC45lib()
         {
-            /*
-             {
-                new DecisionVariable("1", 3),
-                new DecisionVariable("2", 2),
-                new DecisionVariable("3", 4),
-                new DecisionVariable("4", DecisionVariableKind.Continuous),
-                new DecisionVariable("5", DecisionVariableKind.Continuous),
-                new DecisionVariable("6", 2),
-                new DecisionVariable("7", 2),
-                new DecisionVariable("8", 3),
-                new DecisionVariable("9", DecisionVariableKind.Continuous),
-                };
-             */
+         
             c45Learning = new C45Learning();
                
             double[][] inputs1 = new double[trainingSet.Count][];
@@ -584,9 +572,28 @@ namespace HeartAttackApp.Model
             {
                 string comparation = decisionNode.ToString();
                 string[] aux = comparation.Split(' ');
-                currentNode.parent.value = int.Parse(aux[0]);
-                currentNode.message = Patient.getNamesColums(int.Parse(aux[0])) + " " + aux[1] + " " + aux[2];
-
+                currentNode.parent.value = int.Parse(aux[0])+1;
+                int column = int.Parse(aux[0])+1;
+                if (column == 1)
+                {
+                    string comparator = Math.Floor(double.Parse(aux[2])) == 0 ? "30" : "60";
+                    currentNode.message = Patient.getNamesColums(column) + " " + aux[1] + " " + comparator;
+                }else if (column == 2)
+                {
+                    string comparator = aux[1].Contains(">") ? "M" : "F";
+                    currentNode.message = Patient.getNamesColums(column) + " " + comparator;
+                }else if(column == 8)
+                {
+                    currentNode.message =  "Value " + aux[1] + " " + Math.Floor(double.Parse(aux[2]));
+                }else if (column == 6)
+                {
+                    string comparator = "120 mg/dl";
+                    currentNode.message = Patient.getNamesColums(column) + " " + aux[1] + " " + comparator;
+                }
+                else
+                {
+                    currentNode.message = Patient.getNamesColums(column) + " " + aux[1] + " " + Math.Floor(double.Parse(aux[2]));
+                }
             }
             else
             {

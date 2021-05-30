@@ -21,17 +21,17 @@ namespace HeartAttackApp.Ui
         {
             stop = false;
             InitializeComponent();
+            HeavyTaskExcel heavy = new HeavyTaskExcel(this);
+            heavy.Callback += CallbackLoadExcel;
             visualizationPane = new Visualization();
             controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
-            gridPatients1.initialize(controller,this, buttonsOptions1, filterOptions1);
+            gridPatients1.initialize(controller,this, buttonsOptions1, filterOptions1,heavy);
             filterOptions1.inicialize(controller, gridPatients1,visualizationPane);
             buttonsOptions1.inicialize(controller, gridPatients1, filterOptions1);
             visualizationPane.initialize(controller);
         }
         
-
-
         public void training()
         {
             Thread t = new Thread(new ThreadStart(controller.training));
@@ -77,7 +77,7 @@ namespace HeartAttackApp.Ui
 
         private void Main_Load(object sender, EventArgs e)
         {
-            HeavyTask.HeavyTask hvtask = new HeavyTask.HeavyTask(this);
+            HeavyTask.HeavyTaskTraning hvtask = new HeavyTask.HeavyTaskTraning(this);
 
             // Puedes crear multiples callbacks o solo uno
             hvtask.Callback += CallbackActualiceProgess;
@@ -85,9 +85,17 @@ namespace HeartAttackApp.Ui
             training();
         }
 
-        private void buttonsOptions1_Load(object sender, EventArgs e)
+        private void CallbackLoadExcel(object sender, HeavyTaskResponseExcel response)
         {
+            filterOptions1.eneableAll(false);
+            gridPatients1.enableAll(false);
+            buttonsOptions1.enableAll(false);
 
+            gridPatients1.ExportarDatosExcel();
+
+            filterOptions1.eneableAll(true);
+            gridPatients1.enableAll(true);
+            buttonsOptions1.enableAll(true);
         }
     }
 }

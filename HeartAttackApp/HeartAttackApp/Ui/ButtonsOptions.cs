@@ -80,5 +80,12 @@ namespace HeartAttackApp.Ui
             filterOptions.cb_filterSetVisible(true);
             gridPatiens.loadGrid(controller.patient());
         }
+
+        public void enableAll(bool enable)
+        {
+            btn_load.Enabled = enable;
+            btn_new.Enabled = enable;
+        }
+
     }
 }

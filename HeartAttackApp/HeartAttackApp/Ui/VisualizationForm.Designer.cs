@@ -1,7 +1,7 @@
 ﻿
 namespace HeartAttackApp.Ui
 {
-    partial class Visualization
+    partial class VisualizationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HeartAttackApp.Ui
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Visualization));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizationForm));
             this.ptb_C45TreeVisualization = new System.Windows.Forms.PictureBox();
             this.ptb_TreeVisualitation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_C45TreeVisualization)).BeginInit();

@@ -76,7 +76,7 @@ Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the p
 [Engineering Method](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Met%C3%B3do%20de%20la%20ingenieria%20Proyecto%20x.pdf)
 
 ### Sequence Diagrams
-[Sequence Diagrams](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/Sequence%20Diagrams.pdf)
+[Sequence Diagrams](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/SequenceDiagrams.pdf)
 
 ## Contributing
 
@@ -110,6 +110,7 @@ In this videos we show the functionalities and how we see the model and the data
 
 ### [Video - Milestone 1](https://youtu.be/NX_hr811Gl0)
 ### [Video - Milestone 2](https://youtu.be/8ViVyqaJcxQ)
+### [Video - Milestone 3](https://youtu.be/4zbWcJPt7-w)
 ### [Pitch](https://youtu.be/ZayVhv_tCLU)
 
 ## Contributors 

@@ -60,18 +60,12 @@ namespace HeartAttackApp.Ui
             btn_add.Enabled = enable;
             btn_graphics.Enabled = enable;
         }
-      
 
         // LO HABILITA CUANDO VOY A EXPORTAR UNO O MAS PACIENTES SIN HABER CARGDO LA BD 
-        public void enableexportADD() {
-          //  bt_export.Enabled = true;
-        }
 
-    public void enableExport() {
-          //bt_export.Enabled = false;
+        public void enableExport() {
             btExcelExport.Enabled = true;
         }
-
         
         public void ExportarDatosExcel()
         {
@@ -109,6 +103,10 @@ namespace HeartAttackApp.Ui
         {
             heavy.Start();
         }
-  
+
+        public void ourTree(bool our)
+        {
+            main.ourTree(our);
+        }
     }
 }

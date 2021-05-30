@@ -38,13 +38,13 @@ namespace HeartAttackApp.Ui
             this.tb_cadena = new System.Windows.Forms.TextBox();
             this.cb_filter = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_search = new System.Windows.Forms.Button();
             this.labelDTree = new System.Windows.Forms.Label();
             this.cbDecisionTree = new System.Windows.Forms.ComboBox();
             this.txt_accuracy = new System.Windows.Forms.Label();
             this.btn_showDecisionTree = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_search = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +127,7 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.04453F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.95547F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 273F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.cb_filter, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelDTree, 3, 0);
@@ -145,18 +145,6 @@ namespace HeartAttackApp.Ui
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(995, 95);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // btn_search
-            // 
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.Location = new System.Drawing.Point(185, 35);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(75, 22);
-            this.btn_search.TabIndex = 17;
-            this.btn_search.Text = "search";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Visible = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click_1);
             // 
             // labelDTree
             // 
@@ -176,9 +164,9 @@ namespace HeartAttackApp.Ui
             this.cbDecisionTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDecisionTree.FormattingEnabled = true;
             this.cbDecisionTree.Items.AddRange(new object[] {
-            "Decision tree our",
-            "Decision tree library"});
-            this.cbDecisionTree.Location = new System.Drawing.Point(496, 35);
+            "Our Decision Tree",
+            "Library\'s Decision Tree"});
+            this.cbDecisionTree.Location = new System.Drawing.Point(495, 35);
             this.cbDecisionTree.Name = "cbDecisionTree";
             this.cbDecisionTree.Size = new System.Drawing.Size(149, 21);
             this.cbDecisionTree.TabIndex = 22;
@@ -191,7 +179,7 @@ namespace HeartAttackApp.Ui
             this.txt_accuracy.Font = new System.Drawing.Font("Stencil", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_accuracy.ForeColor = System.Drawing.Color.Red;
             this.txt_accuracy.Image = ((System.Drawing.Image)(resources.GetObject("txt_accuracy.Image")));
-            this.txt_accuracy.Location = new System.Drawing.Point(831, 32);
+            this.txt_accuracy.Location = new System.Drawing.Point(830, 32);
             this.txt_accuracy.Name = "txt_accuracy";
             this.txt_accuracy.Size = new System.Drawing.Size(54, 25);
             this.txt_accuracy.TabIndex = 20;
@@ -204,7 +192,7 @@ namespace HeartAttackApp.Ui
             this.btn_showDecisionTree.BackColor = System.Drawing.Color.White;
             this.btn_showDecisionTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_showDecisionTree.Image = ((System.Drawing.Image)(resources.GetObject("btn_showDecisionTree.Image")));
-            this.btn_showDecisionTree.Location = new System.Drawing.Point(786, 63);
+            this.btn_showDecisionTree.Location = new System.Drawing.Point(785, 63);
             this.btn_showDecisionTree.Name = "btn_showDecisionTree";
             this.btn_showDecisionTree.Size = new System.Drawing.Size(144, 29);
             this.btn_showDecisionTree.TabIndex = 18;
@@ -218,7 +206,7 @@ namespace HeartAttackApp.Ui
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(274, 0);
+            this.label2.Location = new System.Drawing.Point(273, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 28);
             this.label2.TabIndex = 21;
@@ -229,12 +217,24 @@ namespace HeartAttackApp.Ui
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(505, 0);
+            this.label1.Location = new System.Drawing.Point(504, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 28);
             this.label1.TabIndex = 23;
             this.label1.Text = "Select Decision Tree:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(185, 35);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(75, 22);
+            this.btn_search.TabIndex = 17;
+            this.btn_search.Text = "search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Visible = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click_1);
             // 
             // FilterOptions
             // 

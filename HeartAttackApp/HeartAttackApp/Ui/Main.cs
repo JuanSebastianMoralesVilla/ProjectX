@@ -16,18 +16,18 @@ namespace HeartAttackApp.Ui
     {
         private ControllerGUI controller;
         public bool stop;
-        private Visualization visualizationPane;
+        private VisualizationForm visualizationPane;
         public Main()
         {
             stop = false;
             InitializeComponent();
             HeavyTaskExcel heavy = new HeavyTaskExcel(this);
             heavy.Callback += CallbackLoadExcel;
-            visualizationPane = new Visualization();
+            visualizationPane = new VisualizationForm();
             controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
-            gridPatients1.initialize(controller,this, buttonsOptions1, filterOptions1,heavy);
-            filterOptions1.inicialize(controller, gridPatients1,visualizationPane);
+            filterOptions1.inicialize(controller, gridPatients1);
+            gridPatients1.initialize(controller, this, buttonsOptions1, filterOptions1, heavy);
             buttonsOptions1.inicialize(controller, gridPatients1, filterOptions1);
             visualizationPane.initialize(controller);
         }
@@ -96,6 +96,22 @@ namespace HeartAttackApp.Ui
             filterOptions1.eneableAll(true);
             gridPatients1.enableAll(true);
             buttonsOptions1.enableAll(true);
+        }
+
+        public void ourTree(bool our)
+        {
+            if (our)
+            {
+                visualizationPane.getPtbC45().Visible = false;
+                visualizationPane.getPtbDecision().Visible = true;
+            }
+            else
+            {
+                visualizationPane.getPtbC45().Visible = true;
+                visualizationPane.getPtbDecision().Visible = false;
+            }
+
+            visualizationPane.ShowDialog();
         }
     }
 }

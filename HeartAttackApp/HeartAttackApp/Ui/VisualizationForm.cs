@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace HeartAttackApp.Ui
 {
-    public partial class Visualization : Form
+    public partial class VisualizationForm : Form
     {
         ControllerGUI controller;
-        public Visualization()
+        public VisualizationForm()
         {
             InitializeComponent();
         }

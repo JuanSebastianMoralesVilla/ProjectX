@@ -19,6 +19,7 @@ namespace HeartAttackApp.Model
         private List<Patient>[] allTrainings { get; set; }
         private List<Patient> trainingSet { get; set; }
         private List<Patient> testingSet { get; set; }
+        private List<Patient> trainingSets { get; set; }
 
         private C45Learning c45Learning;   
 
@@ -375,6 +376,7 @@ namespace HeartAttackApp.Model
         private void files()
         {
             allTrainings = new List<Patient>[5];
+            trainingSets = new List<Patient>();
             for(int s = 0; s < 5; s++)
             {
                 allTrainings[s] = new List<Patient>();
@@ -415,7 +417,7 @@ namespace HeartAttackApp.Model
                         position++;
                     }
                 }
-                trainingSet.Add(all);
+                trainingSets.Add(all);
                 line = reader.ReadLine();
                 i++;
             }
@@ -440,8 +442,6 @@ namespace HeartAttackApp.Model
             threadDecision.Join();
             threadC45.Join();
         }
-        
-        
         private void training(int limit)
         {
             trainingSet = new List<Patient>();
@@ -458,6 +458,7 @@ namespace HeartAttackApp.Model
         private void files(int limit)
         {
             allTrainings = new List<Patient>[5];
+            trainingSets = new List<Patient>();
             for (int s = 0; s < 5; s++)
             {
                 allTrainings[s] = new List<Patient>();
@@ -498,7 +499,7 @@ namespace HeartAttackApp.Model
                         position++;
                     }
                 }
-                trainingSet.Add(all);
+                trainingSets.Add(all);
                 line = reader.ReadLine();
                 i++;
             }
@@ -506,27 +507,15 @@ namespace HeartAttackApp.Model
         private void trainingC45lib()
         {
          
-            c45Learning = new C45Learning();
-            int size = trainingSet.Count + testingSet.Count;
+            c45Learning = new C45Learning() {
+                Join = 2,
+                MaxHeight = 5
+            };
+            int size = trainingSets.Count;
             double[][] inputs1 = new double[size][];
             int[] outputs1 = new int[size];
             int i = 0;
-            foreach (Patient patient in trainingSet)
-            {
-                double[] aux = new double[9];
-                for (int j = 1; j <= 9; j++)
-                {
-                    if (j == 1)
-                    {
-                        aux[j - 1] = patient.get(j) < 30 ? 0 : patient.get(j) < 60 ? 1 : 2;
-                    }
-                    else aux[j - 1] = patient.get(j);
-                }
-                inputs1[i] = aux;
-                outputs1[i] = patient.get(10);
-                i++;
-            }
-            foreach (Patient patient in testingSet)
+            foreach (Patient patient in trainingSets)
             {
                 double[] aux = new double[9];
                 for (int j = 1; j <= 9; j++)
@@ -563,28 +552,33 @@ namespace HeartAttackApp.Model
         {
             decision = new DecisionTree();
             double best = 0;
-            int index = 0;
+            int index = 8;
+            
             for (int i = 2; i <= 9; i++)
             {
                 decision.depthLimit = i;
                 decision.training(trainingSet);
-                double result = Math.Round(decision.testing(testingSet), 2);
-                if (result > best)
+                double aux = Math.Round(decision.testing(testingSet), 2);
+                if (aux > best)
                 {
-                    best = result;
+                    best = aux;
                     index = i;
                 }
-                Console.WriteLine("# " + i + " " + result);
                 advance++;
             }
             decision.depthLimit = index;
-            accuracyDecision =  best;
+            decision.training(trainingSet);
+            double result = Math.Round(decision.testing(testingSet), 2);
+            advance++;
+            accuracyDecision =  result;
         }
         private void crossValidationDecision()
         {
             double allAccuracyDecision = 0;
             for (int i = 0; i < 5; i++)
             {
+                trainingSet = new List<Patient>();
+                testingSet = new List<Patient>();
                 for (int j = 0; j < 5; j++)
                 {
                     advance++;

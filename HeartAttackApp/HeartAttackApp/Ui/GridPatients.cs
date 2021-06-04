@@ -92,7 +92,7 @@ namespace HeartAttackApp.Ui
             exported = true;
         }
 
-        public void ExportarExperimento(string[][] mat)
+        public void exportarExperimento(string[][] mat)
         {
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             excel.Application.Workbooks.Add(true);
@@ -115,6 +115,21 @@ namespace HeartAttackApp.Ui
         public void ourTree(bool our)
         {
             main.ourTree(our);
+        }
+
+        private void experiment()
+        {
+            string[][] experimentMatriz = controller.miHospital.generateResultExperiment(1);
+            exportarExperimento(experimentMatriz);
+        } 
+        private void btn_experiment_Click(object sender, EventArgs e)
+        {
+            DialogResult mes =  MessageBox.Show("this process could take a long time. Are you sure do it?", "Information Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (mes.Equals(DialogResult.Yes))
+            {
+                Thread thread = new Thread(new ThreadStart(experiment));
+                thread.Start();
+            }
         }
     }
 }

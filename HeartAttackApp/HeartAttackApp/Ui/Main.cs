@@ -42,7 +42,7 @@ namespace HeartAttackApp.Ui
         {
             int advance = controller.miHospital.advance;
             startApp1.loading(advance);
-            if (advance == 65)
+            if (advance == 50)
             {
                 stop = true;
                 loadMain();

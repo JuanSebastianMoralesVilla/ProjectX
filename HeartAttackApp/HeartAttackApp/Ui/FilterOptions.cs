@@ -226,7 +226,7 @@ namespace HeartAttackApp.Ui
             }else if (cbDecisionTree.SelectedIndex == 1 )
             {
                 txt_accuracy.Visible = true;
-                txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
+                txt_accuracy.Text = controller.miHospital.accuracyC45lib*100  + "%";
                 btn_showDecisionTree.Enabled = true;
                 message = "The data will be classified according to the library's decision tree.";
             }

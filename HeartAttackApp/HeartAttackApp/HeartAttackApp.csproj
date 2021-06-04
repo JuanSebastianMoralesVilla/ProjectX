@@ -78,7 +78,6 @@
     <Compile Include="Model\Node.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\Visualization.cs" />
-    <Compile Include="Test\TestClass.cs" />
     <Compile Include="Ui\Add_pane.cs">
       <SubType>Form</SubType>
     </Compile>

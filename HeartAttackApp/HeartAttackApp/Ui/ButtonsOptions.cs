@@ -31,10 +31,11 @@ namespace HeartAttackApp.Ui
             btn_solve.Enabled = false;
         }
 
-        public void enableButtons() {
+        public void enableButtons(bool enable) {
 
-            btn_new.Enabled = true;
-            btn_solve.Enabled = true;
+            btn_new.Enabled = enable;
+            btn_solve.Enabled = enable;
+            btn_load.Enabled = enable;
         }
         public ButtonsOptions()
         {
@@ -66,7 +67,7 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(patients.Count);
                 gridPatiens.loadGrid(patients);
                 filterOptions.cb_filterSetVisible(true);
-                enableButtons();
+                enableButtons(true);
                 gridPatiens.enableExport();
             }
         }
@@ -80,12 +81,5 @@ namespace HeartAttackApp.Ui
             filterOptions.cb_filterSetVisible(true);
             gridPatiens.loadGrid(controller.patient());
         }
-
-        public void enableAll(bool enable)
-        {
-            btn_load.Enabled = enable;
-            btn_new.Enabled = enable;
-        }
-
     }
 }

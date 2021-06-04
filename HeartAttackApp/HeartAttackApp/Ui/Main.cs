@@ -42,7 +42,7 @@ namespace HeartAttackApp.Ui
         {
             int advance = controller.miHospital.advance;
             startApp1.loading(advance);
-            if (advance == 10)
+            if (advance == 80)
             {
                 stop = true;
                 loadMain();
@@ -77,9 +77,7 @@ namespace HeartAttackApp.Ui
 
         private void Main_Load(object sender, EventArgs e)
         {
-            HeavyTask.HeavyTaskTraning hvtask = new HeavyTask.HeavyTaskTraning(this);
-
-            // Puedes crear multiples callbacks o solo uno
+            HeavyTaskTraning hvtask = new HeavyTaskTraning(this);
             hvtask.Callback += CallbackActualiceProgess;
             hvtask.Start();
             training();
@@ -89,13 +87,14 @@ namespace HeartAttackApp.Ui
         {
             filterOptions1.eneableAll(false);
             gridPatients1.enableAll(false);
-            buttonsOptions1.enableAll(false);
-
-            gridPatients1.ExportarDatosExcel();
-
-            filterOptions1.eneableAll(true);
-            gridPatients1.enableAll(true);
-            buttonsOptions1.enableAll(true);
+            buttonsOptions1.enableButtons(false);
+            if (gridPatients1.exported)
+            {
+                filterOptions1.eneableAll(true);
+                gridPatients1.enableAll(true);
+                buttonsOptions1.enableButtons(true);
+                stop = true;
+            }
         }
 
         public void ourTree(bool our)

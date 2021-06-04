@@ -38,7 +38,7 @@ namespace HeartAttackApp.HeavyTask
                 ), null);
                 Thread.Sleep(10);
             }
-            
+            main.stop = false;
         }
 
 

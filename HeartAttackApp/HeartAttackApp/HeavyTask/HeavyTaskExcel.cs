@@ -30,10 +30,15 @@ namespace HeartAttackApp.HeavyTask
         }
         private void Run()
         {
-            SyncContext.Post(e => triggerCallback1(
-                     new HeavyTaskResponseExcel()
-                 ), null);
-            Thread.Sleep(10);
+            while (!main.stop)
+            {
+                SyncContext.Post(e => triggerCallback1(
+                    new HeavyTaskResponseExcel()
+                ), null);
+
+                Thread.Sleep(10);
+            }
+            main.stop = false;
         }
 
         private void triggerCallback1(HeavyTaskResponseExcel response)

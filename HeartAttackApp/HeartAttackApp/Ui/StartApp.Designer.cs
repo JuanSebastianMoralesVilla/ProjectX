@@ -49,7 +49,7 @@ namespace HeartAttackApp.Ui
             // 
             this.pb_starting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pb_starting.Location = new System.Drawing.Point(320, 345);
-            this.pb_starting.Maximum = 10;
+            this.pb_starting.Maximum = 80;
             this.pb_starting.Name = "pb_starting";
             this.pb_starting.Size = new System.Drawing.Size(355, 23);
             this.pb_starting.TabIndex = 3;

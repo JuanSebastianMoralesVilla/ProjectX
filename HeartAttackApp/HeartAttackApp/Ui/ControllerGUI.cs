@@ -13,24 +13,20 @@ namespace HeartAttackApp.Ui
     {
 
         public Hospital miHospital { get; private set; }
-
-
+        public int currentID { get; private set; }
         public ControllerGUI(PictureBox ptbDecision,PictureBox ptbC45Learning)
         {
             miHospital = new Hospital(ptbDecision,ptbC45Learning);
+            currentID = 1;
         }
         public List<Patient> patient()
         {
             return miHospital.classify();
         }
-        
-        public void add(int idPatient, int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
+        public void add(int age, int sex, int typePain, int bloodPressure, int cholesterol, int levelSugar, int angina, int resultElectro, int heartRate)
         {
-            miHospital.add(idPatient, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
+            miHospital.add(currentID++, age, sex, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate,null);
         }
-
-        
-
         public void solve(int selected)
         {
             miHospital.resolve(selected);
@@ -55,7 +51,6 @@ namespace HeartAttackApp.Ui
                 while (!string.IsNullOrEmpty(line))
                 {
                     string[] array = line.Split(';');
-                    int idPatient = int.Parse(array[0]);
                     int year = int.Parse(array[1]);
                     int genre = int.Parse(array[2]);
                     int typePain = int.Parse(array[3]);
@@ -67,7 +62,7 @@ namespace HeartAttackApp.Ui
                     int angina = int.Parse(array[9]);
                     int result = int.Parse(array[10]);
 
-                    miHospital.add(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
+                    miHospital.add(currentID++, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
                     line = reader.ReadLine();
                 }
             }
@@ -76,35 +71,28 @@ namespace HeartAttackApp.Ui
                 Console.WriteLine(exception1.Message);
             }
         }
-
-        
-
         public List<Patient> search(int id)
         {
             List<Patient> patients = new List<Patient>();
             patients = miHospital.classify(id);
             return patients;
         }
-
         public List<Patient> search(string type,int lower,int higger)
         {
             List<Patient> patients = new List<Patient>();
             patients = miHospital.classify(type,lower, higger);
             return patients;
         }
-
         public List<Patient> search(string type,int id)
         {
             List<Patient> patients = new List<Patient>();
             patients = miHospital.classify(type,id);
             return patients;
         }
-
         public List<string[]> RetrieveCuadro1()
         {
             return miHospital.Cuadro1Conversor();
         }
-
         public List<string[]> RetrieveCuadro2()
         {
             return miHospital.Cuadro2Conversor();
@@ -114,34 +102,27 @@ namespace HeartAttackApp.Ui
         {
             return miHospital.Cuadro3Conversor();
         }
-
         public List<string[]> RetrieveCuadro4()
         {
             return miHospital.Cuadro4Conversor();
         }
-
         public List<string[]> RetrieveCuadro5()
         {
             return miHospital.Cuadro5Conversor();
 
         }
-
         public string[] valuesC()
         {
             return miHospital.valuesC();
         }
-
         public string[] valuesN()
         {
             return miHospital.valuesN();
         }
-
         public string[] valuesB()
         {
             return miHospital.valuesB();
         }
-
-        
     }
 }
 

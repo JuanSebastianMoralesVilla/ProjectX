@@ -21,6 +21,7 @@ namespace HeartAttackApp.Ui
         private ControllerGUI controller;
         private Main main;
         private HeavyTaskExcel heavy;
+        public bool exported { get; set; }
         public GridPatients()
         {
             InitializeComponent();
@@ -31,14 +32,12 @@ namespace HeartAttackApp.Ui
             this.controller = controller;
             addPane = new Add_pane(controller, this, btnopt, ft);
             this.heavy = heavy;
+            exported = exported;
         }
-
-
         private void btn_graphics_Click(object sender, EventArgs e)
         {
             main.loadCharts();
         }
-
         private void btn_add_Click(object sender, EventArgs e)
         {
             addPane.ShowDialog();
@@ -51,9 +50,7 @@ namespace HeartAttackApp.Ui
         public void newClick()
         {
             grid_data.DataSource = new List<Patient>();
-            addPane.SetId(304);
         }
-      
         public void enableAll(bool enable)
         {
             btExcelExport.Enabled = enable;
@@ -97,11 +94,14 @@ namespace HeartAttackApp.Ui
             {
                 MessageBox.Show("No have register for export .");
             }
+            exported = true;
         }
 
         private void btExcelExport_Click(object sender, EventArgs e)
         {
             heavy.Start();
+            Thread thread = new Thread(new ThreadStart(ExportarDatosExcel));
+            thread.Start();
         }
 
         public void ourTree(bool our)

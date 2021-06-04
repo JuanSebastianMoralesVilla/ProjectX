@@ -13,7 +13,9 @@ namespace HeartAttackApp.Model
     public class Hospital
     {
         public List<Patient> patients { get;private set; }
+        private List<Patient>[] allTrainings { get; set; }
         private List<Patient> trainingSet { get; set; }
+        private List<Patient> testingSet { get; set; }
 
         private C45Learning c45Learning;   
 
@@ -23,7 +25,6 @@ namespace HeartAttackApp.Model
         Accord.MachineLearning.DecisionTrees.DecisionTree decisionTreeLib;
         public int advance;
         private DecisionTree decision { get; set; }
-        private List<Patient> testingSet { get; set; }
         public Hashtable Cuadro1 { get; private set; }
         public Hashtable Cuadro2 { get; private set; }
         public Hashtable Cuadro3 { get; private set; }
@@ -147,9 +148,6 @@ namespace HeartAttackApp.Model
 
             return result;
         }
-
-       
-
         public List<Patient> classify(string type, int value)
         {
             clearGrahpics();
@@ -187,7 +185,6 @@ namespace HeartAttackApp.Model
 
             return result;
         }
-
         public void AddRecordToHashTables(Patient Pat)
         {
             int[] arrayForAverage = { 0, 0 };
@@ -311,7 +308,6 @@ namespace HeartAttackApp.Model
                 Cuadro5.Add(colesterol, 1);
             }
         }
-
         public List<string[]> Cuadro1Conversor()
         {
             List<string[]> datos = new List<string[]>();
@@ -324,7 +320,6 @@ namespace HeartAttackApp.Model
             }
             return datos;
         }
-
         public List<string[]> Cuadro2Conversor()
         {
             List<string[]> datos = new List<string[]>();
@@ -337,7 +332,6 @@ namespace HeartAttackApp.Model
             }
             return datos;
         }
-
         public List<string[]> Cuadro3Conversor()
         {
             List<string[]> datos = new List<string[]>();
@@ -350,7 +344,6 @@ namespace HeartAttackApp.Model
             }
             return datos;
         }
-
         public List<string[]> Cuadro4Conversor()
         {
             List<string[]> datos = new List<string[]>();
@@ -364,7 +357,6 @@ namespace HeartAttackApp.Model
             return datos;
 
         }
-
         public List<string[]> Cuadro5Conversor()
         {
             List<string[]> datos = new List<string[]>();
@@ -377,39 +369,54 @@ namespace HeartAttackApp.Model
             }
             return datos;
         }
-
         private void files()
         {
+            allTrainings = new List<Patient>[5];
+            for(int s = 0; s < 5; s++)
+            {
+                allTrainings[s] = new List<Patient>();
+            }
+            Random rnd = new Random();
             string path = @"../../../../Dataset/Datasets/";
-            var reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetTrainingFull.csv"));
+            var reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetHeartAtack.csv"));
             string line = reader.ReadLine();
             line = reader.ReadLine();
-
+            int i = 1;
             while (!string.IsNullOrEmpty(line))
             {
                 string[] array = line.Split(';');
-                int idPatient = int.Parse(array[0]);
-                int year = int.Parse(array[1]);
-                int genre = int.Parse(array[2]);
-                int typePain = int.Parse(array[3]);
-                int bloodPressure = int.Parse(array[4]);
-                int cholesterol = int.Parse(array[5]);
-                int levelSugar = int.Parse(array[6]);
-                int resultElectro = int.Parse(array[7]);
-                int heartRate = int.Parse(array[8]);
-                int angina = int.Parse(array[9]);
-                /*
-                double oldPeak = double.Parse(array[10]);
-                int slp = int.Parse(array[11]);
-                int caa = int.Parse(array[12]);
-                int thall = int.Parse(array[13]);
-                */
-                int result = int.Parse(array[10]);
+                int idPatient = i;
+                int year = int.Parse(array[0]);
+                int genre = int.Parse(array[1]);
+                int typePain = int.Parse(array[2]);
+                int bloodPressure = int.Parse(array[3]);
+                int cholesterol = int.Parse(array[4]);
+                int levelSugar = int.Parse(array[5]);
+                int resultElectro = int.Parse(array[6]);
+                int heartRate = int.Parse(array[7]);
+                int angina = int.Parse(array[8]);
+                int result = int.Parse(array[9]);
 
                 Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
+                int position = rnd.Next(5);
+                bool gainPosition = false;
+                while (!gainPosition)
+                {
+                    if(allTrainings[position%5].Count < 60 + (position % 2))
+                    {
+                        allTrainings[position%5].Add(all);
+                        gainPosition = true;
+                    }
+                    else
+                    {
+                        position++;
+                    }
+                }
                 trainingSet.Add(all);
                 line = reader.ReadLine();
+                i++;
             }
+            /*
             reader = new System.IO.StreamReader(File.OpenRead(path + "DataSetValidFull.csv"));
             line = reader.ReadLine();
             line = reader.ReadLine();
@@ -427,20 +434,14 @@ namespace HeartAttackApp.Model
                 int resultElectro = int.Parse(array[7]);
                 int heartRate = int.Parse(array[8]);
                 int angina = int.Parse(array[9]);
-                /*
-                double oldPeak = double.Parse(array[10]);
-                int slp = int.Parse(array[11]);
-                int caa = int.Parse(array[12]);
-                int thall = int.Parse(array[13]);
-                */
                 int result = int.Parse(array[10]);
 
                 Patient all = new Patient(idPatient, year, genre, typePain, bloodPressure, cholesterol, levelSugar, angina, resultElectro, heartRate, result);
                 testingSet.Add(all);
                 line = reader.ReadLine();
             }
+            */
         }
-
         public void visualize()
         {
             decision.createTree(visualizationDecision);
@@ -448,16 +449,35 @@ namespace HeartAttackApp.Model
             visualizationC45Learning.insert(DecisionNodeToNodeClass(c45Learning.Model.Root));
             visualizationC45Learning.visualize();
         }
-
         public void training()
         {
             trainingSet = new List<Patient>();
             testingSet = new List<Patient>();
-            trainingDecision();
-            trainingC45lib();
+            double allAccuracyDecision = 0;
+            double allAccuracyC45 = 0;
+            advance = 0;
+            files();
+            for (int i = 0; i < 5; i++)
+            {
+                for(int j = 0; j < 5; j++)
+                {
+                    advance++;
+                    if (i != j)
+                    {
+                        trainingSet.AddRange(allTrainings[j]);
+                    }
+                    else
+                    {
+                        testingSet.AddRange(allTrainings[j]);
+                    }
+                }
+                allAccuracyDecision += trainingDecision();
+                allAccuracyC45+=trainingC45lib();
+            }
+            accuracyDecision = allAccuracyDecision / 5;
+            accuracyC45lib = allAccuracyC45 / 5;
         }
-
-        private void trainingC45lib()
+        private double trainingC45lib()
         {
          
             c45Learning = new C45Learning();
@@ -498,21 +518,18 @@ namespace HeartAttackApp.Model
                 outputs2[i] = patient.get(10);
                 i++;
             }
-
+            advance++;
             decisionTreeLib = c45Learning.Learn(inputs1, outputs1);
-
+            advance++;
             int[] predicted = decisionTreeLib.Decide(inputs2);
-
+            advance++;
             double error = new ZeroOneLoss(outputs2).Loss(predicted);
-            accuracyC45lib = Math.Round(1 - error, 2) * 100;
-            Console.WriteLine(accuracyC45lib);
+            
+            return Math.Round(1 - error, 2) * 100;
         }
-
-        private void trainingDecision()
+        private double trainingDecision()
         {
             decision = new DecisionTree();
-            files();
-            advance = 1;
             double best = 0;
             int index = 0;
             for (int i = 2; i <= 9; i++)
@@ -525,13 +542,11 @@ namespace HeartAttackApp.Model
                     best = result;
                     index = i;
                 }
-                advance = i;
                 Console.WriteLine("# " + i + " " + result);
+                advance++;
             }
             decision.depthLimit = index;
-            decision.training(trainingSet);
-            advance = 10;
-            accuracyDecision = best;
+            return best;
         }
         public void resolve(int selected)
         {
@@ -557,14 +572,12 @@ namespace HeartAttackApp.Model
                 
             }
         }
-
         public Node DecisionNodeToNodeClass(DecisionNode root)
         {
             Node result = new Node();
             DecisionNodeToNodeClass(root, result);
             return result;
         }
-
         private void  DecisionNodeToNodeClass(DecisionNode decisionNode, Node currentNode)
         {
            

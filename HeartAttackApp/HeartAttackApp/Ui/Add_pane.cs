@@ -17,8 +17,6 @@ namespace HeartAttackApp.Ui
         GridPatients grid;
         ButtonsOptions btnopt;
         FilterOptions ft;
-
-        private int id;
         
         public Add_pane(ControllerGUI controller, GridPatients grid, ButtonsOptions btnopt, FilterOptions ft)
         {
@@ -27,7 +25,6 @@ namespace HeartAttackApp.Ui
             this.btnopt = btnopt;
             this.controller = controller;
             this.grid = grid;
-            id = 304;
         }
 
         private void clear()
@@ -64,30 +61,16 @@ namespace HeartAttackApp.Ui
                 {
                     throw new FormatException();
                 }
-                /*
-                age = Math.Abs(age);
-                bloodPressure = Math.Abs(bloodPressure);
-                cholesterol = Math.Abs(cholesterol);
-                electro = Math.Abs(electro);
-                heartRate = Math.Abs(heartRate);
-
-                txt_age.Text = age + "";
-                txt_bloodPressure.Text = bloodPressure + "";
-                txt_colesterol.Text = cholesterol + "";
-                txt_electroCardio.Text = electro + "";
-                txt_maxHeart.Text = heartRate + "";
-                */
                 
                 DialogResult result = MessageBox.Show("ARE YOU SURE YOU WANT TO ADD THAT PATIENT?", "Confirm add patient", MessageBoxButtons.YesNo);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    controller.add(id, age, sex, typePain, bloodPressure, cholesterol, bloodSugar, angina, electro, heartRate);
+                    controller.add(age, sex, typePain, bloodPressure, cholesterol, bloodSugar, angina, electro, heartRate);
                     List<Patient> patients = controller.patient();
                     grid.loadGrid(patients);
-                    id++;
                     clear();
                     grid.enableExport();
-                    btnopt.enableButtons();
+                    btnopt.enableButtons(true);
                     ft.cb_filterSetVisible(true);
                     this.Close();
                 }
@@ -105,16 +88,7 @@ namespace HeartAttackApp.Ui
 
         private void Add_pane_Load(object sender, EventArgs e)
         {
-            txt_ID.Text = id+ "";
+            txt_ID.Text = controller.currentID+ "";
         }
-
-        public void SetId(int n)
-        {
-            id = n;
-        }
-
-
-       
-
     }
 }

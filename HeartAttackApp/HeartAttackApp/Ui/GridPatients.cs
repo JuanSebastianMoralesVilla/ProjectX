@@ -97,6 +97,15 @@ namespace HeartAttackApp.Ui
             exported = true;
         }
 
+        public void ExportarExperimento(string[] mat)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(true);
+            for (int fila = 0; fila < mat.Length; fila++)
+            {
+                for ()
+            }
+        }
         private void btExcelExport_Click(object sender, EventArgs e)
         {
             heavy.Start();

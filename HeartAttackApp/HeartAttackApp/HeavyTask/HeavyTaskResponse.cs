@@ -8,11 +8,9 @@ namespace HeartAttackApp.HeavyTask
 {
     public class HeavyTaskResponse
     {
-        private readonly int message;
 
         public HeavyTaskResponse()
         {
-            this.message = 0;
         }
     }
 }

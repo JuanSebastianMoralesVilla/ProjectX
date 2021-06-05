@@ -41,6 +41,7 @@ namespace HeartAttackApp.Ui
             // 
             this.gridPatients1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gridPatients1.BackgroundImage")));
             this.gridPatients1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPatients1.exported = false;
             this.gridPatients1.Location = new System.Drawing.Point(0, 95);
             this.gridPatients1.Name = "gridPatients1";
             this.gridPatients1.Size = new System.Drawing.Size(995, 332);
@@ -94,6 +95,7 @@ namespace HeartAttackApp.Ui
             this.Controls.Add(this.startApp1);
             this.Controls.Add(this.showCharts1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1020, 610);
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);

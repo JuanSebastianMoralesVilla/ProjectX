@@ -69,9 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeavyTask\HeavyTaskExcel.cs" />
-    <Compile Include="HeavyTask\HeavyTaskResponseExcel.cs" />
-    <Compile Include="HeavyTask\HeavyTaskTraning.cs" />
+    <Compile Include="HeavyTask\HeavyTasks.cs" />
     <Compile Include="HeavyTask\HeavyTaskResponse.cs" />
     <Compile Include="Model\DecisionTree.cs" />
     <Compile Include="Model\Hospital.cs" />

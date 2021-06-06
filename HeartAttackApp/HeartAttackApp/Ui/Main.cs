@@ -1,13 +1,6 @@
 ﻿using HeartAttackApp.HeavyTask;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HeartAttackApp.Ui
@@ -17,12 +10,16 @@ namespace HeartAttackApp.Ui
         private ControllerGUI controller;
         public bool stop;
         private VisualizationForm visualizationPane;
+        private HeavyTasks heavy;
         public Main()
         {
             stop = false;
             InitializeComponent();
-            HeavyTaskExcel heavy = new HeavyTaskExcel(this);
-            heavy.Callback += CallbackLoadExcel;
+            HeavyTasks heavy = new HeavyTasks(this);
+            heavy.CallbackExcel += CallbackLoadExcel;
+            heavy.CallbackTraining += CallbackActualiceProgess;
+            heavy.CallbackExperiment += CallbackLoadExperiment;
+            this.heavy = heavy;
             visualizationPane = new VisualizationForm();
             controller = new ControllerGUI(visualizationPane.getPtbDecision(),visualizationPane.getPtbC45());
             startApp1.initialize(this);
@@ -42,7 +39,7 @@ namespace HeartAttackApp.Ui
         {
             int advance = controller.miHospital.advance;
             startApp1.loading(advance);
-            if (advance == 50)
+            if (advance == 70)
             {
                 stop = true;
                 loadMain();
@@ -77,13 +74,11 @@ namespace HeartAttackApp.Ui
 
         private void Main_Load(object sender, EventArgs e)
         {
-            HeavyTaskTraning hvtask = new HeavyTaskTraning(this);
-            hvtask.Callback += CallbackActualiceProgess;
-            hvtask.Start();
+            heavy.Start(0);
             training();
         }
 
-        private void CallbackLoadExcel(object sender, HeavyTaskResponseExcel response)
+        private void CallbackLoadExcel(object sender, HeavyTaskResponse response)
         {
             filterOptions1.eneableAll(false);
             gridPatients1.enableAll(false);
@@ -93,10 +88,20 @@ namespace HeartAttackApp.Ui
                 filterOptions1.eneableAll(true);
                 gridPatients1.enableAll(true);
                 buttonsOptions1.enableButtons(true);
+                gridPatients1.exported = false;
                 stop = true;
             }
         }
 
+        private void CallbackLoadExperiment(object sender, HeavyTaskResponse response)
+        {
+            double load = controller.miHospital.loadExperiment;
+            gridPatients1.setLoad(load);
+            if (load == 1)
+            {
+                stop = true;
+            }
+        }
         public void ourTree(bool our)
         {
             if (our)

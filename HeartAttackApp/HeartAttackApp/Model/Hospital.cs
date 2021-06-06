@@ -554,7 +554,7 @@ namespace HeartAttackApp.Model
             var result = crossValidation.Learn(inputs1, outputs1);
 
             GeneralConfusionMatrix gcm = result.ToConfusionMatrix(inputs1, outputs1);
-            accuracyC45lib = Math.Round(gcm.Accuracy,2);
+            accuracyC45lib = Math.Round(gcm.Accuracy,3);
         }
         private void trainingC45libExperiment()
         {

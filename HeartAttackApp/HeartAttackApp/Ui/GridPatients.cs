@@ -138,7 +138,7 @@ namespace HeartAttackApp.Ui
             btn_experiment.Enabled = false;
             lb_wait.Visible = true;
             pb_loadingExperiment.Visible = true;
-            DialogResult mes =  MessageBox.Show("this process could take a long time. Are you sure do it?", "Information Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult mes =  MessageBox.Show("This process could take a long time. Are you sure want to start it?", "Information Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (mes.Equals(DialogResult.Yes))
             {
                 heavy.Start(2);

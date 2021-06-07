@@ -130,20 +130,23 @@ namespace HeartAttackApp.Ui
 
         private void experiment()
         {
-            string[][] experimentMatriz = controller.miHospital.generateResultExperiment(30);
+            string[][] experimentMatriz = controller.miHospital.generateResultExperiment(3);
             exportarExperimento(experimentMatriz);
         } 
         private void btn_experiment_Click(object sender, EventArgs e)
         {
-            btn_experiment.Enabled = false;
-            lb_wait.Visible = true;
-            pb_loadingExperiment.Visible = true;
             DialogResult mes =  MessageBox.Show("This process could take a long time. Are you sure want to start it?", "Information Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (mes.Equals(DialogResult.Yes))
             {
+
+                btn_experiment.Enabled = false;
+                lb_wait.Visible = true;
+                pb_loadingExperiment.Visible = true;
+           
                 heavy.Start(2);
                 Thread thread = new Thread(new ThreadStart(experiment));
                 thread.Start();
+
             }
         }
     }

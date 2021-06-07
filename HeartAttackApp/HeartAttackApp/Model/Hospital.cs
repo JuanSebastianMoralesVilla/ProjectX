@@ -378,7 +378,7 @@ namespace HeartAttackApp.Model
                 allTrainings[s] = new List<Patient>();
             }
             //A seed is used so that the algorithm is deterministic.
-            Random rnd = new Random(4);
+            Random rnd = new Random();
            
             string path = @"../../../../Dataset/Datasets/";
             var reader = new StreamReader(File.OpenRead(path + "DataSetHeartAtack.csv"));

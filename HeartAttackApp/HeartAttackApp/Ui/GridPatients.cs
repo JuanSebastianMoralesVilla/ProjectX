@@ -1,14 +1,6 @@
 ﻿using HeartAttackApp.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using HeartAttackApp.HeavyTask;
@@ -20,13 +12,13 @@ namespace HeartAttackApp.Ui
         private Add_pane addPane;
         private ControllerGUI controller;
         private Main main;
-        private HeavyTaskExcel heavy;
+        private HeavyTasks heavy;
         public bool exported { get; set; }
         public GridPatients()
         {
             InitializeComponent();
         }
-        public void initialize(ControllerGUI controller,Main main, ButtonsOptions btnopt, FilterOptions ft,HeavyTaskExcel heavy)
+        public void initialize(ControllerGUI controller,Main main, ButtonsOptions btnopt, FilterOptions ft,HeavyTasks heavy)
         {
             this.main = main;
             this.controller = controller;
@@ -64,9 +56,12 @@ namespace HeartAttackApp.Ui
             btExcelExport.Enabled = true;
         }
         
-        public void ExportarDatosExcel()
+        private void ExportarDatosExcel()
         {
-            DataGridView datagrid = grid_data;
+            ExportarDatosExcel(grid_data);
+        }
+        private void ExportarDatosExcel(DataGridView datagrid)
+        {
             try
             {
                 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -97,7 +92,7 @@ namespace HeartAttackApp.Ui
             exported = true;
         }
 
-        public void ExportarExperimento(string[][] mat)
+        public void exportarExperimento(string[][] mat)
         {
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             excel.Application.Workbooks.Add(true);
@@ -105,21 +100,54 @@ namespace HeartAttackApp.Ui
             {
                 for (int colum = 0; colum < mat[0].Length; colum++)
                 {
-                    excel.Cells[fila + 1, colum] = mat[fila][colum];
+                    excel.Cells[fila + 1, colum+1] = mat[fila][colum];
                 }
             }
             excel.Visible = true;
         }
         private void btExcelExport_Click(object sender, EventArgs e)
         {
-            heavy.Start();
+            heavy.Start(1);
             Thread thread = new Thread(new ThreadStart(ExportarDatosExcel));
             thread.Start();
         }
 
+        public void setLoad(double load)
+        {
+            pb_loadingExperiment.Value = (int)Math.Round(load*100,0);
+            if (pb_loadingExperiment.Value == 100)
+            {
+                btn_experiment.Enabled = true;
+                pb_loadingExperiment.Visible = false;
+                pb_loadingExperiment.Value = 0;
+                lb_wait.Visible = false;
+            }
+        }
         public void ourTree(bool our)
         {
             main.ourTree(our);
+        }
+
+        private void experiment()
+        {
+            string[][] experimentMatriz = controller.miHospital.generateResultExperiment(3);
+            exportarExperimento(experimentMatriz);
+        } 
+        private void btn_experiment_Click(object sender, EventArgs e)
+        {
+            DialogResult mes =  MessageBox.Show("This process could take a long time. Are you sure want to start it?", "Information Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (mes.Equals(DialogResult.Yes))
+            {
+
+                btn_experiment.Enabled = false;
+                lb_wait.Visible = true;
+                pb_loadingExperiment.Visible = true;
+           
+                heavy.Start(2);
+                Thread thread = new Thread(new ThreadStart(experiment));
+                thread.Start();
+
+            }
         }
     }
 }

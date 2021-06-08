@@ -226,13 +226,13 @@ namespace HeartAttackApp.Ui
             }else if (cbDecisionTree.SelectedIndex == 1 )
             {
                 txt_accuracy.Visible = true;
-                txt_accuracy.Text = controller.miHospital.accuracyC45lib  + "%";
+                txt_accuracy.Text = controller.miHospital.accuracyC45lib*100  + "%";
                 btn_showDecisionTree.Enabled = true;
                 message = "The data will be classified according to the library's decision tree.";
             }
-            if(!first)
+            if(!first || cbDecisionTree.SelectedIndex!=-1)
             {
-               // DialogResult mes = MessageBox.Show("The data will be classified according to the selecetd tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // DialogResult mes = MessageBox.Show("The data will be classified according to the selected tree , do you want to continue?", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult mes = MessageBox.Show(message, "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

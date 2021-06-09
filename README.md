@@ -82,7 +82,7 @@ Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the p
 ### Experiment
 [Experiment](https://github.com/JuanSebastianMoralesVilla/ProjectX/tree/main/Experimento)
 
-### Visualization app
+## Visualization app
 
 
 ## Contributing

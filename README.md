@@ -30,12 +30,13 @@
       <ul>
         <li><a href="#class-diagram">Class Diagram</a></li>
         <li><a href="#object-diagram">Object Diagram</a></li>
+        <li><a href="Engineering-Method">Engineering Method</a></li>
+        <li><a href="#Sequence-Diagrams">Sequence Diagrams</a></li>
+        <li><a href="#Experiment">Experiment</a></li>   
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#personal-software-process">Personal Software Process</a></li>
-    <li><a href="#ingineering-method">Ingineering Method</a></li>
-    <li><a href="#video">Video</a></li>
+    <li><a href="#videos">Videos</a></li>
     <li><a href="#contributors">Contributors</a></li>
   </ol>
 </details>
@@ -78,6 +79,9 @@ Here we have some diagrams in Unifed Modeling Lenguage to see how we treat the p
 ### Sequence Diagrams
 [Sequence Diagrams](https://github.com/JuanSebastianMoralesVilla/ProjectX/blob/main/Documentacion/SequenceDiagrams.pdf)
 
+### Experiment
+[Experiment](https://github.com/JuanSebastianMoralesVilla/ProjectX/tree/main/Experimento)
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -88,9 +92,7 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Personal Software Process
 
-We dont take our times at the moment
 
 ## Software Requirements Specifications
 
@@ -111,6 +113,7 @@ In this videos we show the functionalities and how we see the model and the data
 ### [Video - Milestone 1](https://youtu.be/NX_hr811Gl0)
 ### [Video - Milestone 2](https://youtu.be/8ViVyqaJcxQ)
 ### [Video - Milestone 3](https://youtu.be/4zbWcJPt7-w)
+### [Video - Milestone 4](https://youtu.be/5qUB2EODCxI)
 ### [Pitch](https://youtu.be/ZayVhv_tCLU)
 
 ## Contributors 
